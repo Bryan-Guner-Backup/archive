@@ -23504,4 +23504,1190 @@
                                 kind: 'text',
                                 key: '5e737a14bfca4375bbcbea129b1e1104',
                                 ranges: [
-                                  {
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '    def add_edge(self, v1, v2, weight = 0):',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '23ac8319c7b142d893b436f587a2d114',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '2ca6167c0f2b4feebbdad183887d8a8e',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        if v1 not in self.vertices:',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '1880574a05804ce0855c8c81e1ba44fa',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '97043c89bf214c0083c7988cb40a91a0',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '            self.add_vertex(v1)',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: 'cc00bf2b76a84fcd948c49ec2e66ecbd',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'a75e243ec4f5470e915706dfece5c746',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        if v2 not in self.vertices:',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '73500186e6a44f68a1770329401e9924',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '3fd7b62aadda4de0948f7d0daa2d8dd1',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '            self.add_vertex(v2)',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '3ff78635bb79416badf0ce230f51ed47',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '2b2e25978fc140f3b5f8a3d32e480370',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        self.vertices[v1].add_connection(self.vertices[v2], weight)',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '8282d3f582ec4cfb8be5837b5d82d181',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '71ab260a610d418883653ae77ccbc71b',
+                                ranges: [
+                                  { kind: 'range', marks: [], text: '' },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '879811647eb943559f67fa02d75a26d0',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '39f1c4b6d1da4a0382b03d70a76d2dd1',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '    def get_vertices(self):',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '0b155230a7134f7c9f5fd2127117390f',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '581ada18396f4e01a31757f8ab0539eb',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        return self.vertices.keys()',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                      {
+                        kind: 'block',
+                        type: 'paragraph',
+                        key: '4026937030ee4f8880f9ee65dea8a5cf',
+                        isVoid: false,
+                        data: {},
+                        nodes: [
+                          {
+                            kind: 'text',
+                            key: 'c152b794d96045389f4fc7fbe17b756c',
+                            ranges: [
+                              {
+                                kind: 'range',
+                                marks: [],
+                                text: 'Now, we will add a ',
+                              },
+                              {
+                                kind: 'range',
+                                marks: [
+                                  { kind: 'mark', data: {}, type: 'code' },
+                                ],
+                                text: 'depth_first_search',
+                              },
+                              {
+                                kind: 'range',
+                                marks: [],
+                                text: ' method to our ',
+                              },
+                              {
+                                kind: 'range',
+                                marks: [
+                                  { kind: 'mark', data: {}, type: 'code' },
+                                ],
+                                text: 'Graph',
+                              },
+                              {
+                                kind: 'range',
+                                marks: [],
+                                text: " class. One of the most common and simplest ways to implement a DFS is to use a set to keep track of visited vertices and use recursion to manage the visitation order. Let's now define our function:",
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                      {
+                        kind: 'block',
+                        type: 'code',
+                        key: 'f63052add50b4244bf29a840cd2c14a5',
+                        isVoid: false,
+                        data: { syntax: 'python' },
+                        nodes: [
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '61a0a024e6324f098cd64c54c0d11c1d',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '9e346b95decb404d9597e7bb2415a52f',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: 'class Graph:',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '1738c7ed496348999b089950f1c89e8c',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '7d7ebcf4b3ee4710ab25a373baa2cd29',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '    def __init__(self):',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: 'fdd2a51f7bf24b2dbfecc84fcd542618',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '6e9726de821441c3aa047d49f34b30f7',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        self.vertices = {}',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '08451480b6b2493d9393185bf878d8a7',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'dde2552001494258b7022b9ce5c3f419',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        self.count = 0',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '7f326dd6a9f04023a6ae7040791c3a5b',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '2ee4b5e34cf24d29b5c26506ebebb131',
+                                ranges: [
+                                  { kind: 'range', marks: [], text: '' },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: 'b7fb4e3b065f412d805def7b0975edc2',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '22843828160041268c6eba6fa689c67f',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '    def __contains__(self, vert):',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: 'f742336be9f94613b58d50a8e403590e',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'f58da5be0a0f45829071ca28b9f9eec2',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        return vert in self.vertices',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: 'd392c8d84cba47838a152ed3778e54f5',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '754230c8e98a4320b9b66051e0fd8191',
+                                ranges: [
+                                  { kind: 'range', marks: [], text: '' },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '7bf66943ea944b0384a1de23a8e8dd44',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '21976cda7306474880b979080d4f7e9e',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '    def __iter__(self):',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '7ee7e2acaefe44008dc88b74639810f9',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'f71882ce96a345bcac441373e838d503',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        return iter(self.vertices.values())',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '90d3aa9085d9491f98b5676683f4afc7',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'c50d26b691ff45288454edbbb5ebbb05',
+                                ranges: [
+                                  { kind: 'range', marks: [], text: '' },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '9c3802944ab24f309150e5e53ae03d2c',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'c430253e53ba4fadbfb1013b415a965d',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '    def add_vertex(self, value):',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '06a431d760364c07be69e6d5886772eb',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'df69cceb003541feb8dcaed49456221d',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        self.count += 1',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '7291b72069084ae3b5c71aee1214e7dd',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'bc8da11a5d97424cb86bff83c7713028',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        new_vert = Vertex(value)',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '9bd6c4c3d1c5420aa0baaa3d88359105',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'ec2bb73ccfbe4886b4235ef4906d82a8',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        self.vertices[value] = new_vert',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '8dc263bf412f4602bb7fc244f8fd828c',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '7d0e4aecd33f40cda757e910f4f70020',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        return new_vert',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: 'f3d38813bcc74ca3af65b3ed8a983331',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '47f60f8bbf274c3d930256970a5288c9',
+                                ranges: [
+                                  { kind: 'range', marks: [], text: '' },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: 'e160b01fa0da41c69bdc5efedb257ee2',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'dc9c7a9d9e554d4487d58f1e2c49bd21',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '    def add_edge(self, v1, v2, weight = 0):',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '19e21df03a8945fb9b214c96df1b818c',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '5f56af3a0c4e4bfb9f67e5224b0eba0e',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        if v1 not in self.vertices:',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '3d9869bc725847c5a3ec77417d1e8682',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '2561166d1ddc4b7fa0d7b4511a115ff0',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '            self.add_vertex(v1)',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: 'a6d4a46c09f44d34a5b6704f594654a5',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '16e36be367584ef9861d1d16abf24ac4',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        if v2 not in self.vertices:',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '027e38b43d104807a3a51f8f1d77833d',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '76b5d1751a754ea0b8af0a87e1e58c0a',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '            self.add_vertex(v2)',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '62ec42e8293b4e44b27db7a5d49445e4',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'f72de47279074302b0fc9c0baeb91379',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        self.vertices[v1].add_connection(self.vertices[v2], weight)',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '844fd443df2d4da29095d5b08a3caa0a',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '1590e12033404417a2a606c4855b56ab',
+                                ranges: [
+                                  { kind: 'range', marks: [], text: '' },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '2ca66540924e426881b97f8bbffea189',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '318b57bd7752443ea0688b69070c234b',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '    def get_vertices(self):',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '20bdfbb88f554867bd1ec84294394fc1',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'd918e9a4af3e4d329d33424c0263da3b',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        return self.vertices.keys()',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '1fcce6552d6348ea8e72d98b53da22be',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '6ff8ef27058e41348ea5afdcce0b2fc2',
+                                ranges: [
+                                  { kind: 'range', marks: [], text: '' },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: 'd908b0657f8640c28d6f6cb636b30ee2',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '6847c2c1ccfc45a6aa5a287fefd37591',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '    def depth_first_search(self, vertex, visited = set()):',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '015b4d06c21c4e9f8ceea3c62a659657',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '4b5af978f3414559b70363e6bae482b0',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        visited.add(vertex)',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: 'f50bceb6c1784786aaffadf6d8cc096a',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: 'c06fe20adae54dada11833bf867420f9',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '        for next_vert in vertex.get_connections():',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: '141b5227893346a69c1e9ed65d3a7bfe',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '6fbcfee7677d4a3fad5bbeb2dbadf6b2',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '            if next_vert not in visited:',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'code-line',
+                            key: 'd6ebf9945ac94870ac91a81f2ddc3735',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'text',
+                                key: '899e7cc5a5b347849a8ca5387519d80c',
+                                ranges: [
+                                  {
+                                    kind: 'range',
+                                    marks: [],
+                                    text: '                self.depth_first_search(next_vert, visited)',
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                      {
+                        kind: 'block',
+                        type: 'heading-2',
+                        key: '544c8f48b4e54320953130f05c5d7cc1',
+                        isVoid: false,
+                        data: { id: 'challenge' },
+                        nodes: [
+                          {
+                            kind: 'text',
+                            key: 'e5892b9aad364e4ebe50695e0b2d1f09',
+                            ranges: [
+                              { kind: 'range', marks: [], text: 'Challenge' },
+                            ],
+                          },
+                        ],
+                      },
+                      {
+                        kind: 'block',
+                        type: 'list-ordered',
+                        key: '25ab310f5cab4394b614ef9b71b967d7',
+                        isVoid: false,
+                        data: {},
+                        nodes: [
+                          {
+                            kind: 'block',
+                            type: 'list-item',
+                            key: '0e47ad90e9f345a8bd4b901575b0e243',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'block',
+                                type: 'paragraph',
+                                key: '586015e70309450cafcbe79086db7b86',
+                                isVoid: false,
+                                data: {},
+                                nodes: [
+                                  {
+                                    kind: 'text',
+                                    key: '874138672e854c029d8f057cad628638',
+                                    ranges: [
+                                      {
+                                        kind: 'range',
+                                        marks: [],
+                                        text: 'Does a depth-first search reliably find the shortest path?',
+                                      },
+                                    ],
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                          {
+                            kind: 'block',
+                            type: 'list-item',
+                            key: 'eacba4f6081b480992fa66439ed05234',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'block',
+                                type: 'paragraph',
+                                key: '8f8c7f22bc4a438c97a59dcabad7bd24',
+                                isVoid: false,
+                                data: {},
+                                nodes: [
+                                  {
+                                    kind: 'text',
+                                    key: '9a50598121e94491a1fbd37bc91742a8',
+                                    ranges: [
+                                      {
+                                        kind: 'range',
+                                        marks: [],
+                                        text: "If you didn't want to use recursion, what data structure could you use to write an iterative depth-first search?",
+                                      },
+                                    ],
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                      {
+                        kind: 'block',
+                        type: 'heading-2',
+                        key: 'c2311249c889437884aaaba579d71c5c',
+                        isVoid: false,
+                        data: { id: 'additional-resources' },
+                        nodes: [
+                          {
+                            kind: 'text',
+                            key: '77527e5cf5054c1a82fc5bec9c457ce7',
+                            ranges: [
+                              {
+                                kind: 'range',
+                                marks: [],
+                                text: 'Additional Resources',
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                      {
+                        kind: 'block',
+                        type: 'list-unordered',
+                        key: 'd83f838c752b4cc78239e96e0b3d7122',
+                        isVoid: false,
+                        data: {},
+                        nodes: [
+                          {
+                            kind: 'block',
+                            type: 'list-item',
+                            key: 'd27ad3354e0a4482aa2d2752744c5e40',
+                            isVoid: false,
+                            data: {},
+                            nodes: [
+                              {
+                                kind: 'block',
+                                type: 'paragraph',
+                                key: 'e2e19c1fe6e84a1482315f0c92c1417b',
+                                isVoid: false,
+                                data: {},
+                                nodes: [
+                                  {
+                                    kind: 'text',
+                                    key: '34296ad10c2e4f7e8d92bb26eb27d3c2',
+                                    ranges: [
+                                      { kind: 'range', marks: [], text: '' },
+                                    ],
+                                  },
+                                  {
+                                    kind: 'inline',
+                                    type: 'link',
+                                    key: '5a74317f4c384b03be419ef8f88b3bef',
+                                    isVoid: false,
+                                    data: {
+                                      href: 'https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/',
+                                    },
+                                    nodes: [
+                                      {
+                                        kind: 'text',
+                                        key: '80bd0df7c7f04e63a69460433f5c1f27',
+                                        ranges: [
+                                          {
+                                            kind: 'range',
+                                            marks: [],
+                                            text: 'https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/ (Links to an external site.)',
+                                          },
+                                        ],
+                                      },
+                                    ],
+                                  },
+                                  {
+                                    kind: 'text',
+                                    key: 'f2cc856a70054f92ac7d26b5937e942f',
+                                    ranges: [
+                                      { kind: 'range', marks: [], text: '' },
+                                    ],
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                      {
+                        kind: 'block',
+                        type: 'paragraph',
+                        key: 'e1f60f92e86347b1a53d8e180ca0b9e5',
+                        isVoid: false,
+                        data: {},
+                        nodes: [
+                          {
+                            kind: 'text',
+                            key: '1c81e8f0e720468f81f6cc4d0b898463',
+                            ranges: [{ kind: 'range', marks: [], text: '' }],
+                          },
+                        ],
+                      },
+                      {
+                        kind: 'block',
+                        type: 'paragraph',
+                        key: 'b05920ac603e4f178f6842a8bb4706f5',
+                        isVoid: false,
+                        data: {},
+                        nodes: [
+                          {
+                            kind: 'text',
+                            key: '477967e2eb1c4bf2bc961a6047f69300',
+                            ranges: [{ kind: 'range', marks: [], text: '' }],
+                          },
+                        ],
+                      },
+                      {
+                        kind: 'block',
+                        type: 'image',
+                        key: '931760e2f8ec45168cdfe968a51fc1aa',
+                        isVoid: true,
+                        data: { assetID: '-MimaxjgfPRC2qill0nL' },
+                        nodes: [
+                          {
+                            kind: 'text',
+                            key: 'ce5fbfcb54c249bebed840a2119b88f8',
+                            ranges: [{ kind: 'range', marks: [], text: '' }],
+                          },
+                        ],
+                      },
+                      {
+                        kind: 'block',
+                        type: 'paragraph',
+                        key: '3b7a21d8efcf4f3fa2b64568f9a3a5b8',
+                        isVoid: false,
+                        data: {},
+                        nodes: [
+                          {
+                            kind: 'text',
+                            key: 'b711e02f4c6540aeb72512d0c3bafbb6',
+                            ranges: [{ kind: 'range', marks: [], text: '' }],
+                          },
+                        ],
+                      },
+                      {
+                        kind: 'block',
+                        type: 'paragraph',
+                        key: 'a9d2c00fcdaf4e6a8e048770477fd988',
+                        isVoid: false,
+                        data: {},
+                        nodes: [
+                          {
+                            kind: 'text',
+                            key: '544d637fd5bb4390833930a564b2b2f8',
+                            ranges: [{ kind: 'range', marks: [], text: '' }],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                },
+            },
+          },
+          user: {
+            kind: 'user',
+            uid: '-Mj4D7hU3ghrTgYEc7ap',
+            baseDomain: '',
+            defaultSpace: null,
+            displayName: '',
+            photoURL: null,
+            deletedAt: null,
+            usageStatuses: null,
+            email: '',
+            emailVerified: false,
+            disabled: false,
+            phoneNumber: null,
+            providers: {},
+            isVisitor: true,
+            customClaims: {},
+            lastLoggedInAt: 1631096196766,
+            createdAt: 1631096196766,
+          },
+        },
+        config: {
+          environment: 'production',
+          firebase: {
+            apiKey: 'AIzaSyBL3yy07hdwBstwhhFTkRtzJA865UQzQVg',
+            authDomain: 'app.gitbook.com',
+            databaseURL: 'https://gitbook-28427.firebaseio.com',
+            projectId: 'gitbook-28427',
+            storageBucket: 'gitbook-28427.appspot.com',
+            messagingSenderId: '208404988308',
+            appId: '1:208404988308:web:e3bb4e102d055798',
+          },
+          appcheck: { public_key: '6Le6ydgbAAAAALjBXGHKKls31hijUdNgNvb32as-' },
+          amplitude: {
+            key: 'fef1e872c952688acd962d30aa545b9e',
+            endpoint: 'www.gitbook.com/__amp/',
+          },
+          intercom: { app_id: 'ajrah9dt' },
+          ga: {
+            spaces: { id: 'UA-57505611-10', view_id: '152688311' },
+            website: { id: 'UA-57505611-9' },
+          },
+          slack: {
+            client_id: '3085992729.251477828931',
+            redirect_uri: 'https://hooks.gitbook.com/hooks/slack/oauth',
+          },
+          sentry: {
+            url: 'https://df403e1abd7046148b272790ec350ce0@sentry.io/193897',
+          },
+          stripe: {
+            public_key: 'pk_live_iPkbPsG28bjTrkbfHXUq0cA0',
+            plans: {
+              startup_monthly: 'plan_FpdWuSK3BgOldB',
+              startup_yearly: 'plan_FpdZWR4TLYnKYH',
+              team_monthly: 'plan_GAeDpGXRUSctoE',
+              team_yearly: 'plan_GAeDEVtig2ujYe',
+              business_monthly: 'plan_ERCJFVRMVGgjVZ',
+              business_yearly: 'plan_ERCJgSzm3Ui1ox',
+            },
+            products: {
+              startup: 'prod_Cd5mCUdVDfZSHY',
+              business: 'prod_DpiRtaS8dvrtrK',
+              enterprise: 'prod_DpMsO7RlzNd0Ty',
+              legacy: 'prod_FROhqd8l1W4Fwg',
+              team: 'prod_GAeD47cc905FaD',
+            },
+          },
+          algolia: { appid: 'Q9UGR6532T' },
+          clearbit: { public_key: 'pk_e1e4d94ae5385255f0fc7d76d4897ade' },
+          urls: {
+            api: 'https://api-beta.gitbook.com',
+            spaces: 'https://gitbook-28427.firebaseapp.com',
+            website: 'https://app.gitbook.com',
+            saml: 'https://www.gitbook.com',
+          },
+          domains: { spaces: 'gitbook.io', cookie: '.gitbook.com' },
+          cdn: {
+            blobsurl: 'https://gblobscdn.gitbook.com/',
+            hosting_cname: 'hosting.gitbook.io',
+          },
+          logrocket: { key: 'fvjtqz/gitbook' },
+          version: '6.26.0',
+          buildVersion: '6.26.0-e2b8f33.34575',
+        },
+        props: {
+          ownerID: '-MiTbcxmvQYjsYEeD8c9',
+          spaceID: '-Mij72ebV4OjqJvBacMy',
+          spaceName: 'datastructures-in-pytho',
+          basename: '/datastructures-in-pytho',
+          location:
+            '/datastructures-in-pytho/cirriculumn/untitled-1/untitled-4',
+        },
+      };
+    </script>
+    <script
+      id="__LOADABLE_REQUIRED_CHUNKS__"
+      type="application/json"
+      crossorigin="anonymous"
+      charset="utf-8"
+    >
+      []
+    </script>
+    <script
+      async
+      data-chunk="space"
+      src="https://gstatic.gitbook.com/js/111.d0a159af.js"
+      crossorigin="anonymous"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>
