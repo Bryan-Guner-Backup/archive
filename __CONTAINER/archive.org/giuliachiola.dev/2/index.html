@@ -1,0 +1,1790 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+    <script>
+      const currentTheme = localStorage.getItem('theme') || 'light'
+      document.documentElement.setAttribute('data-theme', currentTheme)
+    </script>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today I learned | Giulia Chiola</title>
+    
+    <meta name="robots" content="index,follow"><!-- All Search Engines -->
+    
+    <link rel="archives" href="../search.html">
+    
+    
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    <meta name="theme-color" content="#f37694">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon-color-1.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32-color-1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16-color-1.png">
+    <link rel="manifest" href="../site-color-1.webmanifest">
+    
+    
+
+
+
+
+
+<meta name="description" content="A collection of useful code snippets for a faster development.&lt;br&gt;Reading time &amp;lt; 5 mins">
+<meta name="author" content="Giulia Chiola">
+<link rel="canonical" href="index.html" />
+
+
+<meta property="og:title" content="Today I learned">
+<meta property="og:description" content="A collection of useful code snippets for a faster development.&lt;br&gt;Reading time &amp;lt; 5 mins">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://giuliachiola.dev">
+<meta property="og:image" content="https://giuliachiola.dev/social-img/today-i-learned.png" />
+
+
+<meta name="twitter:image" content="https://giuliachiola.dev/social-img/today-i-learned.png" />
+<meta name="twitter:creator" content="@giulia_chiola">
+<meta name="twitter:site" content="@giulia_chiola">
+<meta name="twitter:card" content="summary_large_image">
+
+
+    
+    <link rel="stylesheet" href="../css/css-bundle.css">
+    
+    <link rel="stylesheet" type="text/css" href="../super-styleguide/src/css/print.css" media="print">
+
+    
+    
+    
+    
+    <style>
+      @charset "UTF-8";:root{--co_text:#69778f;--co_text-tint-10:#78859a;--co_background:#fff;--co_shadow:rgba(0, 0, 0, 0.1);--co_shadow-intense:rgba(0, 0, 0, 0.4);--co_palette:#69778f;--co_palette--lighten:#8591a6;--co_palette--lighten-hard:#c0c6d1}[data-theme=dark]{--co_text:#fff;--co_background:#191935;--co_text-tint-10:white}.t-palette-color--1{--co_palette:#ef476f;--co_palette--lighten:#f37694;--co_palette--lighten-hard:#ffe1e8}[data-theme=dark] .t-palette-color--1{--co_shadow:rgba(239, 71, 111, 0.4);--co_shadow-intense:rgba(239, 71, 111, 0.7)}.t-palette-color--2{--co_palette:#0d3b95;--co_palette--lighten:#114ec4;--co_palette--lighten-hard:#d7e5ff}[data-theme=dark] .t-palette-color--2{--co_shadow:rgba(13, 59, 149, 0.4);--co_shadow-intense:rgba(13, 59, 149, 0.7)}.t-palette-color--3{--co_palette:#06d6a0;--co_palette--lighten:#17f8be;--co_palette--lighten-hard:#adffe9}[data-theme=dark] .t-palette-color--3{--co_shadow:rgba(6, 214, 160, 0.4);--co_shadow-intense:rgba(6, 214, 160, 0.7)}.t-palette-color--4{--co_palette:#1b98e0;--co_palette--lighten:#45ade9;--co_palette--lighten-hard:#ace1ff}[data-theme=dark] .t-palette-color--4{--co_shadow:rgba(27, 152, 224, 0.4);--co_shadow-intense:rgba(27, 152, 224, 0.7)}.t-palette-color--5{--co_palette:#ff9f1c;--co_palette--lighten:#ffb54f;--co_palette--lighten-hard:#ffe3bd}[data-theme=dark] .t-palette-color--5{--co_shadow:rgba(255, 159, 28, 0.4);--co_shadow-intense:rgba(255, 159, 28, 0.7)}body{font-family:Montserrat,sans-serif;line-height:1.65}h1{font-size:2.125rem;font-weight:500;line-height:1.2}@media (min-width:48em){h1{font-size:2.5rem}}@media (min-width:64em){h1{font-size:3rem}}h2{font-size:1.75rem;font-weight:500;line-height:1.2}@media (min-width:48em){h2{font-size:1.9375rem}}@media (min-width:64em){h2{font-size:2.375rem}}h3{font-size:1.4375rem;font-weight:500;line-height:1.2}@media (min-width:48em){h3{font-size:1.5625rem}}@media (min-width:64em){h3{font-size:1.75rem}}h4,h5,h6{font-size:1.1875rem;font-weight:500;line-height:1.2}@media (min-width:48em){h4,h5,h6{font-size:1.25rem}}@media (min-width:64em){h4,h5,h6{font-size:1.5rem}}legend{display:table;padding:0}fieldset{border:0;margin:0;min-width:0;padding:.01em 0 0 0}body:not(:-moz-handler-blocked) fieldset{display:table-cell}.c-header__list{list-style:none;margin:0;padding-left:0}.c-header__item{margin-bottom:0;padding-left:0}*{box-sizing:border-box;font-family:inherit;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;line-height:inherit}::after,::before{box-sizing:inherit}html{font-size:1rem;scroll-behavior:smooth}body{background-color:var(--co_background);color:var(--co_text);height:100%;margin:0;padding:0}body.is-menu-open{position:fixed;width:100%}a{color:var(--co_text);text-decoration:none}a:hover{color:var(--co_text-tint-10);text-decoration:underline}code{font-family:"Fira Code",monospace}img{height:auto;max-width:100%;vertical-align:middle;color:var(--co_palette--lighten);text-transform:uppercase}hr{background-color:#e8e8e8;border:none;color:#e8e8e8;height:.0625rem}blockquote{border-left:.1875rem solid #e8e8e8;margin:0;padding-left:1.25rem}body,html{height:100%;margin:0}.l-wrapper{display:flex;flex-direction:column;height:100%}.l-wrapper .c-footer{margin-top:auto}.l-spacing-xs{margin-bottom:.3125rem!important}.l-spacing-s{margin-bottom:.625rem!important}.l-spacing-m{margin-bottom:1.25rem!important}.l-spacing-l{margin-bottom:2.5rem!important}.l-spacing-top-m{margin-top:1.25rem!important}@media (min-width:64em){.c-header{position:relative}}@media (max-width:63.99em){.is-menu-open .c-header{height:100vh;position:fixed;width:100%;z-index:10}}@media (max-width:63.99em){.c-header__nav{margin:0;position:relative}}@media (max-width:63.99em){.c-header__list{align-content:center;background-color:var(--co_palette--lighten);display:flex;flex-direction:column;height:100%;justify-content:center;left:100%;padding:0;position:fixed;text-align:center;top:0;transform:translate3d(0,0,0);transition:transform .7s cubic-bezier(.32,-.01,0,.99);width:100%;z-index:10}.c-header__toggle:checked~.c-header__list{transform:translate3d(-100%,0,0);transition:transform .7s cubic-bezier(.32,-.01,0,.99)}}@media (min-width:64em){.c-header__list{padding:1.25rem 0;text-align:right}}.c-header__item{display:block}@media (max-width:63.99em){.c-header__item{font-size:1.75rem;font-weight:500;line-height:1.2;margin-bottom:1.25rem}}@media (max-width:63.99em) and (min-width:48em){.c-header__item{font-size:1.9375rem}}@media (max-width:63.99em) and (min-width:64em){.c-header__item{font-size:2.375rem}}@media (min-width:64em){.c-header__item{display:inline-block;margin-bottom:0}.c-header__item::before{color:var(--co_text);content:'•'}}@media (min-width:64em){.c-header__item+.c-header__item{margin-left:1.25rem}}@media (max-width:63.99em){.c-header__link{color:#fff}.c-header__link:hover{color:#fff}}@media (hover:hover){.c-header__link:hover{border-bottom:.0625rem solid #69778f;border-color:var(--co_palette--lighten);padding-bottom:.25rem;text-decoration:none}}.c-header__link[data-state=active]{border-bottom:.125rem dashed #fff;font-weight:400;padding-bottom:.25rem}@media (min-width:64em){.c-header__link[data-state=active]{border-bottom:.25rem solid var(--co_palette--lighten)}.c-header__link[data-state=active]:hover{text-decoration:none}}.c-header__link[data-state=current-section]{border-bottom:.125rem dotted #fff}@media (min-width:64em){.c-header__link[data-state=current-section]{border-bottom:.125rem dotted var(--co_palette--lighten);font-weight:400;padding-bottom:.25rem}}.c-header__toggle{height:2.8125rem;margin:0;opacity:0;position:absolute;right:.625rem;top:.625rem;width:2.8125rem;z-index:11}@media (min-width:64em){.c-header__toggle{display:none}}.c-header__hamburger{background:#fff;display:block;height:.125rem;position:absolute;right:1.25rem;top:1.875rem;transition:background .7s;width:1.875rem;z-index:11}.c-header__toggle:checked~.c-header__hamburger{background:0 0;transition:background .7s}.c-header__hamburger::before{background:#fff;content:'';height:.125rem;left:0;position:absolute;top:.625rem;transition:transform .7s;width:1.875rem}.c-header__toggle:checked~.c-header__hamburger::before{transform:translateY(-5px) rotate(-45deg);transition:transform .7s}.c-header__hamburger::after{background:#fff;bottom:.625rem;content:'';height:.125rem;left:0;position:absolute;transition:transform .7s;width:1.875rem}.c-header__toggle:checked~.c-header__hamburger::after{transform:translateY(15px) rotate(45deg);transition:transform .7s}@media (min-width:64em){.c-header__hamburger{display:none}}.c-hero{align-items:center;background-color:var(--co_palette);color:#fff;display:flex;min-height:21.875rem;padding:2.5rem 0;position:relative;text-align:center}.c-hero .l-main{width:100%}.c-hero--bg-img{color:#fff;min-height:31.25rem;text-shadow:rgba(0,0,0,.5) 0 0 .625rem}.c-hero--quote{font-style:italic}@media (max-width:47.99em){.c-hero--quote{padding:3.125rem 1.25rem}}.c-hero__blockquote{border-left:none;padding-left:0}.c-hero__quote{font-size:1.75rem;font-weight:500;line-height:1.2;display:block;margin:0 auto}@media (min-width:48em){.c-hero__quote{font-size:1.9375rem}}@media (min-width:64em){.c-hero__quote{font-size:2.375rem}}@media (min-width:48em){.c-hero__quote{max-width:80%}}.c-hero__quote::before{content:'“'}.c-hero__quote::after{content:'”'}.c-hero__title{margin-top:0}.c-hero__title-custom{font-size:1.4375rem;font-weight:500;line-height:1.2;border-bottom:.0625rem dashed #fff;font-weight:600;text-transform:uppercase}@media (min-width:48em){.c-hero__title-custom{font-size:1.5625rem}}@media (min-width:64em){.c-hero__title-custom{font-size:1.75rem}}.c-hero__img{background-attachment:fixed;background-image:var(--hero-image);background-position:center;background-repeat:no-repeat;background-size:cover;height:100%;left:0;opacity:.3;position:absolute;top:0;width:100%}.c-hero__subtitle{font-size:1.1875rem;font-weight:500;line-height:1.2;margin-bottom:0}@media (min-width:48em){.c-hero__subtitle{font-size:1.25rem}}@media (min-width:64em){.c-hero__subtitle{font-size:1.5rem}}.c-hero--quote .c-hero__subtitle{display:block;font-style:normal;margin-top:1.25rem}.c-label{background-color:var(--co_palette--lighten-hard);border-radius:2px;border-radius:6.25rem;color:#073b4c;font-size:.75rem;padding:.125rem .5rem;text-transform:uppercase}.c-label:hover{color:#073b4c}.c-label+.c-label{margin-left:.3125rem}.c-label[data-state=active]{background:var(--co_palette);color:#fff}
+    </style>
+
+    
+    
+    <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+
+    <link rel="preload"
+          as="style"
+          href=https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Montserrat:wght@400;600&amp;display=swap />
+
+    <link rel="stylesheet"
+          href=https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Montserrat:wght@400;600&amp;display=swap
+          media="print" onload="this.media='all'" />
+
+    <noscript>
+      <link rel="stylesheet"
+            href=https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Montserrat:wght@400;600&amp;display=swap />
+    </noscript>
+  </head>
+
+  <body>
+    <div class="l-wrapper t-palette-color--1">
+      
+      
+
+<header class="c-header">
+  
+  <a class="s-skip-to-content-link" href="index.html#main">
+    Skip to content
+  </a>
+
+  <nav class="c-header__nav l-main">
+    <input class="c-header__toggle" type="checkbox" name="checkbox" id="headerToggle" value="value"/>
+    <label class="c-header__hamburger" for="headerToggle"></label>
+    <ul class="c-header__list">
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="../index.html"
+            
+            
+            >
+            til
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="../tutorials.html"
+            
+            
+            >
+            tutorials
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="../search.html"
+            
+            
+            >
+            search
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="../projects/index.html"
+            
+            
+            >
+            projects
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="../uses/index.html"
+            
+            
+            >
+            uses
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="../about/index.html"
+            
+            
+            >
+            about
+          </a>
+        </li>
+    </ul>
+  </nav>
+</header>
+
+
+      
+      
+
+<div class="l-spacing-m">
+  
+  
+
+
+
+
+<section class="c-hero  ">
+  
+    <div class="l-main">
+      
+      
+        <h1 class="c-hero__title">Today I learned</h1>
+      
+      
+      <h2 class="c-hero__subtitle">A collection of useful code snippets for a faster development.<br>Reading time &lt; 5 mins</h2>
+      
+    </div>
+    
+</section>
+
+</div>
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+  
+  
+
+
+<main id="main" class="l-main">
+  
+  <div class="l-spacing-m"><fieldset class="c-filter">
+  <legend class="c-filter__legend">Filter by:</legend>
+  
+  
+
+  
+  <ul class="c-filter__list">
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/design-system/index.html" class="c-label" >design system</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/nodejs/index.html" class="c-label" >nodejs</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/css/index.html" class="c-label" >css</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/uiengine/index.html" class="c-label" >uiengine</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/js/index.html" class="c-label" >js</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/regex/index.html" class="c-label" >regex</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/vsc/index.html" class="c-label" >vsc</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/git/index.html" class="c-label" >git</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/shell/index.html" class="c-label" >shell</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/json/index.html" class="c-label" >json</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/template-engine/index.html" class="c-label" >template engine</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/nunjucks/index.html" class="c-label" >nunjucks</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/performance/index.html" class="c-label" >performance</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/11ty/index.html" class="c-label" >11ty</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/static-site-generator/index.html" class="c-label" >static site generator</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/pug/index.html" class="c-label" >pug</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/mac-os/index.html" class="c-label" >mac os</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/node/index.html" class="c-label" >node</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/npm/index.html" class="c-label" >npm</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/vuejs/index.html" class="c-label" >vuejs</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/styleguidist/index.html" class="c-label" >styleguidist</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../tags/productivity/index.html" class="c-label" >productivity</a>
+      </li>
+    
+  </ul>
+</fieldset>
+
+
+  </div>
+  
+  
+    
+    <nav class="c-pagination">
+  <ol class="c-pagination__list">
+    <li class="c-pagination__item">
+      
+      <a class="c-pagination__link" href="../1/index.html">&#8592; prev</a>
+      
+    </li>
+    <li class="c-pagination__item">
+      
+    </li>
+  </ol>
+</nav>
+
+    
+    <div class="l-spacing-l">
+      
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#8</span>
+    
+    
+    <a class="c-card__title " href="../posts/how-to-set-up-githubgitlab-issue-and-pr-templates/index.html">
+      <h2 class="c-card__title-heading">How to set up GitHub/GitLab issue and PR templates</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <h2 id="templates-for-both-gitlab-and-github">Templates for both GitLab and GitHub <a class="j-header-anchor" href="index.html#templates-for-both-gitlab-and-github">#</a></h2>
+<p>Use the content that works best for you, here there are mine.</p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Snippet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>issue</td>
+<td><a href="https://github.com/giuliachiola/super-blog-content/blob/main/til/git/issue-and-pr-templates/_snippet-template-issue.md">🐙 GitHub snippet</a></td>
+</tr>
+<tr>
+<td>pull request / merge request</td>
+<td><a href="https://github.com/giuliachiola/super-blog-content/blob/main/til/git/issue-and-pr-templates/_snippet-template-mr.md">🐙 GitHub snippet</a></td>
+</tr>
+<tr>
+<td>release</td>
+<td><a href="https://github.com/giuliachiola/super-blog-content/blob/main/til/git/issue-and-pr-templates/_snippet-template-release.md">🐙 GitHub snippet</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="basic">Basic <a class="j-header-anchor" href="index.html#basic">#</a></h2>
+<h3 id="github">GitHub <a class="j-header-anchor" href="index.html#github">#</a></h3>
+<ul>
+<li>Create <code>.github</code> folder in project root.</li>
+<li>Add templates files following this folder structure</li>
+</ul>
+<pre class="language-shell"><code class="language-shell">├── .gitlab/<br>│   ├── ISSUE_TEMPLATE/<br>│   │   ├── issue-templates.md<br>│   ├── PULL_REQUEST_TEMPLATE/<br>│   │   ├── merge-request-templates.md<br>│   ├── RELEASE_TEMPLATE/<br>│   │   ├── release-templates.md</code></pre>
+<ul>
+<li>
+<p>Commit and push on our default branch.</p>
+</li>
+<li>
+<p>Check our project on GitHub. From now on, when we will open an issue, it will be pre-compiled with the markdown template we added.</p>
+</li>
+</ul>
+<img class="u-shadow" loading="lazy" src="https://res.cloudinary.com/giuliachiola/image/upload/v1586637232/super-blog/T8-issue-and-pr-templates/til-14-bug-report-01_fcauoy.jpg" alt="issue template 01" width="1440" height="341">
+<img class="u-shadow" loading="lazy" src="https://res.cloudinary.com/giuliachiola/image/upload/v1586637233/super-blog/T8-issue-and-pr-templates/til-14-bug-report-02_ywp8su.jpg" alt="issue template 02" width="1168" height="744">
+<h3 id="gitlab">GitLab <a class="j-header-anchor" href="index.html#gitlab">#</a></h3>
+<p>In GitLab is pretty much the same, but here we have to create a folder named <code>.gitlab</code>, and add this folders structure:</p>
+<pre class="language-shell"><code class="language-shell">├── .gitlab/<br>│   ├── issue_templates/<br>│   │   ├── issue-templates.md<br>│   ├── merge_request_templates/<br>│   │   ├── merge-request-templates.md<br>│   ├── release_templates/<br>│   │   ├── release-templates.md</code></pre>
+<h2 id="advanced">Advanced <a class="j-header-anchor" href="index.html#advanced">#</a></h2>
+<p>If we need different templates to choose, we have to add folders instead of files, and add many files as we need.</p>
+<pre class="language-shell"><code class="language-shell">├── .github<br>│   ├── ISSUE_TEMPLATE<br>│   │   ├── bug-report.md<br>│   │   ├── feature.md<br>│   │   ├── nice-to-have.md<br>│   ├── PULL_REQUEST_TEMPLATE.md<br>│   ├── RELEASE_TEMPLATE<br>│   │   ├── default.md<br>│   │   ├── hotfix.md</code></pre>
+<blockquote>
+<p>📚 More info</p>
+<ul>
+<li><a href="https://help.github.com/en/github/building-a-strong-community/configuring-issue-templates-for-your-repository">Configuring templates for GitHub</a></li>
+<li><a href="https://docs.gitlab.com/ee/user/project/description_templates.html">Configuring templates for GitLab</a></li>
+</ul>
+</blockquote>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-20">20 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="../tags/git/index.html" class="c-label">git</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#7</span>
+    
+    
+    <a class="c-card__title " href="../posts/sass-placeholder-and-its-limits/index.html">
+      <h2 class="c-card__title-heading">Sass placeholder and its limits</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>From the official <a href="https://sass-lang.com/documentation/style-rules/placeholder-selectors">📚 Sass documentation</a></p>
+<blockquote>
+<p>Sass has a special kind of selector known as a “placeholder”. It looks and acts a lot like a class selector, but it starts with a % and it's not included in the CSS output. In fact, any complex selector (the ones between the commas) that even contains a placeholder selector isn't included in the CSS, nor is any style rule whose selectors all contain placeholders.</p>
+</blockquote>
+<p>We can write a placeholder for reusable pieces of code prefixed by the <code>%</code> keyword:</p>
+<pre class="language-scss"><code class="language-scss"><span class="token comment">// colors.scss</span><br><br><span class="token selector"><span class="token placeholder">%colors-per-viewport</span> </span><span class="token punctuation">{</span><br>  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><br><br>  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>    <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>and call the placeholder using the syntax <code>@extend %[placeholder-name]</code></p>
+<pre class="language-scss"><code class="language-scss"><span class="token comment">// component.scss</span><br><br><span class="token selector">.colors </span><span class="token punctuation">{</span><br>  <span class="token keyword">@extend</span> <span class="token placeholder selector">%colors-per-viewport</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>CSS output:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.colors</span> <span class="token punctuation">{</span><br>  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>  <span class="token selector">.colors</span> <span class="token punctuation">{</span><br>    <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>As seen above, we could also declare a code snippet with mediaquery inside.</p>
+<h3 id="the-small-matter">The small matter <a class="j-header-anchor" href="index.html#the-small-matter">#</a></h3>
+<p>Unfortunately, we cannot call a placeholder declaration <strong>inside</strong> a mediaquery 😩</p>
+<p>For instance, if we try to declare two placeholders and call them inside a media query</p>
+<pre class="language-scss"><code class="language-scss"><span class="token selector"><span class="token placeholder">%colors-mobile</span> </span><span class="token punctuation">{</span><br>  <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector"><span class="token placeholder">%colors-tablet</span> </span><span class="token punctuation">{</span><br>  <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token selector">.colors-viewport </span><span class="token punctuation">{</span><br>  <span class="token keyword">@extend</span> <span class="token placeholder selector">%colors-mobile</span><span class="token punctuation">;</span> <span class="token comment">// ok!</span><br><br>  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>    <span class="token keyword">@extend</span> <span class="token placeholder selector">%colors-tablet</span><span class="token punctuation">;</span> <span class="token comment">// nope!</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>The code above will throw an error 😭</p>
+<pre class="language-shell"><code class="language-shell">You may not @extend an outer selector from within @media.<br>You may only @extend selectors within the same directive.</code></pre>
+<p>So, if we really need to reuse a code snipped inside a mediaquery, we can use a <code>mixin</code> declaration.</p>
+<p>I know, it is not the correct use of the <code>mixin</code> function... but it's a desperate measure! 😅</p>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@mixin</span> <span class="token selector">colors-mobile </span><span class="token punctuation">{</span><br>  <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">@mixin</span> <span class="token selector">colors-tablet </span><span class="token punctuation">{</span><br>  <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token selector">.colors-viewport </span><span class="token punctuation">{</span><br>  <span class="token keyword">@include</span> colors-mobile<span class="token punctuation">;</span> <span class="token comment">// ok!</span><br><br>  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>    <span class="token keyword">@include</span> colors-tablet<span class="token punctuation">;</span> <span class="token comment">// yasss!</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>📚 More info</p>
+<ul>
+<li><a href="https://sass-lang.com/documentation/style-rules/placeholder-selectors">Sass lang - placeholder selectors</a></li>
+<li><a href="https://www.sitepoint.com/sass-mixin-placeholder/">Sass - mixin or placeholder</a></li>
+</ul>
+</blockquote>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-20">20 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="../tags/css/index.html" class="c-label">css</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#6</span>
+    
+    
+    <a class="c-card__title " href="../posts/create-css-classes-dynamically/index.html">
+      <h2 class="c-card__title-heading">Create CSS classes dynamically</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p><strong>SASS interpolation</strong> is an useful tool that comes in handy when we have to create CSS classes name dynamically from an array.</p>
+<p>For the first version of this blog, I wanted different gradients based on post tag (git, vsc, nodejs...). Each tag is append to the main card class in order to create a modifier</p>
+<pre class="language-html"><code class="language-html">// card.njk<br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>c-card c-card--{{ tag }}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>and its CSS was this</p>
+<pre class="language-scss"><code class="language-scss"><span class="token comment">// card.scss</span><br><br><span class="token property"><span class="token variable">$co_card-gradient-git</span></span><span class="token punctuation">:</span> #eb3349<span class="token punctuation">,</span> #f45c43<span class="token punctuation">;</span><br><span class="token property"><span class="token variable">$co_card-gradient-vsc</span></span><span class="token punctuation">:</span> #1a2980<span class="token punctuation">,</span> #26d0ce<span class="token punctuation">;</span><br><span class="token property"><span class="token variable">$co_card-gradient-nodejs</span></span><span class="token punctuation">:</span> #36582f<span class="token punctuation">,</span> #7ab659<span class="token punctuation">;</span><br><br><span class="token selector">.c-card--git </span><span class="token punctuation">{</span><br>  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> <span class="token variable">$co_card-gradient-git</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.c-card--vsc </span><span class="token punctuation">{</span><br>  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> <span class="token variable">$co_card-gradient-vsc</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.c-card--nodejs </span><span class="token punctuation">{</span><br>  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> <span class="token variable">$co_card-gradient-nodejs</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br></code></pre>
+<p>In attempt to remove repetitions and have a DRY (Don't Repeat Yourself) code, I tried to loop through a SASS list and generate classes</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$tags</span></span><span class="token punctuation">:</span> git<span class="token punctuation">,</span> vsc<span class="token punctuation">,</span> nodejs<span class="token punctuation">;</span><br><br><span class="token keyword">@each</span> <span class="token selector"><span class="token variable">$tag</span> in <span class="token variable">$tags</span> </span><span class="token punctuation">{</span><br>  <span class="token selector">.c-card--<span class="token variable">#{$tag}</span> </span><span class="token punctuation">{</span><br>    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> <span class="token variable">$co_card-gradient-</span>#<span class="token punctuation">{</span>tag<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>but unfortunately SASS <strong>does not support</strong> variable name interpolation at the moment! 💔</p>
+<p>If you try to compile the snippet above, you will get</p>
+<pre class="language-shell"><code class="language-shell">Sass Error: Undefined variable: <span class="token string">"<span class="token variable">$co_card</span>-gradient-"</span></code></pre>
+<p><a href="https://sass-lang.com/documentation/interpolation">Read more about sass interpolation</a></p>
+<h2 id="the-workaround">The workaround <a class="j-header-anchor" href="index.html#the-workaround">#</a></h2>
+<ul>
+<li>create a <code>mixin</code> using SASS conditionals with all cases you need</li>
+</ul>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@mixin</span> <span class="token function">card-gradient</span><span class="token punctuation">(</span><span class="token variable">$tag</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">@if</span> <span class="token selector"><span class="token variable">$tag</span> == 'git' </span><span class="token punctuation">{</span><br>    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token variable">$co_card-gradient-git</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><br>  <span class="token keyword">@else if</span> <span class="token selector"><span class="token variable">$tag</span> == 'vsc' </span><span class="token punctuation">{</span><br>    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token variable">$co_card-gradient-vsc</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><br>  <span class="token keyword">@else if</span> <span class="token selector"><span class="token variable">$tag</span> == 'nodejs' </span><span class="token punctuation">{</span><br>    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token variable">$co_card-gradient-nodejs</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<ul>
+<li>use the tag list to dynamically generate classes names</li>
+</ul>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$tags</span></span><span class="token punctuation">:</span> git<span class="token punctuation">,</span> vsc<span class="token punctuation">,</span> nodejs<span class="token punctuation">;</span><br><br><span class="token keyword">@each</span> <span class="token selector"><span class="token variable">$tag</span> in <span class="token variable">$tags</span> </span><span class="token punctuation">{</span><br>  <span class="token selector">.c-card--<span class="token variable">#{$tag}</span> </span><span class="token punctuation">{</span><br>    <span class="token keyword">@include</span> <span class="token function">card-gradient</span><span class="token punctuation">(</span><span class="token variable">$tag</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p><a href="https://codepen.io/giuliachiola/pen/VwLVVRy">🖥 Codepen example</a></p>
+<h2 id="dynamic-classes-using-css-vars">Dynamic classes using CSS vars <a class="j-header-anchor" href="index.html#dynamic-classes-using-css-vars">#</a></h2>
+<p>Note that if we use <strong>CSS vars</strong> instead of <em>SASS vars</em> we can interpolate the class name with <code>#{}</code> syntax.</p>
+<ol>
+<li>Declare the CSS var</li>
+</ol>
+<pre class="language-scss"><code class="language-scss"><span class="token selector">:root </span><span class="token punctuation">{</span><br>  <span class="token property">--co_palette-1</span><span class="token punctuation">:</span> #ef476f<span class="token punctuation">;</span><br>  <span class="token comment">/* ... */</span><br><span class="token punctuation">}</span></code></pre>
+<ol start="2">
+<li>Use the interpolation where it is called, for example in a <code>@for</code> loop</li>
+</ol>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@for</span> <span class="token variable">$i</span> <span class="token keyword">from</span> 1 <span class="token keyword">through</span> <span class="token selector">5 </span><span class="token punctuation">{</span><br>  <span class="token selector">.t-palette-color--<span class="token variable">#{$i}</span> </span><span class="token punctuation">{</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-<span class="token variable">#{$i}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>If we need to mantain SASS vars (in my code, I needed to use <code>darken</code> and <code>lighten</code> SASS function) we could interpolate classes name like this:</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$co_palette-1</span></span><span class="token punctuation">:</span> #ef476f<span class="token punctuation">;</span><br><span class="token property"><span class="token variable">$co_palette-2</span></span><span class="token punctuation">:</span> #ffc233<span class="token punctuation">;</span><br><span class="token property"><span class="token variable">$co_palette-3</span></span><span class="token punctuation">:</span> #06d6a0<span class="token punctuation">;</span><br><span class="token property"><span class="token variable">$co_palette-4</span></span><span class="token punctuation">:</span> #1b98e0<span class="token punctuation">;</span><br><span class="token property"><span class="token variable">$co_palette-5</span></span><span class="token punctuation">:</span> #ff9f1c<span class="token punctuation">;</span><br><br><span class="token selector">:root </span><span class="token punctuation">{</span><br>  <span class="token property">--co_palette-1</span><span class="token punctuation">:</span> <span class="token variable">#{$co_palette-1}</span><span class="token punctuation">;</span><br>  <span class="token property">--co_palette-2</span><span class="token punctuation">:</span> <span class="token variable">#{$co_palette-2}</span><span class="token punctuation">;</span><br>  <span class="token property">--co_palette-3</span><span class="token punctuation">:</span> <span class="token variable">#{$co_palette-3}</span><span class="token punctuation">;</span><br>  <span class="token property">--co_palette-4</span><span class="token punctuation">:</span> <span class="token variable">#{$co_palette-4}</span><span class="token punctuation">;</span><br>  <span class="token property">--co_palette-5</span><span class="token punctuation">:</span> <span class="token variable">#{$co_palette-5}</span><span class="token punctuation">;</span><br><br>  <span class="token property">--co_palette-1--lighten</span><span class="token punctuation">:</span> #<span class="token punctuation">{</span><span class="token function">lighten</span><span class="token punctuation">(</span><span class="token variable">$co_palette-1</span><span class="token punctuation">,</span> 10%<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span><br>  <span class="token property">--co_palette-2--lighten</span><span class="token punctuation">:</span> #<span class="token punctuation">{</span><span class="token function">lighten</span><span class="token punctuation">(</span><span class="token variable">$co_palette-2</span><span class="token punctuation">,</span> 10%<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span><br>  <span class="token property">--co_palette-3--lighten</span><span class="token punctuation">:</span> #<span class="token punctuation">{</span><span class="token function">lighten</span><span class="token punctuation">(</span><span class="token variable">$co_palette-3</span><span class="token punctuation">,</span> 10%<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span><br>  <span class="token property">--co_palette-4--lighten</span><span class="token punctuation">:</span> #<span class="token punctuation">{</span><span class="token function">lighten</span><span class="token punctuation">(</span><span class="token variable">$co_palette-4</span><span class="token punctuation">,</span> 10%<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span><br>  <span class="token property">--co_palette-5--lighten</span><span class="token punctuation">:</span> #<span class="token punctuation">{</span><span class="token function">lighten</span><span class="token punctuation">(</span><span class="token variable">$co_palette-5</span><span class="token punctuation">,</span> 10%<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@for</span> <span class="token variable">$i</span> <span class="token keyword">from</span> 1 <span class="token keyword">through</span> <span class="token selector">5 </span><span class="token punctuation">{</span><br>  <span class="token selector">.t-palette-color--<span class="token variable">#{$i}</span> .c-card::before </span><span class="token punctuation">{</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-<span class="token variable">#{$i}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-<span class="token variable">#{$i}</span>--lighten<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>Output:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.t-palette-color--1 .c-card::before</span> <span class="token punctuation">{</span><br>  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-1<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-1--lighten<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.t-palette-color--2 .c-card::before</span> <span class="token punctuation">{</span><br>  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-2<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-2--lighten<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.t-palette-color--3 .c-card::before</span> <span class="token punctuation">{</span><br>  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-3<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-3--lighten<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.t-palette-color--4 .c-card::before</span> <span class="token punctuation">{</span><br>  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-4<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-4--lighten<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.t-palette-color--5 .c-card::before</span> <span class="token punctuation">{</span><br>  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-5<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--co_palette-5--lighten<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-20">20 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="../tags/css/index.html" class="c-label">css</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#5</span>
+    
+    
+    <a class="c-card__title " href="../posts/add-comments-in-json-file/index.html">
+      <h2 class="c-card__title-heading">Add comments in JSON file</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>Spoiler: I lied.</p>
+<div class="s-giphy s-giphy--small-d">
+  <video autoplay loop muted playsinline>
+    <source src="https://i.giphy.com/media/rigB6iCSm8F68/giphy.mp4" type="video/mp4">
+  </video>
+  <p><a href="https://giphy.com/gifs/bill-paxton-rigB6iCSm8F68">via GIPHY</a></p>
+</div>
+<p>As you know, you cannot and will never can add comments in JSON file <strong>but</strong> you can add something that <em>seems</em> a comment 😈:</p>
+<pre class="language-json"><code class="language-json"><span class="token property">"_____________________________CSS_____________________________"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span></code></pre>
+<p>Using this <code>key:value</code> pair separator you can tidy a long and complex JSON, for example <em>&quot;scripts&quot;</em> object in <code>package.json</code></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"super-styleguide"</span><span class="token punctuation">,</span><br>  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span><br>  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>  <span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"index.js"</span><span class="token punctuation">,</span><br>  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"_____________________________CSS_____________________________"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>    <span class="token property">"stylelint"</span><span class="token operator">:</span> <span class="token string">"stylelint 'src/scss/**/*.scss' || echo \"Stylelint failed for some file(s).\""</span><span class="token punctuation">,</span><br>    <span class="token property">"scss-to-css-dev"</span><span class="token operator">:</span> <span class="token string">"node-sass --output-style expanded src/scss/styles/develop -o src/css/"</span><span class="token punctuation">,</span><br>    <span class="token property">"css-to-postcss-dev"</span><span class="token operator">:</span> <span class="token string">"postcss src/css --dir dist/css"</span><span class="token punctuation">,</span><br>    <span class="token property">"styles-dev"</span><span class="token operator">:</span> <span class="token string">"npm run stylelint &amp;&amp; npm run scss-to-css-dev &amp;&amp; npm run css-to-postcss-dev"</span><span class="token punctuation">,</span><br>    <span class="token property">"_____________________________SVG_____________________________"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>    <span class="token property">"clean-svgo"</span><span class="token operator">:</span> <span class="token string">"rimraf src/icons/svgo/*"</span><span class="token punctuation">,</span><br>    <span class="token property">"svg-optimize"</span><span class="token operator">:</span> <span class="token string">"npm run clean-svgo &amp;&amp; node scripts/svgo.js"</span><span class="token punctuation">,</span><br>    <span class="token property">"_____________________________Webpack bundle__________________"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>    <span class="token property">"bundle"</span><span class="token operator">:</span> <span class="token string">"webpack --env.production"</span><span class="token punctuation">,</span><br>    <span class="token property">"bundle:uiengine:chunk"</span><span class="token operator">:</span> <span class="token string">" cross-env NODE_ENV=production webpack --env.production --config webpack.uiengine.config.js"</span><span class="token punctuation">,</span><br>    ...<br>    ...<br>  <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
+<blockquote>
+<p>📚 More info</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON">JavaScript Object Notation (JSON) - MDN</a></p>
+</blockquote>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-19">19 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="../tags/json/index.html" class="c-label">json</a>
+        
+          
+          <a href="../tags/nodejs/index.html" class="c-label">nodejs</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#4</span>
+    
+    
+    <a class="c-card__title " href="../posts/oh-my-zsh-git-plugin-cheatsheet/index.html">
+      <h2 class="c-card__title-heading">Oh my zsh git plugin cheatsheet</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>Some useful shortcuts I use with <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git">oh-my-zsh git plugin</a>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Alias</th>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>gb</code></td>
+<td style="text-align:left"><code>git branch</code></td>
+<td style="text-align:left">List of local branches</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gba</code></td>
+<td style="text-align:left"><code>git branch -a</code></td>
+<td style="text-align:left">List of local and remote branches</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gcam</code></td>
+<td style="text-align:left"><code>git commit -am</code></td>
+<td style="text-align:left">Add all files to stage and commit</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gcmsg</code></td>
+<td style="text-align:left"><code>git commit -m</code></td>
+<td style="text-align:left">Git commit message</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gco</code></td>
+<td style="text-align:left"><code>git checkout</code></td>
+<td style="text-align:left">Change branch</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gco -</code></td>
+<td style="text-align:left"><code>git checkout</code> to the previous branch</td>
+<td style="text-align:left">Change branch to the previous one</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gd</code></td>
+<td style="text-align:left"><code>git diff</code></td>
+<td style="text-align:left">Files differences in staging</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gfa</code></td>
+<td style="text-align:left"><code>git fetch --all --prune</code></td>
+<td style="text-align:left">Fetch all remote branches, delete branch if upstream is gone</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gl</code></td>
+<td style="text-align:left"><code>git pull</code></td>
+<td style="text-align:left">Pull from remote</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gp</code></td>
+<td style="text-align:left"><code>git push</code></td>
+<td style="text-align:left">Push to remote</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gpsup</code></td>
+<td style="text-align:left"><code>git push --set-upstream origin [currentbranch]</code></td>
+<td style="text-align:left">Set upstream branch</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gst</code></td>
+<td style="text-align:left"><code>git status</code></td>
+<td style="text-align:left">Local files to commit</td>
+</tr>
+</tbody>
+</table>
+<h2 id="add-your-zsh-aliases">Add your zsh aliases <a class="j-header-anchor" href="index.html#add-your-zsh-aliases">#</a></h2>
+<ul>
+<li>Open zsh configuration file</li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token function">nano</span> ~/.zshrc</code></pre>
+<ul>
+<li>Add aliases using the syntax</li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">alias</span> <span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'[command]'</span></code></pre>
+<p>For instance, these are my aliases in <code>.zshrc</code> file</p>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">gflbs</span><span class="token operator">=</span><span class="token string">'git flow bugfix start'</span><br><span class="token builtin class-name">alias</span> <span class="token assign-left variable">gflbf</span><span class="token operator">=</span><span class="token string">'git flow bugfix finish'</span><br><br><span class="token builtin class-name">alias</span> <span class="token assign-left variable">gbm</span><span class="token operator">=</span><span class="token string">'git branch -m'</span><br><span class="token builtin class-name">alias</span> <span class="token assign-left variable">gbD</span><span class="token operator">=</span><span class="token string">'git branch -D'</span><br><span class="token builtin class-name">alias</span> <span class="token assign-left variable">gbuu</span><span class="token operator">=</span><span class="token string">'git branch --unset-upstream'</span></code></pre>
+<p>To apply these changes, you should close the tab and open a new one <strong>or</strong> you can run</p>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">source</span> ~/.zshrc</code></pre>
+<p>or shorter version</p>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">.</span> ~/.zshrc</code></pre>
+<h3 id="my-aliases">My aliases <a class="j-header-anchor" href="index.html#my-aliases">#</a></h3>
+<p>Here are some shortcuts I added compared to the ones came with <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-flow">oh-my-zsh plugin</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Alias</th>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>gflbs</code></td>
+<td style="text-align:left"><code>git flow bugfix start</code></td>
+<td style="text-align:left">Start a <code>bugfix/</code> branch from <code>develop</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gflbf</code></td>
+<td style="text-align:left"><code>git flow bugfix finish</code></td>
+<td style="text-align:left">Finish a <code>bugfix/</code> branch from <code>develop</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gbm</code></td>
+<td style="text-align:left"><code>git branch -m</code></td>
+<td style="text-align:left">Rename branch</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gbD</code></td>
+<td style="text-align:left"><code>git branch -D</code></td>
+<td style="text-align:left">Delete local branch with force option</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gbuu</code></td>
+<td style="text-align:left"><code>git branch --unset-upstream</code></td>
+<td style="text-align:left">Unset upstream branch</td>
+</tr>
+</tbody>
+</table>
+<div class="s-giphy s-giphy--small-d">
+  <video autoplay loop muted playsinline>
+    <source src="https://i.giphy.com/media/GD5xkDtFPUpY4/giphy.mp4" type="video/mp4">
+  </video>
+  <p><a href="https://giphy.com/gifs/love-movie-film-GD5xkDtFPUpY4">via GIPHY</a></p>
+</div>
+<blockquote>
+<p>📚 More info</p>
+<ul>
+<li><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet">Oh My Zsh cheatsheet</a></li>
+<li><a href="https://ohmycheatsheet.com/oh-my-zsh-commands-cheat-sheet/">Oh My Zsh Commands Aliases Cheat Sheet</a></li>
+<li><a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-flow">Oh My Zsh Git-Flow plugin</a></li>
+</ul>
+</blockquote>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-18">18 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="../tags/shell/index.html" class="c-label">shell</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#3</span>
+    
+    
+    <a class="c-card__title " href="../posts/how-to-rename-a-git-branch/index.html">
+      <h2 class="c-card__title-heading">How to rename a git branch</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <h2 id="rename-local-branch">Rename local branch <a class="j-header-anchor" href="index.html#rename-local-branch">#</a></h2>
+<p>To rename a <em>local</em> branch in git</p>
+<ul>
+<li>Move on the branch you want to rename</li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> checkout -b feature/wrong-name</code></pre>
+<ul>
+<li>Rename it locally</li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> branch -m feature/new-awesome-name</code></pre>
+<h3 id="%E2%9A%A1%EF%B8%8F-bonus-tip">⚡️ Bonus tip <a class="j-header-anchor" href="index.html#%E2%9A%A1%EF%B8%8F-bonus-tip">#</a></h3>
+<p>If you have <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git">ohmyzsh git plugin</a> installed, you can use its shortcuts</p>
+<pre class="language-shell"><code class="language-shell">gco -b feature/wrong-name<br>gbm feature/new-awesome-name</code></pre>
+<h2 id="rename-remote-branch">Rename remote branch <a class="j-header-anchor" href="index.html#rename-remote-branch">#</a></h2>
+<p>To rename a <em>remote</em> branch is quite longer:</p>
+<ul>
+<li>Unset the upstream branch to unlink local and remote branch</li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> branch --unset-upstream</code></pre>
+<p>Note: if you followed the previous step, you don't have to delete local branch because you have already renamed it!</p>
+<ul>
+<li>Update the upstream branch to the new one and push it</li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> push --set-upstream origin feature/new-awesome-name</code></pre>
+<h3 id="%E2%9A%A1%EF%B8%8F-bonus-tip-1">⚡️ Bonus tip <a class="j-header-anchor" href="index.html#%E2%9A%A1%EF%B8%8F-bonus-tip-1">#</a></h3>
+<p>If you have <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git">ohmyzsh git plugin</a> installed, you can use its shortcut to set the upstream</p>
+<pre class="language-shell"><code class="language-shell">gpsup <span class="token punctuation">(</span>branch name is implicit<span class="token punctuation">)</span></code></pre>
+<ul>
+<li>Delete remote branch</li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> push origin --delete feature/wrong-name</code></pre>
+<p>or the shortest syntax (note the space between remote name and semicolon)</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> push origin :feature/wrong-name</code></pre>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-17">17 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="../tags/git/index.html" class="c-label">git</a>
+        
+          
+          <a href="../tags/shell/index.html" class="c-label">shell</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#2</span>
+    
+    
+    <a class="c-card__title " href="../posts/visual-studio-code-shortcuts/index.html">
+      <h2 class="c-card__title-heading">Visual Studio Code shortcuts</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>Some useful shortcuts I use in Visual Studio Code:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">(find) <code>\n([\w])</code> -&gt; (replace with) <code> $1</code></td>
+<td style="text-align:left">remove all blank lines and replace them with space (using RegEx)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>cmd</code> + <code>b</code></td>
+<td style="text-align:left">toggle sidebar</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>cmd</code> + <code>shitf</code> + <code>v</code></td>
+<td style="text-align:left">preview markdown</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>opt</code> + <code>up/down</code></td>
+<td style="text-align:left">move row up/down</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>opt</code> + <code>z</code></td>
+<td style="text-align:left">toggle text wrap</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ctrl</code> + <code>w</code></td>
+<td style="text-align:left">switch workspace</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>cmd</code> + <code>f</code> -&gt; focus away -&gt; <code>cmd</code> + <code>g</code></td>
+<td style="text-align:left">find occurence, focus away, go to the next occurence</td>
+</tr>
+<tr>
+<td style="text-align:left">search a word, then <code>↑</code></td>
+<td style="text-align:left">it will return the previous search keyword</td>
+</tr>
+</tbody>
+</table>
+<div class="s-giphy s-giphy--small-d">
+  <video autoplay loop muted playsinline>
+    <source src="https://i.giphy.com/media/5gXYzsVBmjIsw/giphy.mp4" type="video/mp4">
+  </video>
+  <p><a href="https://giphy.com/gifs/cat-cool-5gXYzsVBmjIsw">via GIPHY</a></p>
+</div>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-16">16 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="../tags/vsc/index.html" class="c-label">vsc</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#1</span>
+    
+    
+    <a class="c-card__title " href="../posts/how-to-remove-all-links-in-javascript/index.html">
+      <h2 class="c-card__title-heading">How to remove all links in JavaScript</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>If you need to remove all links occurrencies in a webpage and return it as plain text you can go with two methods:</p>
+<h2 id="basic-method">Basic method <a class="j-header-anchor" href="index.html#basic-method">#</a></h2>
+<p>If you know the content of all your <code>href</code>s you can use this basic way. In my example, the <code>href</code> content is a simple hash <code>#</code>.</p>
+<ul>
+<li>
+<p>get the page content as string</p>
+</li>
+<li>
+<p>replace all start anchor tags using the JavaScript method <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace">String.prototype.replace()</a> with the RegEx <code>/g</code> global pattern flag: it returns all matches (it does not return after first match)</p>
+</li>
+</ul>
+<pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;a href="#"></span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span></code></pre>
+<ul>
+<li>replace all end anchor tags using RegEx</li>
+</ul>
+<pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;\/a></span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span></code></pre>
+<ul>
+<li>concatenate the two replace functions</li>
+</ul>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> mystring <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;a href="#">The cat&lt;/a> (Felis catus) is a domestic species of small carnivorous mammal. It is the only domesticated species in the family &lt;a href="#">Felidae&lt;/a> and is often referred to as the domestic cat to distinguish it from the wild members of the family.</span><span class="token template-punctuation string">`</span></span><br><br>mystring<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;a href="#"></span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;\/a></span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span></code></pre>
+<p><em>Output</em></p>
+<pre class="language-html"><code class="language-html">The cat (Felis catus) is a domestic species of small carnivorous mammal. It is the only domesticated species in the family Felidae and is often referred to as the domestic cat to distinguish it from the wild members of the family.</code></pre>
+<p><a href="https://regex101.com/r/iaHby4/2">Live RegEx example</a></p>
+<h2 id="advanced-method">Advanced method <a class="j-header-anchor" href="index.html#advanced-method">#</a></h2>
+<p>In this way, we can remove all anchor tag instances from our string, even those we do not know the <code>href</code>s.<br>
+Thanks to <a href="https://dev.to/shadowtime2000/comment/1afjl">@shadowtime2000</a> for pointing that out 🙂</p>
+<ul>
+<li>create a new DOM element</li>
+</ul>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> elem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span></code></pre>
+<ul>
+<li>add the inner HTML passed as string</li>
+</ul>
+<pre class="language-js"><code class="language-js">elem<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;a href="https://en.wikipedia.org/wiki/Cat">The cat&lt;/a> (Felis catus) is a domestic species of small carnivorous mammal. It is the only domesticated species in the family &lt;a href="#">Felidae&lt;/a> and is often referred to as the &lt;strong>domestic cat&lt;/strong> to distinguish it from the wild members of the family.</span><span class="token template-punctuation string">`</span></span></code></pre>
+<ul>
+<li>loop through all <code>&lt;div&gt;</code> children (so we are looping the HTML string we have just passed) and check if there are any <code>&lt;a&gt;</code> tag.</li>
+</ul>
+<blockquote>
+<p>🧨 <strong>!important</strong></p>
+<p><code>tagName</code> returns the tag name of the element, and in HTML language it is in uppercase.</p>
+</blockquote>
+<pre class="language-js"><code class="language-js">Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>elem<span class="token punctuation">.</span>children<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">child</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token comment">// if child is an HTML tag different from an anchor &lt;a>, then skip it</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>child<span class="token punctuation">.</span>tagName <span class="token operator">===</span> <span class="token string">'A'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span><br>  <span class="token comment">// else if child is an anchor tag,</span><br>  <span class="token comment">// then replace the current node with a new textNode containing the anchor text content</span><br>  <span class="token comment">// &lt;a href="#">wow!&lt;/a> -> wow!</span><br>  child<span class="token punctuation">.</span><span class="token function">replaceWith</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span>child<span class="token punctuation">.</span>textContent<span class="token punctuation">)</span><span class="token punctuation">)</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>To sum up</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> elem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><br><br>elem<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;a href="https://en.wikipedia.org/wiki/Cat">The cat&lt;/a> (Felis catus) is a domestic species of small carnivorous mammal. It is the only domesticated species in the family &lt;a href="#">Felidae&lt;/a> and is often referred to as the &lt;strong>domestic cat&lt;/strong> to distinguish it from the wild members of the family.</span><span class="token template-punctuation string">`</span></span><br><br>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>elem<span class="token punctuation">.</span>children<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">child</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>child<span class="token punctuation">.</span>tagName <span class="token operator">===</span> <span class="token string">'A'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span><br>  child<span class="token punctuation">.</span><span class="token function">replaceWith</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span>child<span class="token punctuation">.</span>textContent<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>Output: <code>console.log(elem)</code></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>The cat (Felis catus) is a domestic species of small carnivorous mammal. It is the only domesticated species in the family Felidae and is often referred to as the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>domestic cat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span> to distinguish it from the wild members of the family.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<blockquote>
+<p>📚 More info</p>
+<ul>
+<li><a href="https://regex101.com/">RegEx 101 playground</a></li>
+<li><a href="https://blog.bitsrc.io/a-beginners-guide-to-regular-expressions-regex-in-javascript-9c58feb27eb4">A Practical Guide to Regular Expressions (RegEx) In JavaScript</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName"><code>tagName</code> - MDN</a></li>
+</ul>
+</blockquote>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-15">15 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="../tags/js/index.html" class="c-label">js</a>
+        
+          
+          <a href="../tags/regex/index.html" class="c-label">regex</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    </div>
+    
+    <nav class="c-pagination">
+  <ol class="c-pagination__list">
+    <li class="c-pagination__item">
+      
+      <a class="c-pagination__link" href="../1/index.html">&#8592; prev</a>
+      
+    </li>
+    <li class="c-pagination__item">
+      
+    </li>
+  </ol>
+</nav>
+
+    
+  
+
+</main>
+
+
+
+
+
+
+      
+      <footer class="c-footer">
+  <div class="l-main">
+    <div class="c-footer__group">
+      <div class="c-footer__theme-switcher"><label class="c-theme-switcher j-theme-switcher" for="checkbox">
+  <input class="c-theme-switcher__input" type="checkbox" id="checkbox"/>
+  <span class="c-theme-switcher__label c-theme-switcher__label--light" aria-label="theme-light">☀️</span>
+  <span class="c-theme-switcher__label c-theme-switcher__label--dark" aria-label="theme-dark">🌙</span>
+</label>
+
+      </div>
+
+      <p class="c-footer__copyright">© 2021 made with <span>♥️</span> by Giulia Chiola</p>
+
+      <div class="c-footer__socials">
+        <a class="c-footer__link" href="https://twitter.com/giulia_chiola" target="_blank" rel="noopener" title="twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon--twitter" fill="currentColor" width="200"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+        <a class="c-footer__link" href="https://github.com/giuliachiola" target="_blank" rel="noopener" title="github">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon icon--github" fill="currentColor" width="200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a class="c-footer__link" href="https://codepen.com/giuliachiola" target="_blank" rel="noopener" title="codepen">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon--codepen" fill="currentColor" width="200"><path d="M18.144 13.067v-2.134L16.55 12zm1.276 1.194a.628.628 0 01-.006.083l-.005.028-.011.053-.01.031a.443.443 0 01-.017.047l-.014.03a.78.78 0 01-.021.043l-.019.03a.57.57 0 01-.08.1l-.026.025a.602.602 0 01-.036.03l-.029.022-.01.008-6.782 4.522a.637.637 0 01-.708 0L4.864 14.79l-.01-.008a.599.599 0 01-.065-.052l-.026-.025-.032-.034-.021-.028a.588.588 0 01-.067-.11l-.014-.031a.644.644 0 01-.017-.047l-.01-.03c-.004-.018-.008-.036-.01-.054l-.006-.028a.628.628 0 01-.006-.083V9.739a.58.58 0 01.006-.083l.005-.027.011-.054.01-.03a.574.574 0 01.12-.217l.031-.034.026-.025a.62.62 0 01.065-.052l.01-.008 6.782-4.521a.638.638 0 01.708 0l6.782 4.521.01.008.03.022.035.03c.01.008.017.016.026.025a.545.545 0 01.08.1l.019.03a.633.633 0 01.021.043l.014.03c.007.016.012.032.017.047l.01.031c.004.018.008.036.01.054l.006.027a.619.619 0 01.006.083zM12 0C5.373 0 0 5.372 0 12c0 6.627 5.373 12 12 12 6.628 0 12-5.372 12-12 0-6.627-5.372-12-12-12m0 10.492L9.745 12 12 13.51 14.255 12zm.638 4.124v2.975l4.996-3.33-2.232-1.493zm-6.272-.356l4.996 3.33v-2.974l-2.764-1.849zm11.268-4.52l-4.996-3.33v2.974l2.764 1.85zm-6.272-.356V6.41L6.366 9.74l2.232 1.493zm-5.506 1.549v2.134L7.45 12z"/></svg>
+        </a>
+        <a class="c-footer__link" href="https://www.instagram.com/giulia_chiola/" target="_blank" rel="noopener" title="gitlab">
+          <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" class="icon icon--instagram" fill="currentColor" width="200"><path d="M128 23.064c34.177 0 38.225.13 51.722.745 12.48.57 19.258 2.655 23.769 4.408 5.974 2.322 10.238 5.096 14.717 9.575 4.48 4.479 7.253 8.743 9.575 14.717 1.753 4.511 3.838 11.289 4.408 23.768.615 13.498.745 17.546.745 51.723 0 34.178-.13 38.226-.745 51.723-.57 12.48-2.655 19.257-4.408 23.768-2.322 5.974-5.096 10.239-9.575 14.718-4.479 4.479-8.743 7.253-14.717 9.574-4.511 1.753-11.289 3.839-23.769 4.408-13.495.616-17.543.746-51.722.746-34.18 0-38.228-.13-51.723-.746-12.48-.57-19.257-2.655-23.768-4.408-5.974-2.321-10.239-5.095-14.718-9.574-4.479-4.48-7.253-8.744-9.574-14.718-1.753-4.51-3.839-11.288-4.408-23.768-.616-13.497-.746-17.545-.746-51.723 0-34.177.13-38.225.746-51.722.57-12.48 2.655-19.258 4.408-23.769 2.321-5.974 5.095-10.238 9.574-14.717 4.48-4.48 8.744-7.253 14.718-9.575 4.51-1.753 11.288-3.838 23.768-4.408 13.497-.615 17.545-.745 51.723-.745M128 0C93.237 0 88.878.147 75.226.77c-13.625.622-22.93 2.786-31.071 5.95-8.418 3.271-15.556 7.648-22.672 14.764C14.367 28.6 9.991 35.738 6.72 44.155 3.555 52.297 1.392 61.602.77 75.226.147 88.878 0 93.237 0 128c0 34.763.147 39.122.77 52.774.622 13.625 2.785 22.93 5.95 31.071 3.27 8.417 7.647 15.556 14.763 22.672 7.116 7.116 14.254 11.492 22.672 14.763 8.142 3.165 17.446 5.328 31.07 5.95 13.653.623 18.012.77 52.775.77s39.122-.147 52.774-.77c13.624-.622 22.929-2.785 31.07-5.95 8.418-3.27 15.556-7.647 22.672-14.763 7.116-7.116 11.493-14.254 14.764-22.672 3.164-8.142 5.328-17.446 5.95-31.07.623-13.653.77-18.012.77-52.775s-.147-39.122-.77-52.774c-.622-13.624-2.786-22.929-5.95-31.07-3.271-8.418-7.648-15.556-14.764-22.672C227.4 14.368 220.262 9.99 211.845 6.72c-8.142-3.164-17.447-5.328-31.071-5.95C167.122.147 162.763 0 128 0zm0 62.27C91.698 62.27 62.27 91.7 62.27 128c0 36.302 29.428 65.73 65.73 65.73 36.301 0 65.73-29.428 65.73-65.73 0-36.301-29.429-65.73-65.73-65.73zm0 108.397c-23.564 0-42.667-19.103-42.667-42.667S104.436 85.333 128 85.333s42.667 19.103 42.667 42.667-19.103 42.667-42.667 42.667zm83.686-110.994c0 8.484-6.876 15.36-15.36 15.36-8.483 0-15.36-6.876-15.36-15.36 0-8.483 6.877-15.36 15.36-15.36 8.484 0 15.36 6.877 15.36 15.36z" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+    
+      <a href="index.html#" class="s-back-to-top j-back-to-top" title="back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon icon--arrow-up" fill="currentColor" width="200"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18"/></svg>
+      </a>
+    
+
+    
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    
+    
+    <script defer src="../dist/js/bundle.js"></script>
+  </body>
+</html>

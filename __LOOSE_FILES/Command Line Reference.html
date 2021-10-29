@@ -1,0 +1,620 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Georgia;
+	panose-1:2 4 5 2 5 4 5 2 3 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{margin-top:20.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:normal;}
+h2
+	{margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:normal;}
+.MsoChpDefault
+	{font-family:"Arial",sans-serif;}
+.MsoPapDefault
+	{line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<div style='border:none black 1.0pt;padding:0in 0in 0in 0in'>
+
+<h1 style='margin-top:0in;margin-right:0in;margin-bottom:75.0pt;margin-left:
+0in;line-height:120%;page-break-after:auto;border:none;padding:0in;padding-bottom:
+0in;border-bottom:0in none black'><a name="_heading=h.gjdgxs"></a><b><span
+lang=EN style='font-size:27.0pt;line-height:120%;background:white'>Command Line
+Reference</span></b></h1>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+75.0pt;margin-left:0in;line-height:150%;border:none;padding:0in;padding-top:
+0in;padding-bottom:0in;border-bottom:0in none black'><span lang=EN
+style='font-size:15.0pt;line-height:150%;font-family:"Georgia",serif;
+background:white'>While getting to know the different ways to interact with
+your command-line environment, Ubuntu on Windows and Terminal on macOS, it's
+handy to have a reference lying about. This can be that reference!</span></p>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+75.0pt;margin-left:0in;line-height:150%;border:none;padding:0in;padding-top:
+0in'><span lang=EN style='font-size:15.0pt;line-height:150%;font-family:"Georgia",serif;
+background:white'>You can also download this </span><span lang=EN><a
+href="https://assets.aaonline.io/Module-Solo-Prep-Work/assets/shell-reference.pdf"><span
+style='font-size:15.0pt;line-height:150%;font-family:"Georgia",serif;
+color:windowtext;background:white;text-decoration:none'>one-page PDF</span></a></span><span
+lang=EN style='font-size:15.0pt;line-height:150%;font-family:"Georgia",serif;
+background:white'> if you're the type of person that likes to have it available
+that way, too.</span></p>
+
+</div>
+
+<div style='border:none black 1.0pt;border-bottom:solid #DDDDDD 1.0pt;
+padding:0in 0in 3.0pt 0in'>
+
+<h2 style='margin-top:60.0pt;margin-right:0in;margin-bottom:75.0pt;margin-left:
+0in;line-height:120%;page-break-after:auto;border:none;padding:0in'><a
+name="_heading=h.30j0zll"></a><b><span lang=EN style='font-size:22.5pt;
+line-height:120%;background:white'>Summary of basic commands</span></b></h2>
+
+</div>
+
+<div style='border:none black 1.0pt;padding:0in 0in 0in 0in'>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+75.0pt;margin-left:0in;line-height:150%;border:none;padding:0in'><span lang=EN
+style='font-size:15.0pt;line-height:150%;font-family:"Georgia",serif;
+background:white'>The following table lists the commands to perform for
+different types of actions on files and directories in the Terminal/Ubuntu</span></p>
+
+</div>
+
+<table class=a border=1 cellspacing=0 cellpadding=0 width=624 style='border-collapse:
+ collapse;border:none'>
+ <tr style='height:31.5pt'>
+  <td width=253 style='width:189.85pt;border:solid #DEDEDE 1.0pt;padding:5.0pt 10.0pt 5.0pt 10.0pt;
+  height:31.5pt'>
+  <p class=MsoNormal align=center style='margin-top:15.0pt;margin-right:0in;
+  margin-bottom:75.0pt;margin-left:0in;text-align:center'><b><span lang=EN
+  style='font-size:15.0pt;line-height:115%;background:white'>Action</span></b></p>
+  </td>
+  <td width=134 style='width:100.25pt;border:solid #DEDEDE 1.0pt;border-left:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal align=center style='margin-top:15.0pt;margin-right:0in;
+  margin-bottom:75.0pt;margin-left:0in;text-align:center'><b><span lang=EN
+  style='font-size:15.0pt;line-height:115%;background:white'>Files</span></b></p>
+  </td>
+  <td width=237 style='width:177.8pt;border:solid #DEDEDE 1.0pt;border-left:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal align=center style='margin-top:15.0pt;margin-right:0in;
+  margin-bottom:75.0pt;margin-left:0in;text-align:center'><b><span lang=EN
+  style='font-size:15.0pt;line-height:115%;background:white'>Directories</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:31.5pt'>
+  <td width=253 style='width:189.85pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>Copy</span></p>
+  </td>
+  <td width=134 style='width:100.25pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>cp</span></p>
+  </td>
+  <td width=237 style='width:177.8pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>cp -r</span></p>
+  </td>
+ </tr>
+ <tr style='height:31.5pt'>
+  <td width=253 style='width:189.85pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>Create</span></p>
+  </td>
+  <td width=134 style='width:100.25pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>code</span></p>
+  </td>
+  <td width=237 style='width:177.8pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>mkdir</span></p>
+  </td>
+ </tr>
+ <tr style='height:31.5pt'>
+  <td width=253 style='width:189.85pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>Delete</span></p>
+  </td>
+  <td width=134 style='width:100.25pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>rm</span></p>
+  </td>
+  <td width=237 style='width:177.8pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>rmdir, rm -r</span></p>
+  </td>
+ </tr>
+ <tr style='height:31.5pt'>
+  <td width=253 style='width:189.85pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>Inspect</span></p>
+  </td>
+  <td width=134 style='width:100.25pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>ls</span></p>
+  </td>
+  <td width=237 style='width:177.8pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>ls</span></p>
+  </td>
+ </tr>
+ <tr style='height:31.5pt'>
+  <td width=253 style='width:189.85pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>Move</span></p>
+  </td>
+  <td width=134 style='width:100.25pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>mv</span></p>
+  </td>
+  <td width=237 style='width:177.8pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>mv</span></p>
+  </td>
+ </tr>
+ <tr style='height:31.5pt'>
+  <td width=253 style='width:189.85pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>Navigate to</span></p>
+  </td>
+  <td width=134 style='width:100.25pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>&nbsp;</span></p>
+  </td>
+  <td width=237 style='width:177.8pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>cd</span></p>
+  </td>
+ </tr>
+ <tr style='height:31.5pt'>
+  <td width=253 style='width:189.85pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>View content</span></p>
+  </td>
+  <td width=134 style='width:100.25pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>cat</span></p>
+  </td>
+  <td width=237 style='width:177.8pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>ls</span></p>
+  </td>
+ </tr>
+</table>
+
+<div style='border:none black 1.0pt;border-bottom:solid #DDDDDD 1.0pt;
+padding:0in 0in 3.0pt 0in'>
+
+<h2 style='margin-top:60.0pt;margin-right:0in;margin-bottom:75.0pt;margin-left:
+0in;line-height:120%;page-break-after:auto;border:none;padding:0in'><a
+name="_heading=h.1fob9te"></a><b><span lang=EN style='font-size:22.5pt;
+line-height:120%;color:white;background:white'>Glossary of terms</span></b></h2>
+
+</div>
+
+<div style='border:none black 1.0pt;padding:0in 0in 0in 0in'>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+75.0pt;margin-left:0in;line-height:150%;border:none;padding:0in'><span lang=EN
+style='font-size:15.0pt;line-height:150%;font-family:"Georgia",serif;
+background:white'>Here's a table of terms that you will want to remember not
+only as you work through this prep work but also during the remainder of your
+programming career.</span></p>
+
+</div>
+
+<table class=a0 border=1 cellspacing=0 cellpadding=0 width=624
+ style='border-collapse:collapse;border:none'>
+ <tr style='height:31.5pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;padding:5.0pt 10.0pt 5.0pt 10.0pt;
+  height:31.5pt'>
+  <p class=MsoNormal align=center style='margin-top:15.0pt;margin-right:0in;
+  margin-bottom:75.0pt;margin-left:0in;text-align:center'><b><span lang=EN
+  style='font-size:15.0pt;line-height:115%;background:white'>Term</span></b></p>
+  </td>
+  <td width=472 style='width:354.0pt;border:solid #DEDEDE 1.0pt;border-left:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:31.5pt'>
+  <p class=MsoNormal align=center style='margin-top:15.0pt;margin-right:0in;
+  margin-bottom:75.0pt;margin-left:0in;text-align:center'><b><span lang=EN
+  style='font-size:15.0pt;line-height:115%;background:white'>Definition</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:142.5pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:142.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>absolute path</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:142.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>A path that refers to a particular location in a file
+  system. Absolute paths are usually written with respect to the file system’s
+  root directory, and begin with either “/” (on Unix) or “\” (on Microsoft
+  Windows). An example of an absolute path is </span><span lang=EN
+  style='font-size:15.0pt;line-height:115%;font-family:"Courier New";
+  background:white'>/home/webdevhub/Downloads</span><span lang=EN
+  style='font-size:15.0pt;line-height:115%;background:white'> which would be
+  the path for the directory that contains downloads for the
+  &quot;webdevhub&quot; account.</span></p>
+  </td>
+ </tr>
+ <tr style='height:75.75pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:75.75pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>command-line interface</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:75.75pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>A user interface based on typing commands that
+  interacts with files and the operating system. On Windows, you will use the
+  Ubuntu environment for that. On macOS, you will use Terminal.</span></p>
+  </td>
+ </tr>
+ <tr style='height:97.5pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:97.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>current working directory</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:97.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>The directory that relative paths are calculated from;
+  equivalently, the place where files referenced by name only are searched for.
+  The current working directory is usually referred to using the shorthand
+  notation &quot;.&quot; (pronounced “dot”).</span></p>
+  </td>
+ </tr>
+ <tr style='height:75.75pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:75.75pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>file system</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:75.75pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>A set of files and directories. A file system may be
+  spread across many physical devices, or many file systems may be stored on a
+  single physical device; the operating system manages access.</span></p>
+  </td>
+ </tr>
+ <tr style='height:142.5pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:142.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>filename extension</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:142.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>The portion of a file’s name that comes after the
+  final “.” character. By convention this identifies the file’s type: .txt
+  means “text&quot; file, .png means “Portable Network Graphics&quot; file, and
+  so on. These conventions are not enforced by most operating systems: it is
+  perfectly possible (but confusing!) to name an MP3 sound file
+  &quot;homepage.html&quot; which makes it look like an HTML file for showing
+  content in a Web browser!</span></p>
+  </td>
+ </tr>
+ <tr style='height:164.25pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:164.25pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>home directory</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:164.25pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>The default directory associated with an account on a
+  computer system. By convention for your account, all of your files are stored
+  in or below your home directory. On macOS, that is found in the </span><span
+  lang=EN style='font-size:15.0pt;line-height:115%;font-family:"Courier New";
+  background:white'>/Users/«your-name»</span><span lang=EN style='font-size:
+  15.0pt;line-height:115%;background:white'>k directory. On Ubuntu, you can
+  find your home directory under </span><span lang=EN style='font-size:15.0pt;
+  line-height:115%;font-family:"Courier New";background:white'>/home/«your-name»</span><span
+  lang=EN style='font-size:15.0pt;line-height:115%;background:white'>. On
+  Windows, you will find it under </span><span lang=EN style='font-size:15.0pt;
+  line-height:115%;font-family:"Courier New";background:white'>C:\Users\«your-name»</span><span
+  lang=EN style='font-size:15.0pt;line-height:115%;background:white'>. On
+  Ubuntu and macOS, the shortcut for your home directory is &quot;~&quot;.</span></p>
+  </td>
+ </tr>
+ <tr style='height:75.75pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:75.75pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>operating system</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:75.75pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>Software that manages interactions between users,
+  hardware, and software processes. Common examples are Linux, macOS, and
+  Windows.</span></p>
+  </td>
+ </tr>
+ <tr style='height:97.5pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:97.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>parent directory</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:97.5pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>The directory that “contains” the one in question.
+  Every directory in a file system except the root directory has a parent. A
+  directory’s parent is usually referred to using the shorthand notation
+  &quot;..&quot; (pronounced “dot dot”).</span></p>
+  </td>
+ </tr>
+ <tr style='height:75.75pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:75.75pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>path</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:75.75pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>A unique description that specifies the location of a
+  file or directory within a file system. There are two kinds of paths:
+  absolute paths and relative paths.</span></p>
+  </td>
+ </tr>
+ <tr style='height:164.25pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:164.25pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>relative path</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:164.25pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>A path that specifies the location of a file or
+  directory with respect to the current working directory. Any path that does
+  not begin with a path separator character, &quot;/&quot; on Ubuntu and macOS,
+  is a relative path. The path &quot;Documents/Contracts/&quot; is a relative
+  path from the current working directory into a &quot;Contracts&quot;
+  subdirectory under a &quot;Documents&quot; subdirectory. You know that
+  &quot;Contracts&quot; is a subdirectory because there's another path
+  separator (&quot;/&quot;) after it.</span></p>
+  </td>
+ </tr>
+ <tr style='height:53.25pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:53.25pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>root directory</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:53.25pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>The top-most directory in a file system. On macOS and
+  Ubuntu, its name is &quot;/&quot;.</span></p>
+  </td>
+ </tr>
+ <tr style='height:53.25pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:53.25pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>shell</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:53.25pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>A command-line interface such as Bash or Z shell that
+  allows you to interact with the operating system.</span></p>
+  </td>
+ </tr>
+ <tr style='height:53.25pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:53.25pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>subdirectory</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:53.25pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>A directory contained within another directory. All
+  directories except the root directory are subdirectories.</span></p>
+  </td>
+ </tr>
+ <tr style='height:75.75pt'>
+  <td width=152 style='width:114.0pt;border:solid #DEDEDE 1.0pt;border-top:
+  none;padding:5.0pt 10.0pt 5.0pt 10.0pt;height:75.75pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>wildcard</span></p>
+  </td>
+  <td width=472 style='width:354.0pt;border-top:none;border-left:none;
+  border-bottom:solid #DEDEDE 1.0pt;border-right:solid #DEDEDE 1.0pt;
+  padding:5.0pt 10.0pt 5.0pt 10.0pt;height:75.75pt'>
+  <p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+  75.0pt;margin-left:0in'><span lang=EN style='font-size:15.0pt;line-height:
+  115%;background:white'>A character used to specify a pattern to match. In
+  Bash or Z shell, the wildcard character &quot;*&quot; matches zero or more
+  characters. This means that &quot;*.txt&quot; would match any name that ends
+  with &quot;.txt&quot;.</span></p>
+  </td>
+ </tr>
+</table>
+
+<div style='border:none black 1.0pt;padding:0in 0in 0in 0in'>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+75.0pt;margin-left:0in;line-height:150%;border:none;padding:0in'><i><span
+lang=EN style='font-size:15.0pt;line-height:150%;font-family:"Georgia",serif;
+background:white'>Regarding file extensions: since many applications use
+filename extensions to identify the MIME type of the file, misnaming files may
+cause those applications to fail. If you copy a picture from your phone to your
+computer and rename it &quot;recipes.docx&quot;, then your word processor
+program will probably try to open it and complain that the file is
+unrecognizable or corrupt. You know that it's just an image, though, because
+you're smarter than the computer.</span></i></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:38.0pt'><b><span lang=EN
+style='font-size:11.5pt;line-height:115%;background:white'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><span lang=EN style='background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN style='background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN style='background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN style='background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN style='background:white'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

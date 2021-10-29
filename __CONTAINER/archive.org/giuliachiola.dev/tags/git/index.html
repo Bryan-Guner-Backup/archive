@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+    <script>
+      const currentTheme = localStorage.getItem('theme') || 'light'
+      document.documentElement.setAttribute('data-theme', currentTheme)
+    </script>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagged posts git | Giulia Chiola</title>
+    
+    <meta name="robots" content="index,follow"><!-- All Search Engines -->
+    
+    <link rel="archives" href="../../search.html">
+    
+    
+    
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+    <meta name="theme-color" content="#adffe9">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="../../img/favicon/apple-touch-icon-color-3.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon/favicon-32x32-color-3.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon/favicon-16x16-color-3.png">
+    <link rel="manifest" href="../../site-color-3.webmanifest">
+    
+    
+
+
+
+
+
+<meta name="description" content="">
+<meta name="author" content="Giulia Chiola">
+<link rel="canonical" href="index.html" />
+
+
+<meta property="og:title" content="Tagged posts git">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://giuliachiola.dev">
+<meta property="og:image" content="" />
+
+
+<meta name="twitter:image" content="" />
+<meta name="twitter:creator" content="@giulia_chiola">
+<meta name="twitter:site" content="@giulia_chiola">
+<meta name="twitter:card" content="summary_large_image">
+
+
+    
+    <link rel="stylesheet" href="../../css/css-bundle.css">
+    
+    <link rel="stylesheet" type="text/css" href="../../super-styleguide/src/css/print.css" media="print">
+
+    
+    
+    
+    
+    <style>
+      @charset "UTF-8";:root{--co_text:#69778f;--co_text-tint-10:#78859a;--co_background:#fff;--co_shadow:rgba(0, 0, 0, 0.1);--co_shadow-intense:rgba(0, 0, 0, 0.4);--co_palette:#69778f;--co_palette--lighten:#8591a6;--co_palette--lighten-hard:#c0c6d1}[data-theme=dark]{--co_text:#fff;--co_background:#191935;--co_text-tint-10:white}.t-palette-color--1{--co_palette:#ef476f;--co_palette--lighten:#f37694;--co_palette--lighten-hard:#ffe1e8}[data-theme=dark] .t-palette-color--1{--co_shadow:rgba(239, 71, 111, 0.4);--co_shadow-intense:rgba(239, 71, 111, 0.7)}.t-palette-color--2{--co_palette:#0d3b95;--co_palette--lighten:#114ec4;--co_palette--lighten-hard:#d7e5ff}[data-theme=dark] .t-palette-color--2{--co_shadow:rgba(13, 59, 149, 0.4);--co_shadow-intense:rgba(13, 59, 149, 0.7)}.t-palette-color--3{--co_palette:#06d6a0;--co_palette--lighten:#17f8be;--co_palette--lighten-hard:#adffe9}[data-theme=dark] .t-palette-color--3{--co_shadow:rgba(6, 214, 160, 0.4);--co_shadow-intense:rgba(6, 214, 160, 0.7)}.t-palette-color--4{--co_palette:#1b98e0;--co_palette--lighten:#45ade9;--co_palette--lighten-hard:#ace1ff}[data-theme=dark] .t-palette-color--4{--co_shadow:rgba(27, 152, 224, 0.4);--co_shadow-intense:rgba(27, 152, 224, 0.7)}.t-palette-color--5{--co_palette:#ff9f1c;--co_palette--lighten:#ffb54f;--co_palette--lighten-hard:#ffe3bd}[data-theme=dark] .t-palette-color--5{--co_shadow:rgba(255, 159, 28, 0.4);--co_shadow-intense:rgba(255, 159, 28, 0.7)}body{font-family:Montserrat,sans-serif;line-height:1.65}h1{font-size:2.125rem;font-weight:500;line-height:1.2}@media (min-width:48em){h1{font-size:2.5rem}}@media (min-width:64em){h1{font-size:3rem}}h2{font-size:1.75rem;font-weight:500;line-height:1.2}@media (min-width:48em){h2{font-size:1.9375rem}}@media (min-width:64em){h2{font-size:2.375rem}}h3{font-size:1.4375rem;font-weight:500;line-height:1.2}@media (min-width:48em){h3{font-size:1.5625rem}}@media (min-width:64em){h3{font-size:1.75rem}}h4,h5,h6{font-size:1.1875rem;font-weight:500;line-height:1.2}@media (min-width:48em){h4,h5,h6{font-size:1.25rem}}@media (min-width:64em){h4,h5,h6{font-size:1.5rem}}legend{display:table;padding:0}fieldset{border:0;margin:0;min-width:0;padding:.01em 0 0 0}body:not(:-moz-handler-blocked) fieldset{display:table-cell}.c-header__list{list-style:none;margin:0;padding-left:0}.c-header__item{margin-bottom:0;padding-left:0}*{box-sizing:border-box;font-family:inherit;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;line-height:inherit}::after,::before{box-sizing:inherit}html{font-size:1rem;scroll-behavior:smooth}body{background-color:var(--co_background);color:var(--co_text);height:100%;margin:0;padding:0}body.is-menu-open{position:fixed;width:100%}a{color:var(--co_text);text-decoration:none}a:hover{color:var(--co_text-tint-10);text-decoration:underline}code{font-family:"Fira Code",monospace}img{height:auto;max-width:100%;vertical-align:middle;color:var(--co_palette--lighten);text-transform:uppercase}hr{background-color:#e8e8e8;border:none;color:#e8e8e8;height:.0625rem}blockquote{border-left:.1875rem solid #e8e8e8;margin:0;padding-left:1.25rem}body,html{height:100%;margin:0}.l-wrapper{display:flex;flex-direction:column;height:100%}.l-wrapper .c-footer{margin-top:auto}.l-spacing-xs{margin-bottom:.3125rem!important}.l-spacing-s{margin-bottom:.625rem!important}.l-spacing-m{margin-bottom:1.25rem!important}.l-spacing-l{margin-bottom:2.5rem!important}.l-spacing-top-m{margin-top:1.25rem!important}@media (min-width:64em){.c-header{position:relative}}@media (max-width:63.99em){.is-menu-open .c-header{height:100vh;position:fixed;width:100%;z-index:10}}@media (max-width:63.99em){.c-header__nav{margin:0;position:relative}}@media (max-width:63.99em){.c-header__list{align-content:center;background-color:var(--co_palette--lighten);display:flex;flex-direction:column;height:100%;justify-content:center;left:100%;padding:0;position:fixed;text-align:center;top:0;transform:translate3d(0,0,0);transition:transform .7s cubic-bezier(.32,-.01,0,.99);width:100%;z-index:10}.c-header__toggle:checked~.c-header__list{transform:translate3d(-100%,0,0);transition:transform .7s cubic-bezier(.32,-.01,0,.99)}}@media (min-width:64em){.c-header__list{padding:1.25rem 0;text-align:right}}.c-header__item{display:block}@media (max-width:63.99em){.c-header__item{font-size:1.75rem;font-weight:500;line-height:1.2;margin-bottom:1.25rem}}@media (max-width:63.99em) and (min-width:48em){.c-header__item{font-size:1.9375rem}}@media (max-width:63.99em) and (min-width:64em){.c-header__item{font-size:2.375rem}}@media (min-width:64em){.c-header__item{display:inline-block;margin-bottom:0}.c-header__item::before{color:var(--co_text);content:'•'}}@media (min-width:64em){.c-header__item+.c-header__item{margin-left:1.25rem}}@media (max-width:63.99em){.c-header__link{color:#fff}.c-header__link:hover{color:#fff}}@media (hover:hover){.c-header__link:hover{border-bottom:.0625rem solid #69778f;border-color:var(--co_palette--lighten);padding-bottom:.25rem;text-decoration:none}}.c-header__link[data-state=active]{border-bottom:.125rem dashed #fff;font-weight:400;padding-bottom:.25rem}@media (min-width:64em){.c-header__link[data-state=active]{border-bottom:.25rem solid var(--co_palette--lighten)}.c-header__link[data-state=active]:hover{text-decoration:none}}.c-header__link[data-state=current-section]{border-bottom:.125rem dotted #fff}@media (min-width:64em){.c-header__link[data-state=current-section]{border-bottom:.125rem dotted var(--co_palette--lighten);font-weight:400;padding-bottom:.25rem}}.c-header__toggle{height:2.8125rem;margin:0;opacity:0;position:absolute;right:.625rem;top:.625rem;width:2.8125rem;z-index:11}@media (min-width:64em){.c-header__toggle{display:none}}.c-header__hamburger{background:#fff;display:block;height:.125rem;position:absolute;right:1.25rem;top:1.875rem;transition:background .7s;width:1.875rem;z-index:11}.c-header__toggle:checked~.c-header__hamburger{background:0 0;transition:background .7s}.c-header__hamburger::before{background:#fff;content:'';height:.125rem;left:0;position:absolute;top:.625rem;transition:transform .7s;width:1.875rem}.c-header__toggle:checked~.c-header__hamburger::before{transform:translateY(-5px) rotate(-45deg);transition:transform .7s}.c-header__hamburger::after{background:#fff;bottom:.625rem;content:'';height:.125rem;left:0;position:absolute;transition:transform .7s;width:1.875rem}.c-header__toggle:checked~.c-header__hamburger::after{transform:translateY(15px) rotate(45deg);transition:transform .7s}@media (min-width:64em){.c-header__hamburger{display:none}}.c-hero{align-items:center;background-color:var(--co_palette);color:#fff;display:flex;min-height:21.875rem;padding:2.5rem 0;position:relative;text-align:center}.c-hero .l-main{width:100%}.c-hero--bg-img{color:#fff;min-height:31.25rem;text-shadow:rgba(0,0,0,.5) 0 0 .625rem}.c-hero--quote{font-style:italic}@media (max-width:47.99em){.c-hero--quote{padding:3.125rem 1.25rem}}.c-hero__blockquote{border-left:none;padding-left:0}.c-hero__quote{font-size:1.75rem;font-weight:500;line-height:1.2;display:block;margin:0 auto}@media (min-width:48em){.c-hero__quote{font-size:1.9375rem}}@media (min-width:64em){.c-hero__quote{font-size:2.375rem}}@media (min-width:48em){.c-hero__quote{max-width:80%}}.c-hero__quote::before{content:'“'}.c-hero__quote::after{content:'”'}.c-hero__title{margin-top:0}.c-hero__title-custom{font-size:1.4375rem;font-weight:500;line-height:1.2;border-bottom:.0625rem dashed #fff;font-weight:600;text-transform:uppercase}@media (min-width:48em){.c-hero__title-custom{font-size:1.5625rem}}@media (min-width:64em){.c-hero__title-custom{font-size:1.75rem}}.c-hero__img{background-attachment:fixed;background-image:var(--hero-image);background-position:center;background-repeat:no-repeat;background-size:cover;height:100%;left:0;opacity:.3;position:absolute;top:0;width:100%}.c-hero__subtitle{font-size:1.1875rem;font-weight:500;line-height:1.2;margin-bottom:0}@media (min-width:48em){.c-hero__subtitle{font-size:1.25rem}}@media (min-width:64em){.c-hero__subtitle{font-size:1.5rem}}.c-hero--quote .c-hero__subtitle{display:block;font-style:normal;margin-top:1.25rem}.c-label{background-color:var(--co_palette--lighten-hard);border-radius:2px;border-radius:6.25rem;color:#073b4c;font-size:.75rem;padding:.125rem .5rem;text-transform:uppercase}.c-label:hover{color:#073b4c}.c-label+.c-label{margin-left:.3125rem}.c-label[data-state=active]{background:var(--co_palette);color:#fff}
+    </style>
+
+    
+    
+    <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+
+    <link rel="preload"
+          as="style"
+          href=https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Montserrat:wght@400;600&amp;display=swap />
+
+    <link rel="stylesheet"
+          href=https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Montserrat:wght@400;600&amp;display=swap
+          media="print" onload="this.media='all'" />
+
+    <noscript>
+      <link rel="stylesheet"
+            href=https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Montserrat:wght@400;600&amp;display=swap />
+    </noscript>
+  </head>
+
+  <body>
+    <div class="l-wrapper t-palette-color--3">
+      
+      
+
+<header class="c-header">
+  
+  <a class="s-skip-to-content-link" href="index.html#main">
+    Skip to content
+  </a>
+
+  <nav class="c-header__nav l-main">
+    <input class="c-header__toggle" type="checkbox" name="checkbox" id="headerToggle" value="value"/>
+    <label class="c-header__hamburger" for="headerToggle"></label>
+    <ul class="c-header__list">
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="../../index.html"
+            
+            
+            >
+            til
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="../../tutorials.html"
+            
+            
+            >
+            tutorials
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="../../search.html"
+            
+            
+            >
+            search
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="../../projects/index.html"
+            
+            
+            >
+            projects
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="../../uses/index.html"
+            
+            
+            >
+            uses
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="../../about/index.html"
+            
+            
+            >
+            about
+          </a>
+        </li>
+    </ul>
+  </nav>
+</header>
+
+
+      
+      
+
+<div class="l-spacing-m">
+  
+  
+
+
+
+
+<section class="c-hero  ">
+  
+    <div class="l-main">
+      
+      
+        <h1 class="c-hero__title">Tagged posts<br> <span class="c-hero__title-custom">git</span></h1>
+      
+      
+    </div>
+    
+</section>
+
+</div>
+
+
+
+
+
+
+
+
+  
+  
+
+
+<main id="main" class="l-main">
+  
+  <div class="l-spacing-m"><fieldset class="c-filter">
+  <legend class="c-filter__legend">Filter by:</legend>
+  
+  
+
+  
+  <ul class="c-filter__list">
+    
+      <li class="c-filter__item">
+        
+        <a href="../design-system/index.html" class="c-label" >design system</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../nodejs/index.html" class="c-label" >nodejs</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../css/index.html" class="c-label" >css</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../uiengine/index.html" class="c-label" >uiengine</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../js/index.html" class="c-label" >js</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../regex/index.html" class="c-label" >regex</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../vsc/index.html" class="c-label" >vsc</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="index.html" class="c-label" data-state="active">git</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../shell/index.html" class="c-label" >shell</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../json/index.html" class="c-label" >json</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../template-engine/index.html" class="c-label" >template engine</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../nunjucks/index.html" class="c-label" >nunjucks</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../performance/index.html" class="c-label" >performance</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../11ty/index.html" class="c-label" >11ty</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../static-site-generator/index.html" class="c-label" >static site generator</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../pug/index.html" class="c-label" >pug</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../mac-os/index.html" class="c-label" >mac os</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../node/index.html" class="c-label" >node</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../npm/index.html" class="c-label" >npm</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../vuejs/index.html" class="c-label" >vuejs</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../styleguidist/index.html" class="c-label" >styleguidist</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="../productivity/index.html" class="c-label" >productivity</a>
+      </li>
+    
+  </ul>
+</fieldset>
+
+
+  </div>
+  
+  
+    
+    
+    <div class="l-spacing-l">
+      
+  
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--squared-image c-card--horizontal  l-spacing-m j-card">
+  
+    <div class="c-card__img-wrapper">
+      
+      
+        <svg viewBox="0 0 100 61" xmlns="http://www.w3.org/2000/svg" class="icon icon--nodejs" fill="currentColor" width="200"><defs><filter id="nodejs-a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/></filter></defs><g filter="url(#nodejs-a)" fill="none" fill-rule="evenodd"><g fill="#000" fill-rule="nonzero"><path d="M49.783 60.87c-.326 0-.653-.11-.979-.218l-3.043-1.739c-.435-.217-.218-.326-.109-.435.544-.217.761-.217 1.305-.652h.217l2.283 1.413h.326l9.021-5.217c.109 0 .109-.109.109-.218V43.478c0-.108 0-.217-.109-.217l-8.913-5.218h-.326l-9.022 5.218c-.108 0-.108.109-.108.217v10.326c0 .109.108.218.108.218l2.5 1.413c1.305.652 2.174-.109 2.174-.87V44.348c0-.109.11-.218.218-.218h1.087c.108 0 .217.11.217.218v10.217c0 1.74-.978 2.826-2.609 2.826-.543 0-.978 0-2.065-.543l-2.282-1.413c-.544-.326-.979-.978-.979-1.63V43.477c0-.652.326-1.304.979-1.63l9.021-5.218a1.867 1.867 0 011.848 0l9.022 5.218c.543.326.978.978.978 1.63v10.326c0 .653-.326 1.305-.978 1.63l-9.022 5.218a2.048 2.048 0 01-.87.218z"/><path d="M52.5 53.696c-3.913 0-4.783-1.848-4.783-3.261 0-.109.11-.218.218-.218h1.195c.11 0 .218.11.218.218.217 1.195.652 1.739 3.043 1.739 1.848 0 2.718-.435 2.718-1.413 0-.544-.218-.978-3.152-1.304-2.5-.218-4.022-.761-4.022-2.718 0-1.848 1.522-2.935 4.13-2.935 2.826 0 4.348.979 4.457 3.153 0 .108 0 .108-.109.217 0 0-.109.109-.217.109H55a.234.234 0 01-.217-.218c-.326-1.195-.979-1.63-2.826-1.63-2.066 0-2.283.76-2.283 1.304 0 .652.326.87 3.043 1.196 2.718.326 4.022.87 4.022 2.826.218 1.848-1.413 2.935-4.239 2.935zM65.435 42.826c0 .978-.761 1.74-1.74 1.74-.978 0-1.738-.762-1.738-1.74s.76-1.739 1.739-1.739c.978 0 1.739.76 1.739 1.74zm-3.152 0c0 .761.652 1.413 1.413 1.413.76 0 1.413-.652 1.413-1.413 0-.76-.652-1.413-1.413-1.413s-1.413.652-1.413 1.413zm.76-.978h.653c.217 0 .652 0 .652.543 0 .326-.218.435-.326.435.217 0 .326.217.326.435 0 .109 0 .435.109.543h-.435c0-.108-.109-.543-.109-.652a.234.234 0 00-.217-.217h-.326v.76h-.327v-1.847zm.435.87h.326c.218 0 .326-.218.326-.327 0-.217-.217-.217-.326-.217h-.326v.543zM21.957 20.326c0-.435-.218-.76-.544-.978l-9.565-5.435c-.109-.109-.326-.109-.544-.109h-.108c-.218 0-.326.109-.544.109l-9.565 5.435c-.326.217-.544.543-.544.978V35.11c0 .217.11.434.327.543.217.109.434.109.543 0l5.652-3.26c.326-.218.544-.544.544-.979v-6.848c0-.435.217-.76.543-.978l2.391-1.413c.218-.109.327-.109.544-.109.217 0 .435 0 .543.109l2.392 1.413c.326.217.543.543.543.978v6.848c0 .435.218.76.544.978l5.652 3.261c.217.109.435.109.543 0a.598.598 0 00.326-.543l.327-14.783zM67.717.109C67.5 0 67.283 0 67.174.109a.598.598 0 00-.326.543v14.565c0 .11-.109.326-.218.326a.33.33 0 01-.434 0l-2.283-1.413c-.326-.217-.76-.217-1.196 0l-9.456 5.544c-.326.217-.544.543-.544.978V31.63c0 .435.218.761.544.979l9.565 5.543c.326.218.761.218 1.196 0l9.565-5.543c.326-.218.543-.544.543-.979V4.24c0-.436-.217-.762-.543-.98L67.717.11zm-.87 27.934c0 .11-.108.218-.108.218l-3.26 1.848h-.327l-3.26-1.848c-.11 0-.11-.109-.11-.218V24.24c0-.109.11-.217.11-.217l3.26-1.848h.326l3.261 1.848c.109 0 .109.108.109.217v3.804zM99.457 24.13c.326-.217.543-.543.543-.978v-2.717c0-.435-.217-.761-.543-.978L90 13.913c-.326-.217-.76-.217-1.196 0l-9.456 5.544c-.326.217-.544.543-.544.978v11.087c0 .435.218.76.544.978l9.456 5.435a.987.987 0 001.087 0l5.761-3.152a.598.598 0 00.326-.544.598.598 0 00-.326-.543l-9.565-5.544a.598.598 0 01-.326-.543V24.13c0-.217.109-.434.326-.543l2.935-1.74c.217-.108.435-.108.543 0l2.935 1.74a.598.598 0 01.326.543v2.718c0 .217.109.435.326.543.218.109.435.109.544 0l5.76-3.26z"/><path d="M89.24 23.587h.217l1.847 1.087c.109 0 .109.109.109.217v2.066c0 .108 0 .108-.109.217l-1.847 1.087h-.218l-1.848-1.087c-.108 0-.108-.109-.108-.217V24.89c0-.108 0-.108.108-.217l1.848-1.087z"/><g><path d="M36.74 14.022a.987.987 0 011.086 0l9.457 5.435c.326.217.543.543.543.978v10.87c0 .434-.217.76-.543.978l-9.457 5.434a.987.987 0 01-1.087 0l-9.456-5.434c-.326-.218-.544-.544-.544-.979v-10.87c0-.434.218-.76.544-.977l9.456-5.435z"/><path d="M37.826 14.022a.987.987 0 00-1.087 0l-9.456 5.435c-.326.217-.544.543-.544.978v10.87c0 .434.218.76.544.978l9.456 5.434a.987.987 0 001.087 0l9.457-5.434c.326-.218.543-.544.543-.979v-10.87c0-.434-.217-.76-.543-.977l-9.457-5.435z"/><path d="M36.74 14.022l-9.457 5.435c-.326.217-.544.543-.544.978v10.87c0 .217.109.543.218.76l10.652-18.152c-.326 0-.652 0-.87.109zM37.609 37.935c.108 0 .108-.109.217-.109l9.457-5.435c.326-.217.543-.543.543-.978v-10.87c0-.326-.109-.543-.217-.76l-10 18.152z"/><path d="M47.283 19.457l-9.348-5.435c-.109-.109-.218-.109-.326-.109L26.957 32.065l.326.326 9.456 5.435c.326.109.652.217.87.109L47.5 19.783c0-.11-.109-.218-.217-.326z" opacity=".66"/><g><path d="M27.391 19.457a1.196 1.196 0 00-.652 1.086v10.87c0 .435.218.76.544.978l9.456 5.435c.218.109.544.217.87.109L27.39 19.457zM47.826 20.543c0-.434-.217-.76-.543-.978l-9.348-5.435c-.109 0-.218-.108-.218-.108l10.218 17.391v-10.87h-.109z"/><path d="M37.826 37.826l9.457-5.435c.326-.217.543-.543.543-.978L37.61 14.022c-.326-.109-.652 0-.87.108l-9.348 5.435L37.61 38.043c0-.108.108-.108.217-.217z"/></g></g></g></g></svg>
+      
+    </div>
+  
+  <div class="c-card__content">
+    
+    
+    <a class="c-card__title j-card__main-link" href="../../posts/how-i-set-up-my-environment-before-i-start-every-project/index.html">
+      <h2 class="c-card__title-heading">How I set up my environment before I start every project</h2>
+    </a>
+    
+
+    
+    
+      <p class="c-card__abstract">Configuration list to setup a project from scratch.</p>
+    
+
+    
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-31">31 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="../nodejs/index.html" class="c-label">nodejs</a>
+        
+          
+          <a href="index.html" class="c-label">git</a>
+        
+          
+          <a href="../vsc/index.html" class="c-label">vsc</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--squared-image c-card--horizontal  l-spacing-m j-card">
+  
+    <div class="c-card__img-wrapper">
+      
+      
+        <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" class="icon icon--git" fill="currentColor" width="200"><defs><filter id="git-a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/></filter></defs><g transform="translate(-2 -2)" filter="url(#git-a)" fill="none" fill-rule="evenodd"><path d="M0 0h100v100H0z"/><path d="M95.205 45.814L54.182 4.794a6.05 6.05 0 00-8.557 0l-8.515 8.52 10.804 10.804a7.186 7.186 0 017.392 1.722 7.188 7.188 0 011.706 7.437L67.426 43.69c2.518-.868 5.426-.308 7.437 1.71a7.2 7.2 0 010 10.18 7.197 7.197 0 01-10.184 0 7.204 7.204 0 01-1.568-7.831l-9.71-9.71v25.554a7.41 7.41 0 011.905 1.36 7.204 7.204 0 010 10.185c-2.815 2.81-7.373 2.81-10.18 0a7.204 7.204 0 012.356-11.756V37.595a7.117 7.117 0 01-2.356-1.571c-2.131-2.127-2.642-5.254-1.553-7.87l-10.65-10.653L4.798 45.626a6.054 6.054 0 000 8.56l41.019 41.02a6.05 6.05 0 008.557 0l40.827-40.828a6.062 6.062 0 00.004-8.564" fill="#000" fill-rule="nonzero" stroke="#000"/></g></svg>
+      
+    </div>
+  
+  <div class="c-card__content">
+    
+    
+    <a class="c-card__title j-card__main-link" href="../../posts/git-cheatsheet/index.html">
+      <h2 class="c-card__title-heading">Git cheatsheet</h2>
+    </a>
+    
+
+    
+    
+      <p class="c-card__abstract">Some git commands that I find very useful.</p>
+    
+
+    
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-25">25 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="index.html" class="c-label">git</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--squared-image c-card--horizontal  l-spacing-m j-card">
+  
+    <div class="c-card__img-wrapper">
+      
+      
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="icon icon--mac-os" fill="currentColor" width="200"><defs><filter id="mac-os-a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/></filter></defs><g filter="url(#mac-os-a)" fill="none" fill-rule="evenodd"><g fill="#000" fill-rule="nonzero"><path d="M32.662.942c-4.3 1.087-9.249 4.565-15.358 10.725-3.516 3.587-3.686 3.804-3.993 5.724-.649 3.696-3.072 6.268-6.45 6.848-1.57.254-2.083.58-3.858 2.428-2.286 2.391-3.14 4.058-2.832 5.58.136.615 1.433 2.282 3.378 4.311 3.004 3.116 3.277 3.297 4.642 3.297 1.331 0 1.638-.217 4.096-2.754 2.252-2.318 2.73-3.007 2.9-4.275.683-4.456 4.54-7.536 8.26-6.594.649.181 3.857 3.406 10 10.036l9.044 9.783 3.311-3.551 3.345-3.55-8.806-9.059c-4.812-4.963-9.078-9.492-9.42-10.108-1.604-2.537-.307-6.74 3.038-9.928 4.13-3.913 8.532-5.217 12.526-3.804l1.98.724.716-.833.682-.797-1.16-.942C46.246 2.21 40.205.326 36.451.399c-.99 0-2.697.253-3.789.543z"/><path d="M77.85 1.848c-4.471.906-8.498 4.203-10.546 8.623-1.229 2.609-1.263 2.862-1.263 6.522 0 2.101.068 4.203.17 4.637.137.689-3.242 4.457-21.126 23.442l-21.262 22.61-1.23-.363c-.682-.218-2.661-.29-4.368-.218-2.764.11-3.413.29-5.665 1.486-5.495 2.862-8.942 9.348-8.26 15.616l.205 2.101L8.84 81.74l4.334-4.601 4.403.905c2.423.508 4.505 1.051 4.607 1.196.137.181.649 2.391 1.16 5l.922 4.674-4.334 4.601-4.3 4.566 1.842.217c6.007.761 12.116-2.862 14.88-8.768 1.23-2.609 1.264-2.862 1.264-6.522 0-2.101-.069-4.203-.17-4.637-.137-.689 3.207-4.42 21.125-23.442l21.263-22.61 1.229.363c.682.218 2.662.29 4.368.218 2.765-.11 3.413-.29 5.666-1.486 5.529-2.899 8.942-9.42 8.225-15.76l-.205-1.957-4.3 4.565-4.334 4.601-4.403-.978c-2.457-.543-4.54-1.087-4.71-1.232-.137-.145-.648-2.355-1.092-4.927l-.853-4.674 4.3-4.565 4.3-4.566-1.638-.253c-1.911-.254-2.56-.254-4.54.18h.001z"/><path d="M56.826 54.348l-4.71 5L69.283 77.97c21.229 23.007 19.932 21.667 20.888 21.667 1.024 0 9.488-8.913 9.488-10 .034-.652-7.202-8.37-29.045-30.942l-9.044-9.384-4.744 5.036v.001z"/></g></g></svg>
+      
+    </div>
+  
+  <div class="c-card__content">
+    
+    
+    <a class="c-card__title j-card__main-link" href="../../posts/fix-developer-path-after-upgrade-to-macos-catalina/index.html">
+      <h2 class="c-card__title-heading">Fix developer path after upgrade to MacOS Catalina</h2>
+    </a>
+    
+
+    
+    
+      <p class="c-card__abstract">My git commands did not work as expected after I upgraded to MacOS Catalina, here is how to fix the developer path error.</p>
+    
+
+    
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-24">24 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="../mac-os/index.html" class="c-label">mac os</a>
+        
+          
+          <a href="index.html" class="c-label">git</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--squared-image c-card--horizontal  l-spacing-m j-card">
+  
+    <div class="c-card__img-wrapper">
+      
+      
+        <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" class="icon icon--git" fill="currentColor" width="200"><defs><filter id="git-a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/></filter></defs><g transform="translate(-2 -2)" filter="url(#git-a)" fill="none" fill-rule="evenodd"><path d="M0 0h100v100H0z"/><path d="M95.205 45.814L54.182 4.794a6.05 6.05 0 00-8.557 0l-8.515 8.52 10.804 10.804a7.186 7.186 0 017.392 1.722 7.188 7.188 0 011.706 7.437L67.426 43.69c2.518-.868 5.426-.308 7.437 1.71a7.2 7.2 0 010 10.18 7.197 7.197 0 01-10.184 0 7.204 7.204 0 01-1.568-7.831l-9.71-9.71v25.554a7.41 7.41 0 011.905 1.36 7.204 7.204 0 010 10.185c-2.815 2.81-7.373 2.81-10.18 0a7.204 7.204 0 012.356-11.756V37.595a7.117 7.117 0 01-2.356-1.571c-2.131-2.127-2.642-5.254-1.553-7.87l-10.65-10.653L4.798 45.626a6.054 6.054 0 000 8.56l41.019 41.02a6.05 6.05 0 008.557 0l40.827-40.828a6.062 6.062 0 00.004-8.564" fill="#000" fill-rule="nonzero" stroke="#000"/></g></svg>
+      
+    </div>
+  
+  <div class="c-card__content">
+    
+    
+    <a class="c-card__title j-card__main-link" href="../../posts/git-flow-initialize/index.html">
+      <h2 class="c-card__title-heading">Git flow initialize</h2>
+    </a>
+    
+
+    
+    
+      <p class="c-card__abstract">How to fast initialize git flow with one simple command.</p>
+    
+
+    
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-23">23 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="index.html" class="c-label">git</a>
+        
+          
+          <a href="../shell/index.html" class="c-label">shell</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--squared-image c-card--horizontal  l-spacing-m j-card">
+  
+    <div class="c-card__img-wrapper">
+      
+      
+        <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" class="icon icon--git" fill="currentColor" width="200"><defs><filter id="git-a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/></filter></defs><g transform="translate(-2 -2)" filter="url(#git-a)" fill="none" fill-rule="evenodd"><path d="M0 0h100v100H0z"/><path d="M95.205 45.814L54.182 4.794a6.05 6.05 0 00-8.557 0l-8.515 8.52 10.804 10.804a7.186 7.186 0 017.392 1.722 7.188 7.188 0 011.706 7.437L67.426 43.69c2.518-.868 5.426-.308 7.437 1.71a7.2 7.2 0 010 10.18 7.197 7.197 0 01-10.184 0 7.204 7.204 0 01-1.568-7.831l-9.71-9.71v25.554a7.41 7.41 0 011.905 1.36 7.204 7.204 0 010 10.185c-2.815 2.81-7.373 2.81-10.18 0a7.204 7.204 0 012.356-11.756V37.595a7.117 7.117 0 01-2.356-1.571c-2.131-2.127-2.642-5.254-1.553-7.87l-10.65-10.653L4.798 45.626a6.054 6.054 0 000 8.56l41.019 41.02a6.05 6.05 0 008.557 0l40.827-40.828a6.062 6.062 0 00.004-8.564" fill="#000" fill-rule="nonzero" stroke="#000"/></g></svg>
+      
+    </div>
+  
+  <div class="c-card__content">
+    
+    
+    <a class="c-card__title j-card__main-link" href="../../posts/how-to-set-up-githubgitlab-issue-and-pr-templates/index.html">
+      <h2 class="c-card__title-heading">How to set up GitHub/GitLab issue and PR templates</h2>
+    </a>
+    
+
+    
+    
+      <p class="c-card__abstract">GitHub and GitLab give the possibility to set default issue and PR templates.</p>
+    
+
+    
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-20">20 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="index.html" class="c-label">git</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--squared-image c-card--horizontal  l-spacing-m j-card">
+  
+    <div class="c-card__img-wrapper">
+      
+      
+        <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" class="icon icon--git" fill="currentColor" width="200"><defs><filter id="git-a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/></filter></defs><g transform="translate(-2 -2)" filter="url(#git-a)" fill="none" fill-rule="evenodd"><path d="M0 0h100v100H0z"/><path d="M95.205 45.814L54.182 4.794a6.05 6.05 0 00-8.557 0l-8.515 8.52 10.804 10.804a7.186 7.186 0 017.392 1.722 7.188 7.188 0 011.706 7.437L67.426 43.69c2.518-.868 5.426-.308 7.437 1.71a7.2 7.2 0 010 10.18 7.197 7.197 0 01-10.184 0 7.204 7.204 0 01-1.568-7.831l-9.71-9.71v25.554a7.41 7.41 0 011.905 1.36 7.204 7.204 0 010 10.185c-2.815 2.81-7.373 2.81-10.18 0a7.204 7.204 0 012.356-11.756V37.595a7.117 7.117 0 01-2.356-1.571c-2.131-2.127-2.642-5.254-1.553-7.87l-10.65-10.653L4.798 45.626a6.054 6.054 0 000 8.56l41.019 41.02a6.05 6.05 0 008.557 0l40.827-40.828a6.062 6.062 0 00.004-8.564" fill="#000" fill-rule="nonzero" stroke="#000"/></g></svg>
+      
+    </div>
+  
+  <div class="c-card__content">
+    
+    
+    <a class="c-card__title j-card__main-link" href="../../posts/how-to-rename-a-git-branch/index.html">
+      <h2 class="c-card__title-heading">How to rename a git branch</h2>
+    </a>
+    
+
+    
+    
+      <p class="c-card__abstract">Few commands to rename a git branch locally and remotely</p>
+    
+
+    
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-17">17 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="index.html" class="c-label">git</a>
+        
+          
+          <a href="../shell/index.html" class="c-label">shell</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    </div>
+    
+    
+  
+
+</main>
+
+
+
+
+
+
+      
+      <footer class="c-footer">
+  <div class="l-main">
+    <div class="c-footer__group">
+      <div class="c-footer__theme-switcher"><label class="c-theme-switcher j-theme-switcher" for="checkbox">
+  <input class="c-theme-switcher__input" type="checkbox" id="checkbox"/>
+  <span class="c-theme-switcher__label c-theme-switcher__label--light" aria-label="theme-light">☀️</span>
+  <span class="c-theme-switcher__label c-theme-switcher__label--dark" aria-label="theme-dark">🌙</span>
+</label>
+
+      </div>
+
+      <p class="c-footer__copyright">© 2021 made with <span>♥️</span> by Giulia Chiola</p>
+
+      <div class="c-footer__socials">
+        <a class="c-footer__link" href="https://twitter.com/giulia_chiola" target="_blank" rel="noopener" title="twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon--twitter" fill="currentColor" width="200"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+        <a class="c-footer__link" href="https://github.com/giuliachiola" target="_blank" rel="noopener" title="github">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon icon--github" fill="currentColor" width="200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a class="c-footer__link" href="https://codepen.com/giuliachiola" target="_blank" rel="noopener" title="codepen">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon--codepen" fill="currentColor" width="200"><path d="M18.144 13.067v-2.134L16.55 12zm1.276 1.194a.628.628 0 01-.006.083l-.005.028-.011.053-.01.031a.443.443 0 01-.017.047l-.014.03a.78.78 0 01-.021.043l-.019.03a.57.57 0 01-.08.1l-.026.025a.602.602 0 01-.036.03l-.029.022-.01.008-6.782 4.522a.637.637 0 01-.708 0L4.864 14.79l-.01-.008a.599.599 0 01-.065-.052l-.026-.025-.032-.034-.021-.028a.588.588 0 01-.067-.11l-.014-.031a.644.644 0 01-.017-.047l-.01-.03c-.004-.018-.008-.036-.01-.054l-.006-.028a.628.628 0 01-.006-.083V9.739a.58.58 0 01.006-.083l.005-.027.011-.054.01-.03a.574.574 0 01.12-.217l.031-.034.026-.025a.62.62 0 01.065-.052l.01-.008 6.782-4.521a.638.638 0 01.708 0l6.782 4.521.01.008.03.022.035.03c.01.008.017.016.026.025a.545.545 0 01.08.1l.019.03a.633.633 0 01.021.043l.014.03c.007.016.012.032.017.047l.01.031c.004.018.008.036.01.054l.006.027a.619.619 0 01.006.083zM12 0C5.373 0 0 5.372 0 12c0 6.627 5.373 12 12 12 6.628 0 12-5.372 12-12 0-6.627-5.372-12-12-12m0 10.492L9.745 12 12 13.51 14.255 12zm.638 4.124v2.975l4.996-3.33-2.232-1.493zm-6.272-.356l4.996 3.33v-2.974l-2.764-1.849zm11.268-4.52l-4.996-3.33v2.974l2.764 1.85zm-6.272-.356V6.41L6.366 9.74l2.232 1.493zm-5.506 1.549v2.134L7.45 12z"/></svg>
+        </a>
+        <a class="c-footer__link" href="https://www.instagram.com/giulia_chiola/" target="_blank" rel="noopener" title="gitlab">
+          <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" class="icon icon--instagram" fill="currentColor" width="200"><path d="M128 23.064c34.177 0 38.225.13 51.722.745 12.48.57 19.258 2.655 23.769 4.408 5.974 2.322 10.238 5.096 14.717 9.575 4.48 4.479 7.253 8.743 9.575 14.717 1.753 4.511 3.838 11.289 4.408 23.768.615 13.498.745 17.546.745 51.723 0 34.178-.13 38.226-.745 51.723-.57 12.48-2.655 19.257-4.408 23.768-2.322 5.974-5.096 10.239-9.575 14.718-4.479 4.479-8.743 7.253-14.717 9.574-4.511 1.753-11.289 3.839-23.769 4.408-13.495.616-17.543.746-51.722.746-34.18 0-38.228-.13-51.723-.746-12.48-.57-19.257-2.655-23.768-4.408-5.974-2.321-10.239-5.095-14.718-9.574-4.479-4.48-7.253-8.744-9.574-14.718-1.753-4.51-3.839-11.288-4.408-23.768-.616-13.497-.746-17.545-.746-51.723 0-34.177.13-38.225.746-51.722.57-12.48 2.655-19.258 4.408-23.769 2.321-5.974 5.095-10.238 9.574-14.717 4.48-4.48 8.744-7.253 14.718-9.575 4.51-1.753 11.288-3.838 23.768-4.408 13.497-.615 17.545-.745 51.723-.745M128 0C93.237 0 88.878.147 75.226.77c-13.625.622-22.93 2.786-31.071 5.95-8.418 3.271-15.556 7.648-22.672 14.764C14.367 28.6 9.991 35.738 6.72 44.155 3.555 52.297 1.392 61.602.77 75.226.147 88.878 0 93.237 0 128c0 34.763.147 39.122.77 52.774.622 13.625 2.785 22.93 5.95 31.071 3.27 8.417 7.647 15.556 14.763 22.672 7.116 7.116 14.254 11.492 22.672 14.763 8.142 3.165 17.446 5.328 31.07 5.95 13.653.623 18.012.77 52.775.77s39.122-.147 52.774-.77c13.624-.622 22.929-2.785 31.07-5.95 8.418-3.27 15.556-7.647 22.672-14.763 7.116-7.116 11.493-14.254 14.764-22.672 3.164-8.142 5.328-17.446 5.95-31.07.623-13.653.77-18.012.77-52.775s-.147-39.122-.77-52.774c-.622-13.624-2.786-22.929-5.95-31.07-3.271-8.418-7.648-15.556-14.764-22.672C227.4 14.368 220.262 9.99 211.845 6.72c-8.142-3.164-17.447-5.328-31.071-5.95C167.122.147 162.763 0 128 0zm0 62.27C91.698 62.27 62.27 91.7 62.27 128c0 36.302 29.428 65.73 65.73 65.73 36.301 0 65.73-29.428 65.73-65.73 0-36.301-29.429-65.73-65.73-65.73zm0 108.397c-23.564 0-42.667-19.103-42.667-42.667S104.436 85.333 128 85.333s42.667 19.103 42.667 42.667-19.103 42.667-42.667 42.667zm83.686-110.994c0 8.484-6.876 15.36-15.36 15.36-8.483 0-15.36-6.876-15.36-15.36 0-8.483 6.877-15.36 15.36-15.36 8.484 0 15.36 6.877 15.36 15.36z" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+    
+
+    
+    
+    
+    <script defer src="../../dist/js/bundle.js"></script>
+  </body>
+</html>

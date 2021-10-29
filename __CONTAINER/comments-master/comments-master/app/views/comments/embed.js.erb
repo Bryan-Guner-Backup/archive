@@ -1,0 +1,135 @@
+(function($) {
+  $.fn.comments = function(options) {
+    return this.each(function(i) {
+      var opts = $.extend({}, options, { stamp: new Date().getTime().toString() });
+      new $.comments(this, opts);
+    });
+  };
+
+  $.comments = function(el, options) {
+    this.target = $(el);
+    this.options = options;
+    this.addComments();
+    this.addForm();
+  }
+
+  $.extend($.comments.prototype, {
+    target: null, options: null, form: null, name: null, body: null,
+    list: null, header: null, count: 0,
+
+    addComments: function() {
+      $.ajax({
+        url: "<%= comments_url(:format => 'json') %>",
+        context: this,
+        data: {
+          site_key: this.options.siteKey,
+          page_url: document.location.href
+        },
+        success: function(data) {
+          container = $('<div></div>');
+          this.header = $('<h3>Comments</h3>').appendTo(container);
+          this.list = $('<ul></ul>').attr({
+            id: 'comments_list_'+this.options.stamp,
+            'class': 'comments_list'
+          }).appendTo(container);
+
+          var self = this;
+          $.each(data, function() { self.appendComment(this); });
+          this.updateHeader();
+
+          this.target.prepend(container);
+        }
+      });
+    },
+
+    updateHeader: function() {
+      this.header.html(this.count + ' Comment' + (this.count == 1 ? '' : 's'));
+    },
+
+    appendComment: function(comment) {
+      item = $('<li></li>').attr({
+        id: 'comment_'+comment.id, 'class': 'comment'
+      });
+      $('<div></div>').addClass('comment_name').html(comment.name).appendTo(item);
+      $('<div></div>').addClass('comment_date').html(comment.created_at).appendTo(item);
+      $('<div></div>').addClass('comment_body').html(comment.body).appendTo(item);
+      this.list.append(item);
+      this.count += 1;
+    },
+
+    addForm: function() {
+      this.form = $('<form></form>').attr({
+        action: "<%= comments_url(:format => 'json') %>",
+        method: "post", id: 'comments_form_'+this.options.stamp,
+        'class': 'comments_form'
+      });
+
+      // this.appendHiddenElement('authenticity_token', "<%= form_authenticity_token %>");
+      this.appendHiddenElement('comment[page_url]', document.location.href);
+      this.appendHiddenElement('comment[site_key]', this.options.siteKey);
+
+      this.appendFormElement('text', 'name', 'Name:');
+      this.appendFormElement('text', 'email', 'E-mail:');
+      this.appendFormElement('text', 'author_url', 'URL:');
+      this.appendFormElement('textarea', 'body', 'Type your comment here.');
+      this.appendFormElement('submit', 'submit', 'Submit');
+
+      this.body.focusin(function() {
+        if ($(this).val() == "Type your comment here.") { $(this).val(""); }
+      }).focusout(function() {
+        if ($(this).val() == "") { $(this).val("Type your comment here."); }
+      });
+      this.form.bind('submit', this, function(e) {
+        var self = $(this);
+        if (e.data.body.val() == "Type your comment here.") { e.data.body.val(""); }
+        $.ajax({
+          url: self.attr('action'),
+          data: self.serialize(),
+          type: 'POST',
+          context: e.data,
+          success: function(data) {
+            this.appendComment(data);
+            this.updateHeader();
+            this.form[0].reset();
+            this.form.find('*').removeClass('error');
+          },
+          error: function(xhr) {
+            data = $.parseJSON(xhr.responseText);
+            var self = this;
+            $.each(data, function(key, value) {
+              self.form.find('.new_comment_'+key).addClass('error');
+            });
+          }
+        });
+        return false;
+      });
+
+      this.target.append(this.form);
+    },
+
+    appendHiddenElement: function(name, value) {
+      $("<input />").attr({
+        name: name, type: 'hidden', value: value
+      }).appendTo(this.form);
+    },
+
+    appendFormElement: function(type, name, label) {
+      var id = 'new_comment_' + name + '_' + this.options.stamp;
+      var klass = 'new_comment_' + name;
+      var div = $('<div></div>').addClass('new_comment_'+name);
+      var obj = $(type == 'textarea' ? '<textarea></textarea>' : '<input type="'+type+'"></input>');
+      obj.attr({ id: id, 'class': klass });
+
+      if (type == 'submit' || type == 'textarea' || type == 'hidden')
+        obj.val(label);
+      else if (label != null)
+        $('<label>'+label+'</label>').attr({'for': id, 'class': klass}).prependTo(div);
+
+      if (type != 'submit')
+        obj.attr('name', 'comment['+name+']');
+
+      this.form.append(div.append(obj));
+      this[name] = obj;
+    }
+  });
+})(jQuery);

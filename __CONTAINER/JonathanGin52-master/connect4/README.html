@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="github-asynchronous-connect-four">GitHub asynchronous Connect Four</h1>
+<p>Hey there, if you’re here, you’re probably interested in how everything works!</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol type="1">
+<li><a href="#github-automation">GitHub automation</a></li>
+<li><a href="#board-representation">Connect Four</a>
+<ol type="1">
+<li><a href="#board-representation">Board representation</a></li>
+<li><a href="#connect4-ai">Connect4 AI</a></li>
+</ol></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#acknowledgements">Acknowledgments</a></li>
+</ol>
+<h2 id="github-automation">GitHub automation</h2>
+<p>Whenever an issue with the prefix <code>connect4</code> is opened, a <a href="https://github.com/features/actions">GitHub Actions</a> workflow is automatically triggered. The title of the issue and other metadata is passed to a Ruby script, which then takes the appropriate action based on the content of the issue.</p>
+<h2 id="connect-four">Connect Four</h2>
+<h3 id="board-representation">Board representation</h3>
+<p>This implementation of Connect Four uses two bitboards. A <a href="https://en.wikipedia.org/wiki/Bitboard">bitboard</a> is a specialized data structure that is commonly used for board game representation. This representation was chosen because it makes serializing the game state practically trivial. Each bitboard represents the board from one player’s point of view, and is stored as an integer (Ruby is not typed, but in other languages, this would be a 64-bit integer).</p>
+<p>The mapping between each bit and the board is shown is as following:</p>
+<pre><code>  6 13 20 27 34 41 48   55 62     extra row
++---------------------+
+| 5 12 19 26 33 40 47 | 54 61     top row
+| 4 11 18 25 32 39 46 | 53 60
+| 3 10 17 24 31 38 45 | 52 59
+| 2  9 16 23 30 37 44 | 51 58
+| 1  8 15 22 29 36 43 | 50 57
+| 0  7 14 21 28 35 42 | 49 56 63  bottom row
++---------------------+</code></pre>
+<p>The bits in the additional row at the top (6, 13, 20, etc) are not used to represent any discs, but will be of use when bitshifting later on.</p>
+<pre><code>* * * * * * *      0 0 0 0 0 0 0      0 0 0 0 0 0 0
+* * * * * * *      0 0 0 0 0 0 0      0 0 0 0 0 0 0
+* * * * * * *      0 0 0 0 0 0 0      0 0 0 0 0 0 0
+* * O * * * *      0 0 0 0 0 0 0      0 0 1 0 0 0 0
+* * X O * * *      0 0 1 0 0 0 0      0 0 0 1 0 0 0   
+O X X X O * *      0 1 1 1 0 0 0      1 0 0 0 1 0 0    
+-------------      -------------      -------------     
+0 1 2 3 4 5 6      X&#39;s Bitboard       O&#39;s Bitboard </code></pre>
+<p>This translates into to the following numerical representation.</p>
+<pre><code>  2146432  =  0000000 0000000 0000000 0000001 0000011 0000001 0000000 // X&#39;s bitboard
+272695297  =  0000000 0000000 0000001 0000010 0000100 0000000 0000001 // O&#39;s bitboard
+               col 6   col 5   col 4   col 3   col 2   col 1   col 0
+---------     -------------------------------------------------------
+Decimal       Binary encoding (unrepresented bits omitted) </code></pre>
+<p>In addition to storing the location of each disc, we also store an array, <code>peaks</code> containing the location of where the next disc dropped in a column would fall. In the example below, the values of the <code>peaks</code> array is: <code>[1, 8, 17, 23, 29, 35, 42]</code>.</p>
+<pre><code>                   6 13 20 27 34 41 48
+* * * * * * *      5 12 19 26 33 40 47
+* * * * * * *      4 11 18 25 32 39 46
+* * * * * * *      3 10 17 24 31 38 45
+* * O * * * *      2  9 16 23 30 37 44
+* * X O * * *      1  8 15 22 29 36 43
+O X X X O * *      0  7 14 21 28 35 42
+-------------     
+0 1 2 3 4 5 6     </code></pre>
+<h4 id="making-moves">Making moves</h4>
+<p>With the combination of the <code>peaks</code> array and the bitboard representation, making a move is as simple as flipping the bit specified by the <code>peaks</code> array for the given column.</p>
+<h4 id="checking-for-a-win">Checking for a win</h4>
+<p>**Coming soon*</p>
+<h3 id="connect4-ai">Connect4 AI</h3>
+<p>The Connect4 AI uses a simple Minimax game tree search with alpha-beta pruning.</p>
+<h4 id="scoring-function">Scoring function</h4>
+<p><strong>This section is a WIP</strong> Currently the scoring function is as follows:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">def</span> score(depth)</a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">if</span> <span class="dt">AI_WON</span></a>
+<a class="sourceLine" id="cb5-3" title="3">    <span class="dv">22</span> - depth</a>
+<a class="sourceLine" id="cb5-4" title="4">  <span class="kw">elsif</span> <span class="dt">PLAYER_WON</span></a>
+<a class="sourceLine" id="cb5-5" title="5">    -(<span class="dv">22</span> - depth)</a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="kw">else</span></a>
+<a class="sourceLine" id="cb5-7" title="7">    <span class="dv">0</span></a>
+<a class="sourceLine" id="cb5-8" title="8">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="kw">end</span></a></code></pre></div>
+<p>This is a simple scoring function that will eventually be improved with simple heuristics.</p>
+<h2 id="contributing">Contributing</h2>
+<p>If you notice anything wrong or think of a cool new feature, please <a href="https://github.com/JonathanGin52/JonathanGin52/issues/new">open an issue</a>. Feel free to tag me with the text <code>cc: @jonathangin52</code> to make sure I see it.</p>
+<p><strong>More details on how to contribute coming soon!</strong></p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<ul>
+<li>This project was originally inspired by Tim Burgan’s amazing <a href="https://github.com/timburgan/timburgan">community chess tournament</a> project.</li>
+<li>The Connect4 game design was influenced by <span class="citation" data-cites="denkspuren">@denkspuren</span> <a href="https://github.com/denkspuren/BitboardC4/blob/master/BitboardDesign.md">bitboard design</a> document</li>
+</ul>
+</body>
+</html>

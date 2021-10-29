@@ -1,0 +1,1 @@
+chrome-extension://afdfpkhbdpioonfeknablodaejkklbdn/js/content_offset.js

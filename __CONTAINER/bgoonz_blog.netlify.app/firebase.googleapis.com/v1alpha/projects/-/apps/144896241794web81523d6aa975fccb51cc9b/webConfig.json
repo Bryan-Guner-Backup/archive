@@ -1,0 +1,10 @@
+{
+  "projectId": "bgoonzblog20",
+  "appId": "1:44896241794:web:81523d6aa975fccb51cc9b",
+  "databaseURL": "https://bgoonzblog20-default-rtdb.firebaseio.com",
+  "storageBucket": "bgoonzblog20.appspot.com",
+  "locationId": "us-east1",
+  "authDomain": "bgoonzblog20.firebaseapp.com",
+  "messagingSenderId": "44896241794",
+  "measurementId": "G-F56YP2Y17L"
+}

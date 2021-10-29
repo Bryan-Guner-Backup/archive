@@ -1,0 +1,1827 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+    <script>
+      const currentTheme = localStorage.getItem('theme') || 'light'
+      document.documentElement.setAttribute('data-theme', currentTheme)
+    </script>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today I learned | Giulia Chiola</title>
+    
+    <meta name="robots" content="index,follow"><!-- All Search Engines -->
+    
+    <link rel="archives" href="search.html">
+    
+    
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    <meta name="theme-color" content="#f37694">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-color-1.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32-color-1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16-color-1.png">
+    <link rel="manifest" href="site-color-1.webmanifest">
+    
+    
+
+
+
+
+
+<meta name="description" content="A collection of useful code snippets for a faster development.&lt;br&gt;Reading time &amp;lt; 5 mins">
+<meta name="author" content="Giulia Chiola">
+<link rel="canonical" href="index.html" />
+
+
+<meta property="og:title" content="Today I learned">
+<meta property="og:description" content="A collection of useful code snippets for a faster development.&lt;br&gt;Reading time &amp;lt; 5 mins">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://giuliachiola.dev">
+<meta property="og:image" content="https://giuliachiola.dev/social-img/today-i-learned.png" />
+
+
+<meta name="twitter:image" content="https://giuliachiola.dev/social-img/today-i-learned.png" />
+<meta name="twitter:creator" content="@giulia_chiola">
+<meta name="twitter:site" content="@giulia_chiola">
+<meta name="twitter:card" content="summary_large_image">
+
+
+    
+    <link rel="stylesheet" href="css/css-bundle.css">
+    
+    <link rel="stylesheet" type="text/css" href="super-styleguide/src/css/print.css" media="print">
+
+    
+    
+    
+    
+    <style>
+      @charset "UTF-8";:root{--co_text:#69778f;--co_text-tint-10:#78859a;--co_background:#fff;--co_shadow:rgba(0, 0, 0, 0.1);--co_shadow-intense:rgba(0, 0, 0, 0.4);--co_palette:#69778f;--co_palette--lighten:#8591a6;--co_palette--lighten-hard:#c0c6d1}[data-theme=dark]{--co_text:#fff;--co_background:#191935;--co_text-tint-10:white}.t-palette-color--1{--co_palette:#ef476f;--co_palette--lighten:#f37694;--co_palette--lighten-hard:#ffe1e8}[data-theme=dark] .t-palette-color--1{--co_shadow:rgba(239, 71, 111, 0.4);--co_shadow-intense:rgba(239, 71, 111, 0.7)}.t-palette-color--2{--co_palette:#0d3b95;--co_palette--lighten:#114ec4;--co_palette--lighten-hard:#d7e5ff}[data-theme=dark] .t-palette-color--2{--co_shadow:rgba(13, 59, 149, 0.4);--co_shadow-intense:rgba(13, 59, 149, 0.7)}.t-palette-color--3{--co_palette:#06d6a0;--co_palette--lighten:#17f8be;--co_palette--lighten-hard:#adffe9}[data-theme=dark] .t-palette-color--3{--co_shadow:rgba(6, 214, 160, 0.4);--co_shadow-intense:rgba(6, 214, 160, 0.7)}.t-palette-color--4{--co_palette:#1b98e0;--co_palette--lighten:#45ade9;--co_palette--lighten-hard:#ace1ff}[data-theme=dark] .t-palette-color--4{--co_shadow:rgba(27, 152, 224, 0.4);--co_shadow-intense:rgba(27, 152, 224, 0.7)}.t-palette-color--5{--co_palette:#ff9f1c;--co_palette--lighten:#ffb54f;--co_palette--lighten-hard:#ffe3bd}[data-theme=dark] .t-palette-color--5{--co_shadow:rgba(255, 159, 28, 0.4);--co_shadow-intense:rgba(255, 159, 28, 0.7)}body{font-family:Montserrat,sans-serif;line-height:1.65}h1{font-size:2.125rem;font-weight:500;line-height:1.2}@media (min-width:48em){h1{font-size:2.5rem}}@media (min-width:64em){h1{font-size:3rem}}h2{font-size:1.75rem;font-weight:500;line-height:1.2}@media (min-width:48em){h2{font-size:1.9375rem}}@media (min-width:64em){h2{font-size:2.375rem}}h3{font-size:1.4375rem;font-weight:500;line-height:1.2}@media (min-width:48em){h3{font-size:1.5625rem}}@media (min-width:64em){h3{font-size:1.75rem}}h4,h5,h6{font-size:1.1875rem;font-weight:500;line-height:1.2}@media (min-width:48em){h4,h5,h6{font-size:1.25rem}}@media (min-width:64em){h4,h5,h6{font-size:1.5rem}}legend{display:table;padding:0}fieldset{border:0;margin:0;min-width:0;padding:.01em 0 0 0}body:not(:-moz-handler-blocked) fieldset{display:table-cell}.c-header__list{list-style:none;margin:0;padding-left:0}.c-header__item{margin-bottom:0;padding-left:0}*{box-sizing:border-box;font-family:inherit;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;line-height:inherit}::after,::before{box-sizing:inherit}html{font-size:1rem;scroll-behavior:smooth}body{background-color:var(--co_background);color:var(--co_text);height:100%;margin:0;padding:0}body.is-menu-open{position:fixed;width:100%}a{color:var(--co_text);text-decoration:none}a:hover{color:var(--co_text-tint-10);text-decoration:underline}code{font-family:"Fira Code",monospace}img{height:auto;max-width:100%;vertical-align:middle;color:var(--co_palette--lighten);text-transform:uppercase}hr{background-color:#e8e8e8;border:none;color:#e8e8e8;height:.0625rem}blockquote{border-left:.1875rem solid #e8e8e8;margin:0;padding-left:1.25rem}body,html{height:100%;margin:0}.l-wrapper{display:flex;flex-direction:column;height:100%}.l-wrapper .c-footer{margin-top:auto}.l-spacing-xs{margin-bottom:.3125rem!important}.l-spacing-s{margin-bottom:.625rem!important}.l-spacing-m{margin-bottom:1.25rem!important}.l-spacing-l{margin-bottom:2.5rem!important}.l-spacing-top-m{margin-top:1.25rem!important}@media (min-width:64em){.c-header{position:relative}}@media (max-width:63.99em){.is-menu-open .c-header{height:100vh;position:fixed;width:100%;z-index:10}}@media (max-width:63.99em){.c-header__nav{margin:0;position:relative}}@media (max-width:63.99em){.c-header__list{align-content:center;background-color:var(--co_palette--lighten);display:flex;flex-direction:column;height:100%;justify-content:center;left:100%;padding:0;position:fixed;text-align:center;top:0;transform:translate3d(0,0,0);transition:transform .7s cubic-bezier(.32,-.01,0,.99);width:100%;z-index:10}.c-header__toggle:checked~.c-header__list{transform:translate3d(-100%,0,0);transition:transform .7s cubic-bezier(.32,-.01,0,.99)}}@media (min-width:64em){.c-header__list{padding:1.25rem 0;text-align:right}}.c-header__item{display:block}@media (max-width:63.99em){.c-header__item{font-size:1.75rem;font-weight:500;line-height:1.2;margin-bottom:1.25rem}}@media (max-width:63.99em) and (min-width:48em){.c-header__item{font-size:1.9375rem}}@media (max-width:63.99em) and (min-width:64em){.c-header__item{font-size:2.375rem}}@media (min-width:64em){.c-header__item{display:inline-block;margin-bottom:0}.c-header__item::before{color:var(--co_text);content:'•'}}@media (min-width:64em){.c-header__item+.c-header__item{margin-left:1.25rem}}@media (max-width:63.99em){.c-header__link{color:#fff}.c-header__link:hover{color:#fff}}@media (hover:hover){.c-header__link:hover{border-bottom:.0625rem solid #69778f;border-color:var(--co_palette--lighten);padding-bottom:.25rem;text-decoration:none}}.c-header__link[data-state=active]{border-bottom:.125rem dashed #fff;font-weight:400;padding-bottom:.25rem}@media (min-width:64em){.c-header__link[data-state=active]{border-bottom:.25rem solid var(--co_palette--lighten)}.c-header__link[data-state=active]:hover{text-decoration:none}}.c-header__link[data-state=current-section]{border-bottom:.125rem dotted #fff}@media (min-width:64em){.c-header__link[data-state=current-section]{border-bottom:.125rem dotted var(--co_palette--lighten);font-weight:400;padding-bottom:.25rem}}.c-header__toggle{height:2.8125rem;margin:0;opacity:0;position:absolute;right:.625rem;top:.625rem;width:2.8125rem;z-index:11}@media (min-width:64em){.c-header__toggle{display:none}}.c-header__hamburger{background:#fff;display:block;height:.125rem;position:absolute;right:1.25rem;top:1.875rem;transition:background .7s;width:1.875rem;z-index:11}.c-header__toggle:checked~.c-header__hamburger{background:0 0;transition:background .7s}.c-header__hamburger::before{background:#fff;content:'';height:.125rem;left:0;position:absolute;top:.625rem;transition:transform .7s;width:1.875rem}.c-header__toggle:checked~.c-header__hamburger::before{transform:translateY(-5px) rotate(-45deg);transition:transform .7s}.c-header__hamburger::after{background:#fff;bottom:.625rem;content:'';height:.125rem;left:0;position:absolute;transition:transform .7s;width:1.875rem}.c-header__toggle:checked~.c-header__hamburger::after{transform:translateY(15px) rotate(45deg);transition:transform .7s}@media (min-width:64em){.c-header__hamburger{display:none}}.c-hero{align-items:center;background-color:var(--co_palette);color:#fff;display:flex;min-height:21.875rem;padding:2.5rem 0;position:relative;text-align:center}.c-hero .l-main{width:100%}.c-hero--bg-img{color:#fff;min-height:31.25rem;text-shadow:rgba(0,0,0,.5) 0 0 .625rem}.c-hero--quote{font-style:italic}@media (max-width:47.99em){.c-hero--quote{padding:3.125rem 1.25rem}}.c-hero__blockquote{border-left:none;padding-left:0}.c-hero__quote{font-size:1.75rem;font-weight:500;line-height:1.2;display:block;margin:0 auto}@media (min-width:48em){.c-hero__quote{font-size:1.9375rem}}@media (min-width:64em){.c-hero__quote{font-size:2.375rem}}@media (min-width:48em){.c-hero__quote{max-width:80%}}.c-hero__quote::before{content:'“'}.c-hero__quote::after{content:'”'}.c-hero__title{margin-top:0}.c-hero__title-custom{font-size:1.4375rem;font-weight:500;line-height:1.2;border-bottom:.0625rem dashed #fff;font-weight:600;text-transform:uppercase}@media (min-width:48em){.c-hero__title-custom{font-size:1.5625rem}}@media (min-width:64em){.c-hero__title-custom{font-size:1.75rem}}.c-hero__img{background-attachment:fixed;background-image:var(--hero-image);background-position:center;background-repeat:no-repeat;background-size:cover;height:100%;left:0;opacity:.3;position:absolute;top:0;width:100%}.c-hero__subtitle{font-size:1.1875rem;font-weight:500;line-height:1.2;margin-bottom:0}@media (min-width:48em){.c-hero__subtitle{font-size:1.25rem}}@media (min-width:64em){.c-hero__subtitle{font-size:1.5rem}}.c-hero--quote .c-hero__subtitle{display:block;font-style:normal;margin-top:1.25rem}.c-label{background-color:var(--co_palette--lighten-hard);border-radius:2px;border-radius:6.25rem;color:#073b4c;font-size:.75rem;padding:.125rem .5rem;text-transform:uppercase}.c-label:hover{color:#073b4c}.c-label+.c-label{margin-left:.3125rem}.c-label[data-state=active]{background:var(--co_palette);color:#fff}
+    </style>
+
+    
+    
+    <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+
+    <link rel="preload"
+          as="style"
+          href=https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Montserrat:wght@400;600&amp;display=swap />
+
+    <link rel="stylesheet"
+          href=https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Montserrat:wght@400;600&amp;display=swap
+          media="print" onload="this.media='all'" />
+
+    <noscript>
+      <link rel="stylesheet"
+            href=https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Montserrat:wght@400;600&amp;display=swap />
+    </noscript>
+  </head>
+
+  <body>
+    <div class="l-wrapper t-palette-color--1">
+      
+      
+
+<header class="c-header">
+  
+  <a class="s-skip-to-content-link" href="index.html#main">
+    Skip to content
+  </a>
+
+  <nav class="c-header__nav l-main">
+    <input class="c-header__toggle" type="checkbox" name="checkbox" id="headerToggle" value="value"/>
+    <label class="c-header__hamburger" for="headerToggle"></label>
+    <ul class="c-header__list">
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="index.html"
+             data-state="active"
+            
+            >
+            til
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="tutorials.html"
+            
+            
+            >
+            tutorials
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="search.html"
+            
+            
+            >
+            search
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="projects/index.html"
+            
+            
+            >
+            projects
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="uses/index.html"
+            
+            
+            >
+            uses
+          </a>
+        </li>
+        <li class="c-header__item">
+          
+          <a
+            class="c-header__link"
+            href="about/index.html"
+            
+            
+            >
+            about
+          </a>
+        </li>
+    </ul>
+  </nav>
+</header>
+
+
+      
+      
+
+<div class="l-spacing-m">
+  
+  
+
+
+
+
+<section class="c-hero  ">
+  
+    <div class="l-main">
+      
+      
+        <h1 class="c-hero__title">Today I learned</h1>
+      
+      
+      <h2 class="c-hero__subtitle">A collection of useful code snippets for a faster development.<br>Reading time &lt; 5 mins</h2>
+      
+    </div>
+    
+</section>
+
+</div>
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+  
+  
+
+
+<main id="main" class="l-main">
+  
+  <div class="l-spacing-m"><fieldset class="c-filter">
+  <legend class="c-filter__legend">Filter by:</legend>
+  
+  
+
+  
+  <ul class="c-filter__list">
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/design-system/index.html" class="c-label" >design system</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/nodejs/index.html" class="c-label" >nodejs</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/css/index.html" class="c-label" >css</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/uiengine/index.html" class="c-label" >uiengine</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/js/index.html" class="c-label" >js</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/regex/index.html" class="c-label" >regex</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/vsc/index.html" class="c-label" >vsc</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/git/index.html" class="c-label" >git</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/shell/index.html" class="c-label" >shell</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/json/index.html" class="c-label" >json</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/template-engine/index.html" class="c-label" >template engine</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/nunjucks/index.html" class="c-label" >nunjucks</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/performance/index.html" class="c-label" >performance</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/11ty/index.html" class="c-label" >11ty</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/static-site-generator/index.html" class="c-label" >static site generator</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/pug/index.html" class="c-label" >pug</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/mac-os/index.html" class="c-label" >mac os</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/node/index.html" class="c-label" >node</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/npm/index.html" class="c-label" >npm</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/vuejs/index.html" class="c-label" >vuejs</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/styleguidist/index.html" class="c-label" >styleguidist</a>
+      </li>
+    
+      <li class="c-filter__item">
+        
+        <a href="tags/productivity/index.html" class="c-label" >productivity</a>
+      </li>
+    
+  </ul>
+</fieldset>
+
+
+  </div>
+  
+  
+    
+    
+    <div class="l-spacing-l">
+      
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#26</span>
+    
+    
+    <a class="c-card__title " href="posts/how-to-add-generic-styles-in-vue-styleguidist/index.html">
+      <h2 class="c-card__title-heading">How to add generic styles in Vue Styleguidist</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>At work, recently we worked on a styleguide project using <a href="https://github.com/vue-Styleguidist/vue-Styleguidist">vue Styleguidist</a>, the Vue little brother of <a href="https://github.com/Styleguidist/react-Styleguidist">react-styleguidist</a>, and we would like to organize components styles in this way:</p>
+<ul>
+<li>component specific styles would be inside the <code>[ComponentName].vue</code> file</li>
+<li>while all generic styles (colors, typography, and so on) would be inside a generic <code>styles.scss</code> file.</li>
+</ul>
+<h2 id="the-first-(bad)-idea">The first (bad) idea <a class="j-header-anchor" href="index.html#the-first-(bad)-idea">#</a></h2>
+<p>If we hadn't been in a Styleguidist app, but in a &quot;normal&quot; Vue app instead, we could have add a sass <code>@import</code> with all our generic styles at the highiest component, the <code>App.vue</code>:</p>
+<pre class="language-html"><code class="language-html">// App.vue<br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    ...<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span><br>  name<span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span><br><span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>scss<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><br>// generic styles<br>@import <span class="token string">'styles/styles.scss'</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>In this way, all components will have inherited our generic styles.</p>
+<p><strong>But</strong> in a Styleguidist project we have not such an high-level Vue component 😩</p>
+<p>If we would want to import a generic file in that way, we would have to add it into <strong>all</strong> our components, like this:</p>
+<pre class="language-html"><code class="language-html">// components/MyComponent.vue<br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span><br>  ...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span><br>  name<span class="token operator">:</span> <span class="token string">'MyComponent'</span><span class="token punctuation">,</span><br><span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>scss<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><br>// generic styles<br><span class="token atrule"><span class="token rule">@import</span> <span class="token string">'styles/styles.scss'</span><br><br>// my components custom styles<br>.c-my-component</span> <span class="token punctuation">{</span><br>  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br>...<br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>Not such a great idea! 🧐</p>
+<h2 id="the-second-(i-think-good%3F)-idea">The second (I think good?) idea <a class="j-header-anchor" href="index.html#the-second-(i-think-good%3F)-idea">#</a></h2>
+<p>Probably there is a better way to do it, but for the moment we'll go with this! 😅</p>
+<p>Adding a <code>vue.conifg.js</code> file to the Styleguidist project, we can tell to Styleguidist <code>sass-loader</code> which style content it has to prepend <em>before</em> the actual component <code>&lt;style&gt;</code> content. This can be achieved using <code>sass-loader</code> <a href="https://webpack.js.org/loaders/sass-loader/#additionaldata"><code>additionalData</code></a> option</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// vue.config.js</span><br><br>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span><br>  css<span class="token operator">:</span> <span class="token punctuation">{</span><br>    sourceMap<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    loaderOptions<span class="token operator">:</span> <span class="token punctuation">{</span><br>      scss<span class="token operator">:</span> <span class="token punctuation">{</span><br>        additionalData<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>        @import "assets/styles/styles.scss";<br>        </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span><br>      <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>🧨 <strong>!important</strong></p>
+<p>In these examples I have assumed that we are using SASS (.scss) files and not simple CSS files.<br>
+The <code>sass-loader</code> node package I mentioned before is already installed in our project because we wrote styles in SASS using the <code>&lt;style lang=&quot;scss&quot;&gt;</code> syntax.</p>
+</blockquote>
+<h3 id="%E2%9A%A1%EF%B8%8F-bonus-tip">⚡️ Bonus tip <a class="j-header-anchor" href="index.html#%E2%9A%A1%EF%B8%8F-bonus-tip">#</a></h3>
+<p>Since we have just added the <code>vue.config.js</code> file, we also added my <a href="https://github.com/postcss/postcss"><code>postcss</code></a> configuration there:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> postcssNormalize <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'postcss-normalize'</span><span class="token punctuation">)</span><br><span class="token keyword">const</span> postcssPresetEnv <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'postcss-preset-env'</span><span class="token punctuation">)</span><br><br>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span><br>  css<span class="token operator">:</span> <span class="token punctuation">{</span><br>    sourceMap<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    loaderOptions<span class="token operator">:</span> <span class="token punctuation">{</span><br>      scss<span class="token operator">:</span> <span class="token punctuation">{</span><br>        additionalData<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>        @import "assets/styles/styles.scss";<br>        </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span><br>      <span class="token punctuation">}</span><span class="token punctuation">,</span><br>      postcss<span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token function-variable function">plugins</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">[</span><br>          <span class="token function">postcssPresetEnv</span><span class="token punctuation">(</span><span class="token punctuation">{</span><br>            features<span class="token operator">:</span> <span class="token punctuation">{</span><br>              <span class="token string">'logical-properties-and-values'</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>                dir<span class="token operator">:</span> <span class="token string">'ltr'</span><span class="token punctuation">,</span><br>              <span class="token punctuation">}</span><span class="token punctuation">,</span><br>            <span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span><br>          <span class="token function">postcssNormalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><br>        <span class="token punctuation">]</span><span class="token punctuation">,</span><br>      <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><span class="token punctuation">}</span></code></pre>
+<p>Et voilà! 🇫🇷</p>
+<p>With this configuration:</p>
+<ul>
+<li>component specific styles are inside the <code>[ComponentName].vue</code> file</li>
+<li>while all generic styles are inside a generic <code>styles.scss</code> file</li>
+</ul>
+<p>Please let me know if you found a better way to import general styles in Vue Styleguidist components! 😇</p>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-02-05">05 Feb 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="tags/vuejs/index.html" class="c-label">vuejs</a>
+        
+          
+          <a href="tags/styleguidist/index.html" class="c-label">styleguidist</a>
+        
+          
+          <a href="tags/js/index.html" class="c-label">js</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#25</span>
+    
+    
+    <a class="c-card__title " href="posts/find-element-in-array-and-move-it-to-the-first-position/index.html">
+      <h2 class="c-card__title-heading">Find element in array and move it to the first position</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>Surely there are several way to do it, this is just one of them. Let me know if you know a better way to do it 💪🏻</p>
+<p>To find an element into an array and move to be the first, you have to:</p>
+<ul>
+<li>get the index of the founded item using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex"><code>findIndex()</code></a></li>
+</ul>
+<blockquote>
+<p>📚 The <code>findIndex()</code> method returns the index of the <strong>first</strong> element in the array that satisfies the provided testing function.</p>
+</blockquote>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'🐱'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span> <span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><br><span class="token keyword">const</span> itemToFind <span class="token operator">=</span> <span class="token string">'🐱'</span><br><br><span class="token keyword">const</span> foundIdx <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token parameter">el</span> <span class="token operator">=></span> el <span class="token operator">==</span> itemToFind<span class="token punctuation">)</span> <span class="token comment">// -> foundIdx = 3</span></code></pre>
+<ul>
+<li>remove the item in that specific position using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"><code>splice()</code></a></li>
+</ul>
+<blockquote>
+<p>📚 The <code>splice()</code> method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.</p>
+</blockquote>
+<pre class="language-js"><code class="language-js">arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>foundIdx<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br><br><span class="token comment">// splice(start[, deleteCount[, item1[, item2[, ...]]]])</span><br><span class="token comment">// start = foundIdx</span><br><span class="token comment">// deleteCount = 1 = number of elements in the array to remove from start</span></code></pre>
+<ul>
+<li>add the item to the 1st position using <a href="https://developer.mozilla.org/en-us/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift"><code>unshift()</code></a></li>
+</ul>
+<blockquote>
+<p>📚 The <code>unshift()</code> method adds one or more elements to the beginning of an array and returns the new length of the array.</p>
+</blockquote>
+<pre class="language-js"><code class="language-js">arr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>itemToFind<span class="token punctuation">)</span></code></pre>
+<p><em>Output</em></p>
+<pre class="language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><br><br><span class="token comment">// (11) ["🐱", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></code></pre>
+<p>To sum up:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'🐱'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span> <span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><br><span class="token keyword">const</span> itemToFind <span class="token operator">=</span> <span class="token string">'🐱'</span><br><br><span class="token keyword">const</span> foundIdx <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token parameter">el</span> <span class="token operator">=></span> el <span class="token operator">==</span> itemToFind<span class="token punctuation">)</span><br>arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>foundIdx<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>arr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>itemToFind<span class="token punctuation">)</span></code></pre>
+<blockquote>
+<p>📚 More info</p>
+<p><a href="https://dev.to/jalal246/moving-element-in-an-array-from-index-to-another-464b">Moving Element In An Array From Index To Another</a></p>
+</blockquote>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-02-05">05 Feb 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="tags/js/index.html" class="c-label">js</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#24</span>
+    
+    
+    <a class="c-card__title " href="posts/how-to-add-google-fonts-in-vue-styleguidist/index.html">
+      <h2 class="c-card__title-heading">How to add Google Fonts in Vue Styleguidist</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>Few days ago I worked on a <a href="https://github.com/vue-styleguidist/vue-styleguidist">vue-styleguidist</a> project and I had to use a Google Font.</p>
+<p><strong>Side note</strong>: <code>vue-styleguidist</code> is the &quot;Vue version&quot; of the more famous <a href="https://github.com/styleguidist/react-styleguidist">react-styleguidist</a>, <em>a component development environment with hot reloaded dev server and a living style guide</em>.</p>
+<p>In a static page, I would add the font in a classic way using a <code>&lt;link&gt;</code> tag:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><br>          <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/css?family=Raleway:100,400,800<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><br>      <span class="token selector">h1</span> <span class="token punctuation">{</span><br>        <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Raleway'</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span><br>        <span class="token property">font-size</span><span class="token punctuation">:</span> 48px<span class="token punctuation">;</span><br>      <span class="token punctuation">}</span><br>    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Whoa! I'm in Raleway 📝<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>But hey, in Styleguidist we are writing components into the &quot;Styleguidist box&quot; 📦!</p>
+<p>Styleguidist takes care of creating the fancy and functional box around our components, while we only have to write what is strictly necessary for the component (its structure, its styles, and its logic)</p>
+<p>To add a <code>&lt;head&gt;</code> property to the &quot;Styleguidist box&quot; we have to use the <code>react-styleguidist</code> <a href="https://react-styleguidist.js.org/docs/configuration/#template">template property</a> which lets us change the HTML of the Styleguidist application.</p>
+<p>To find out <code>template</code> supported properties, I deep dive into <code>mini-html-webpack-template-plugin</code> <a href="https://www.npmjs.com/package/@vxna/mini-html-webpack-template#extended-options">extended options</a>. There I found that it is possible to add an <code>head</code> property with an array of <code>links</code>... awesome! 😼</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>head.links</code></td>
+<td><code>{Array}</code></td>
+<td><code>undefined</code></td>
+<td>Array of objects with key + value pairs</td>
+</tr>
+</tbody>
+</table>
+<p>So, to add Raleway Google Font in our project we have to add to the <code>styleguide.config.js</code> file a  <code>template</code> object:</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// styleguide.config.js</span><br><br>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span><br>  title<span class="token operator">:</span> <span class="token string">'My awesome styleguide'</span><span class="token punctuation">,</span><br>  components<span class="token operator">:</span> <span class="token string">'components/**/[A-Z]*.vue'</span><span class="token punctuation">,</span><br>  <span class="token operator">...</span><br>  template<span class="token operator">:</span> <span class="token punctuation">{</span><br>    head<span class="token operator">:</span> <span class="token punctuation">{</span><br>      links<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><br>        key<span class="token operator">:</span> <span class="token string">'stylesheet'</span><span class="token punctuation">,</span><br>        value<span class="token operator">:</span> <span class="token string">'https://fonts.googleapis.com/css?family=Raleway:100,400,800'</span><span class="token punctuation">,</span><br>      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><span class="token punctuation">}</span></code></pre>
+<p>that turns out in</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><br>        <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/css?family=Raleway:100,400,800<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>Now, in our components files we can use the Google Font 😏</p>
+<pre class="language-html"><code class="language-html">// My component.vue<br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>My awesome title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span><br>    name<span class="token operator">:</span> <span class="token string">'MyComponent'</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><br>  <span class="token selector">h1</span> <span class="token punctuation">{</span><br>    <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Raleway'</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span><br>    <span class="token property">font-size</span><span class="token punctuation">:</span> 48px<span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<div class="s-giphy s-giphy--small-d">
+  <video autoplay loop muted playsinline>
+    <source src="https://i.giphy.com/media/3oKIPsgVPHyPPG5p3a/giphy.mp4" type="video/mp4">
+  </video>
+  <p><a href="https://media.giphy.com/media/3oKIPsgVPHyPPG5p3a/giphy.mp4">via GIPHY</a></p>
+</div>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-31">31 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="tags/vuejs/index.html" class="c-label">vuejs</a>
+        
+          
+          <a href="tags/styleguidist/index.html" class="c-label">styleguidist</a>
+        
+          
+          <a href="tags/js/index.html" class="c-label">js</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#23</span>
+    
+    
+    <a class="c-card__title " href="posts/add-a-class-in-nunjucks-using-a-conditional-statement/index.html">
+      <h2 class="c-card__title-heading">Add a class in Nunjucks using a conditional statement</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>In <em>Nunjucks</em> we can use a conditional statement in two ways:</p>
+<ol>
+<li><strong>explicit</strong> using the <code>{% if %}</code> keyword,</li>
+<li>or <strong>implicit</strong> using the <code>{{ }}</code> expression.</li>
+</ol>
+<p>Note: I did not find any reference about these names – implicit/explicit – in the Nunjucks <a href="https://mozilla.github.io/nunjucks/templating.html#if">official documentation 📚</a>, I just named to easily distinguish the two syntax in this tutorial 😇.</p>
+<h2 id="syntax-n.1%3A-explicit">Syntax n.1: explicit <a class="j-header-anchor" href="index.html#syntax-n.1%3A-explicit">#</a></h2>
+<p>Using an explicit <code>{% if %}</code> keyword, Nunjucks checks if the condition is met</p>
+<pre class="language-html"><code class="language-html">{% set arr = ['🐱', '🐶', '🐺'] %}<br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>{% if '🐶' in arr %}{% endif %}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p><em>HTML output</em></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>Using this method, we can add an HTML class when a specific condition is met</p>
+<pre class="language-twig"><code class="language-twig"><span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">set</span></span> <span class="token property">arr</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string"><span class="token punctuation">'</span>🐱<span class="token punctuation">'</span></span><span class="token punctuation">,</span> <span class="token string"><span class="token punctuation">'</span>🐶<span class="token punctuation">'</span></span><span class="token punctuation">,</span> <span class="token string"><span class="token punctuation">'</span>🐺<span class="token punctuation">'</span></span><span class="token punctuation">]</span> <span class="token rd"><span class="token punctuation">%}</span></span></span><br><br><span class="token other">&lt;div class="c-animals</span> <span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">if</span></span> <span class="token string"><span class="token punctuation">'</span>🐶<span class="token punctuation">'</span></span> <span class="token operator">in</span> <span class="token property">arr</span> <span class="token rd"><span class="token punctuation">%}</span></span></span><span class="token other">has-dog</span><span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">endif</span></span> <span class="token rd"><span class="token punctuation">%}</span></span></span><span class="token other">">...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span></code></pre>
+<p><em>HTML output</em></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>c-animals has-dog<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="syntax-n.2%3A-implicit">Syntax n.2: implicit <a class="j-header-anchor" href="index.html#syntax-n.2%3A-implicit">#</a></h2>
+<p>Using double curly braces, Nunjucks evalued its content:</p>
+<pre class="language-html"><code class="language-html">{% set arr = ['🐱', '🐶', '🐺'] %}<br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>{{ if '🐶' in arr }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p><em>HTML output</em></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>Using this method, we can add an HTML class when a specific condition is met</p>
+<pre class="language-twig"><code class="language-twig"><span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">set</span></span> <span class="token property">arr</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string"><span class="token punctuation">'</span>🐱<span class="token punctuation">'</span></span><span class="token punctuation">,</span> <span class="token string"><span class="token punctuation">'</span>🐶<span class="token punctuation">'</span></span><span class="token punctuation">,</span> <span class="token string"><span class="token punctuation">'</span>🐺<span class="token punctuation">'</span></span><span class="token punctuation">]</span> <span class="token rd"><span class="token punctuation">%}</span></span></span><br><br><span class="token other">&lt;div class="c-animals</span> <span class="token tag"><span class="token ld"><span class="token punctuation">{{</span></span> <span class="token string"><span class="token punctuation">'</span>has-dog<span class="token punctuation">'</span></span> <span class="token keyword">if</span> <span class="token string"><span class="token punctuation">'</span>🐶<span class="token punctuation">'</span></span> <span class="token operator">in</span> <span class="token property">arr</span> <span class="token rd"><span class="token punctuation">}}</span></span></span><span class="token other">">...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span></code></pre>
+<p><em>HTML output</em></p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>c-animals has-dog<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Note that the HTML output is exactly the same! 🚀</p>
+<h3 id="to-sum-up">To sum up <a class="j-header-anchor" href="index.html#to-sum-up">#</a></h3>
+<pre class="language-twig"><code class="language-twig"><span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">set</span></span> <span class="token property">arr</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string"><span class="token punctuation">'</span>🐱<span class="token punctuation">'</span></span><span class="token punctuation">,</span> <span class="token string"><span class="token punctuation">'</span>🐶<span class="token punctuation">'</span></span><span class="token punctuation">,</span> <span class="token string"><span class="token punctuation">'</span>🐺<span class="token punctuation">'</span></span><span class="token punctuation">]</span> <span class="token rd"><span class="token punctuation">%}</span></span></span><br><br><span class="token comment">{# 1. explicit #}</span><br><span class="token other">&lt;div class="c-animals</span> <span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">if</span></span> <span class="token string"><span class="token punctuation">'</span>🐶<span class="token punctuation">'</span></span> <span class="token operator">in</span> <span class="token property">arr</span> <span class="token rd"><span class="token punctuation">%}</span></span></span><span class="token other">has-dog</span><span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">endif</span></span> <span class="token rd"><span class="token punctuation">%}</span></span></span><span class="token other">">...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span><br><br><span class="token comment">{# 2. implicit #}</span><br><span class="token other">&lt;div class="c-animals</span> <span class="token tag"><span class="token ld"><span class="token punctuation">{{</span></span> <span class="token string"><span class="token punctuation">'</span>has-dog<span class="token punctuation">'</span></span> <span class="token keyword">if</span> <span class="token string"><span class="token punctuation">'</span>🐶<span class="token punctuation">'</span></span> <span class="token operator">in</span> <span class="token property">arr</span> <span class="token rd"><span class="token punctuation">}}</span></span></span><span class="token other">">...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span></code></pre>
+<p>Personally, I use both syntaxes in my Nunjucks files, and to choose which one to use I go with this logic:</p>
+<ul>
+<li>if there is just one condition to met and it is quite simple, I use the <em>implicit</em> syntax</li>
+<li>else I use the <em>explicit</em> one 🤓</li>
+</ul>
+<div class="s-giphy s-giphy--small-d">
+  <video autoplay loop muted playsinline>
+    <source src="https://i.giphy.com/media/2SYc7mttUnWWaqvWz8/giphy.mp4" type="video/mp4">
+  </video>
+  <p><a href="https://media.giphy.com/media/2SYc7mttUnWWaqvWz8/giphy.mp4">via GIPHY</a></p>
+</div>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-31">31 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="tags/template-engine/index.html" class="c-label">template engine</a>
+        
+          
+          <a href="tags/nunjucks/index.html" class="c-label">nunjucks</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#22</span>
+    
+    
+    <a class="c-card__title " href="posts/npm-cheatsheet/index.html">
+      <h2 class="c-card__title-heading">Npm cheatsheet</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>Few <code>npm</code> commands I found very useful during development.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm -v</code></td>
+<td style="text-align:left">show current <code>npm</code> version installed</td>
+</tr>
+<tr>
+<td><code>npm init</code></td>
+<td style="text-align:left">inizialize npm project into the current folder, creates <code>package.json</code></td>
+</tr>
+<tr>
+<td><code>npm --help</code></td>
+<td style="text-align:left">show npm help manual page</td>
+</tr>
+<tr>
+<td><code>npm list</code></td>
+<td style="text-align:left">show a tree of every package found in the current folder</td>
+</tr>
+<tr>
+<td><code>npm list -g</code></td>
+<td style="text-align:left">same as above ^^, but search also in global packages</td>
+</tr>
+<tr>
+<td><code>npm list -g --depth=0</code></td>
+<td style="text-align:left">same as above ^^, but do not show every package’s dependencies</td>
+</tr>
+<tr>
+<td><code>npm list [package name]</code></td>
+<td style="text-align:left">show a tree of every instance found in the current folder of that specific package</td>
+</tr>
+<tr>
+<td><code>npm install</code></td>
+<td style="text-align:left">install all packages in <code>package.json</code></td>
+</tr>
+<tr>
+<td><code>npm install [package name]</code></td>
+<td style="text-align:left">install a package as dependency*</td>
+</tr>
+<tr>
+<td><code>npm install [package name] --save</code></td>
+<td style="text-align:left">install a package as dependency (same as above)</td>
+</tr>
+<tr>
+<td><code>npm install [package name] --save-dev</code></td>
+<td style="text-align:left">install a package as dev dependency</td>
+</tr>
+<tr>
+<td><code>npm install --save username/repo#branch-name-or-commit-or-tag</code></td>
+<td style="text-align:left">install package from GitHub repository</td>
+</tr>
+<tr>
+<td><code>npm uninstall [package name]</code></td>
+<td style="text-align:left">uninstall a package</td>
+</tr>
+<tr>
+<td><code>npm update</code></td>
+<td style="text-align:left">update top level packages</td>
+</tr>
+<tr>
+<td><code>npm update --depth [number of levels]</code></td>
+<td style="text-align:left">update dependencies of dependencies packages</td>
+</tr>
+<tr>
+<td><code>npm update [package name] -g</code></td>
+<td style="text-align:left">update global package installation</td>
+</tr>
+<tr>
+<td><code>npm docs [package name]</code></td>
+<td style="text-align:left">show README, official website, of the given package</td>
+</tr>
+<tr>
+<td><code>npm outdated</code></td>
+<td style="text-align:left">show packages that should be updated</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🧨 <strong>!important</strong><br>
+By default, in node@5 the <code>--save</code> flag is implicit.</p>
+</blockquote>
+<p>Therefore running these two commands you will have the same result:</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">npm</span> i lodash<br><br><span class="token comment"># is the same as</span><br><span class="token function">npm</span> i lodash --save</code></pre>
+<p>they add a new line in your <code>package.json</code> into the <code>dependecies</code> object:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"test-project"</span><span class="token punctuation">,</span><br>  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span><br>  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>  <span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"index.js"</span><span class="token punctuation">,</span><br>  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">"Giulia Chiola"</span><span class="token punctuation">,</span><br>  <span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"ISC"</span><span class="token punctuation">,</span><br>  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"lodash"</span><span class="token operator">:</span> <span class="token string">"^4.17.21"</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2 id="aliases">Aliases <a class="j-header-anchor" href="index.html#aliases">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th style="text-align:left">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm i</code></td>
+<td style="text-align:left"><code>npm install</code></td>
+</tr>
+<tr>
+<td><code>npm i [package name] -D</code></td>
+<td style="text-align:left"><code>npm install [package name] --save-dev </code></td>
+</tr>
+<tr>
+<td><code>npm ls</code></td>
+<td style="text-align:left"><code>npm list</code></td>
+</tr>
+<tr>
+<td><code>npm up [package name]</code></td>
+<td style="text-align:left"><code>npm update [package name]</code></td>
+</tr>
+<tr>
+<td><code>npm un [package name]</code></td>
+<td style="text-align:left"><code>npm uninstall [package name]</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="config">Config <a class="j-header-anchor" href="index.html#config">#</a></h2>
+<p>Set initial values for npm projects:</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">npm</span> config <span class="token builtin class-name">set</span> init-author-name <span class="token string">"Your name"</span><br><span class="token function">npm</span> config <span class="token builtin class-name">set</span> init-author-email <span class="token string">"your@email.com"</span><br><span class="token function">npm</span> config <span class="token builtin class-name">set</span> init-license MIT</code></pre>
+<h3 id="%E2%9A%A1%EF%B8%8F-bonus-tip">⚡️ Bonus tip <a class="j-header-anchor" href="index.html#%E2%9A%A1%EF%B8%8F-bonus-tip">#</a></h3>
+<p><a href="https://github.com/dylang/npm-check">npm-check</a> is a useful tool to <em>check for outdated, incorrect, and unused dependencies</em></p>
+<blockquote>
+<p>📚 More info</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/17937960/how-to-list-npm-user-installed-packages">How to list npm user-installed packages - StackOverflow</a></li>
+<li><a href="https://devhints.io/npm">npm cheatsheet - DevHints</a></li>
+<li><a href="https://medium.com/@jonchurch/use-github-branch-as-dependency-in-package-json-5eb609c81f1a">Use Github branch as dependency in package.json</a></li>
+</ul>
+</blockquote>
+<div class="s-giphy s-giphy--small-d">
+  <video autoplay loop muted playsinline>
+    <source src="https://i.giphy.com/media/d0NnEG1WnnXqg/giphy.mp4" type="video/mp4">
+  </video>
+  <p><a href="http://gph.is/2biY0lt">via GIPHY</a></p>
+</div>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-31">31 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="tags/shell/index.html" class="c-label">shell</a>
+        
+          
+          <a href="tags/node/index.html" class="c-label">node</a>
+        
+          
+          <a href="tags/npm/index.html" class="c-label">npm</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#21</span>
+    
+    
+    <a class="c-card__title " href="posts/git-cheatsheet/index.html">
+      <h2 class="c-card__title-heading">Git cheatsheet</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>Few commands I found very useful during development.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git commit -am &quot;message&quot;</code></td>
+<td>add and commit all trakced files</td>
+</tr>
+<tr>
+<td><code>git fetch --all --prune</code></td>
+<td>fetch all remotes, delete remote branches which are dead</td>
+</tr>
+<tr>
+<td><code>git reset --merge</code></td>
+<td>abort merge, reset as before (also if there are local commit not pushed yet)</td>
+</tr>
+<tr>
+<td><code>git merge --strategy-option theirs [branch]</code></td>
+<td>merge branch into current branch, keeping their work in conflicts</td>
+</tr>
+<tr>
+<td><code>git branch --unset-upstream</code></td>
+<td>remove upstream branch</td>
+</tr>
+<tr>
+<td><code>git reset myfile.js</code></td>
+<td>remove from staging area</td>
+</tr>
+<tr>
+<td><code>git commit --amend --no-edit</code></td>
+<td>amend without edit message</td>
+</tr>
+<tr>
+<td><code>git commit --amend --no-edit --patch</code></td>
+<td>amend without edit message + choose interactively which changes to commit</td>
+</tr>
+<tr>
+<td><code>git checkout -</code></td>
+<td>switch to previous branch</td>
+</tr>
+<tr>
+<td><code>git checkout [branch] -- path/to/file.scss</code></td>
+<td>get file from another branch and copy to current branch</td>
+</tr>
+<tr>
+<td><code>git stash -u</code></td>
+<td>stash all files (also untracked ones)</td>
+</tr>
+<tr>
+<td><code>git reset --soft A</code></td>
+<td>remove files, but still available in staging area</td>
+</tr>
+<tr>
+<td><code>git reset --mixed A</code></td>
+<td><code>git reset A</code> (default) remove files also in staging area</td>
+</tr>
+<tr>
+<td><code>git reset --hard</code></td>
+<td>remove files as they never existed</td>
+</tr>
+<tr>
+<td><code>git stash clear</code></td>
+<td>delete all stashes</td>
+</tr>
+<tr>
+<td><code>git fetch origin; git reset --hard origin/main</code></td>
+<td>restore as remote main branch</td>
+</tr>
+<tr>
+<td><code>git log --tags --simplify-by-decoration --pretty=&quot;format:%ci %d&quot;</code></td>
+<td>show tags details</td>
+</tr>
+<tr>
+<td><code>git log --graph --abbrev-commit --decorate</code></td>
+<td>show commits with decorative branches</td>
+</tr>
+<tr>
+<td><code>git log --decorate --oneline --graph --date-order master@{&quot;4 days ago&quot;}..master</code></td>
+<td>show commits of the last 4 days in a compact graph</td>
+</tr>
+<tr>
+<td><code>git diff --name-only | uniq | xargs $EDITOR</code></td>
+<td>open all modified files</td>
+</tr>
+<tr>
+<td><code>git push origin :feature/branchname</code></td>
+<td>delete remote branch</td>
+</tr>
+<tr>
+<td><code>git push origin --delete feature/branchname</code></td>
+<td>delete remote branch</td>
+</tr>
+<tr>
+<td><code>git push origin --all</code></td>
+<td>push all local branches</td>
+</tr>
+<tr>
+<td><code>git fetch --prune --prune-tags</code></td>
+<td>remove local tags, align tags to remotes</td>
+</tr>
+<tr>
+<td><code>git ls-remote --tags origin</code></td>
+<td>list all remote tags</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E2%9A%A1%EF%B8%8F-bonus-tip">⚡️ Bonus tip <a class="j-header-anchor" href="index.html#%E2%9A%A1%EF%B8%8F-bonus-tip">#</a></h3>
+<p>If there is a command you use often, you can save it as a <strong>global git alias</strong>.</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> config --global alias.fixup <span class="token string">'commit --amend --no-edit'</span></code></pre>
+<p>and then using it</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> fixup</code></pre>
+<p>Thanks to <a href="https://dev.to/darkwiiplayer/comment/1ak6o">DarkWiiPlayer</a> for pointing that out. 😎</p>
+<h2 id="rename-a-git-tag">Rename a git tag <a class="j-header-anchor" href="index.html#rename-a-git-tag">#</a></h2>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> tag <span class="token punctuation">[</span>new<span class="token punctuation">]</span> <span class="token punctuation">[</span>old<span class="token punctuation">]</span><br><span class="token function">git</span> tag -d <span class="token punctuation">[</span>old<span class="token punctuation">]</span><br><span class="token function">git</span> push origin :refs/tags/<span class="token punctuation">[</span>old<span class="token punctuation">]</span><br><span class="token function">git</span> push --tags</code></pre>
+<p>When you fetch remote tags, be sure you have the updated tags</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> pull --prune --tags</code></pre>
+<h2 id="gitlab-branch-compare">GitLab branch compare <a class="j-header-anchor" href="index.html#gitlab-branch-compare">#</a></h2>
+<ul>
+<li>Open the left sidebar</li>
+<li>Click on <code>Repository</code> &gt; <code>Compare</code></li>
+</ul>
+<pre class="language-md"><code class="language-md">https://github.com/giuliachiola/super-blog-11ty/compare/[source]...[target]</code></pre>
+<p>Example:</p>
+<pre class="language-md"><code class="language-md">https://github.com/giuliachiola/super-blog-11ty/compare/main...develop</code></pre>
+<div class="s-giphy s-giphy--small-d">
+  <video autoplay loop muted playsinline>
+    <source src="https://i.giphy.com/media/wTrXRamYhQzsY/giphy.mp4" type="video/mp4">
+  </video>
+  <p><a href="https://giphy.com/gifs/funny-wTrXRamYhQzsY">via GIPHY</a></p>
+</div>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-25">25 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="tags/git/index.html" class="c-label">git</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#20</span>
+    
+    
+    <a class="c-card__title " href="posts/fix-developer-path-after-upgrade-to-macos-catalina/index.html">
+      <h2 class="c-card__title-heading">Fix developer path after upgrade to MacOS Catalina</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>After MacOS system upgrade to <a href="https://www.apple.com/macos/catalina/">Catalina</a>, on my computer <strong>git</strong> did not work anymore. If you happened the same, the following steps resolve it for me!</p>
+<p>Running any of git commands, you would probably got this error</p>
+<pre class="language-shell"><code class="language-shell">xcrun: error: invalid active developer path <span class="token punctuation">(</span>/Library/Developer/CommandLineTools<span class="token punctuation">)</span>, missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</code></pre>
+<p>To fix it, you had to run</p>
+<pre class="language-shell"><code class="language-shell">xcode-select --install</code></pre>
+<p>The &quot;xcode-select&quot; command requires the command line developer tools.</p>
+<p>A prompt will appear asking you to install it now.</p>
+<img loading="lazy" src="https://res.cloudinary.com/giuliachiola/image/upload/v1585479297/super-blog/T12-mac-os-catalina/xcode-prompt_n6obrx.jpg" alt="xcode-prompt" width="1146" height="604">
+<p>When installation is completed, git should work as expected! 😎</p>
+<blockquote>
+<p>📚 More info</p>
+<p><a href="https://apple.stackexchange.com/questions/254380/why-am-i-getting-an-invalid-active-developer-path-when-attempting-to-use-git-a">Invalid active developer path</a></p>
+</blockquote>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-24">24 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="tags/mac-os/index.html" class="c-label">mac os</a>
+        
+          
+          <a href="tags/git/index.html" class="c-label">git</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+
+  
+  
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+<article class="c-card  c-card--highlight-top  l-spacing-m ">
+  
+  <div class="c-card__content">
+    
+    <span class="c-card__number">#19</span>
+    
+    
+    <a class="c-card__title " href="posts/add-items-to-an-array-in-nunjucks/index.html">
+      <h2 class="c-card__title-heading">Add items to an array in Nunjucks</h2>
+    </a>
+    
+
+    
+    
+
+    
+    
+      <div class="c-card__raw-content">
+        <p>To add items in Nunjucks, use the <code>.push()</code> function.</p>
+<pre class="language-twig"><code class="language-twig"><span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">set</span></span> <span class="token property">arr</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token rd"><span class="token punctuation">%}</span></span></span><br><span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">set</span></span> <span class="token property">arr</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token property">arr</span><span class="token punctuation">.</span><span class="token property">push</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token property">arr</span><span class="token punctuation">)</span> <span class="token rd"><span class="token punctuation">%}</span></span></span></code></pre>
+<p>Final array:</p>
+<pre class="language-md"><code class="language-md">arr = [1,2,3]</code></pre>
+<p>Unfortunately, I did not found any references in the official <a href="https://mozilla.github.io/nunjucks/templating.html">Nunjucks documentation</a> for this useful function 🤷🏻‍♀️</p>
+<pre class="language-twig"><code class="language-twig"><span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">set</span></span> <span class="token property">animals</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string"><span class="token punctuation">'</span>cat 🐱<span class="token punctuation">'</span></span><span class="token punctuation">,</span> <span class="token string"><span class="token punctuation">'</span>dog 🐶<span class="token punctuation">'</span></span><span class="token punctuation">,</span> <span class="token string"><span class="token punctuation">'</span>lion 🦁<span class="token punctuation">'</span></span><span class="token punctuation">]</span> <span class="token rd"><span class="token punctuation">%}</span></span></span><br><span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">set</span></span> <span class="token property">domesticAnimals</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token rd"><span class="token punctuation">%}</span></span></span><br><span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">for</span></span> <span class="token property">animal</span> <span class="token operator">in</span> <span class="token property">animals</span> <span class="token rd"><span class="token punctuation">%}</span></span></span><br>  <span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">if</span></span> <span class="token property">animal</span> <span class="token operator">!=</span><span class="token operator">=</span> <span class="token string"><span class="token punctuation">'</span>lion<span class="token punctuation">'</span></span> <span class="token rd"><span class="token punctuation">%}</span></span></span><br>    <span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">set</span></span> <span class="token property">domesticAnimals</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token property">domesticAnimals</span><span class="token punctuation">.</span><span class="token property">push</span><span class="token punctuation">(</span><span class="token property">animal</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token property">domesticAnimals</span><span class="token punctuation">)</span> <span class="token rd"><span class="token punctuation">%}</span></span></span><br>  <span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">endif</span></span> <span class="token rd"><span class="token punctuation">%}</span></span></span><br><span class="token tag"><span class="token ld"><span class="token punctuation">{%</span> <span class="token keyword">endfor</span></span> <span class="token rd"><span class="token punctuation">%}</span></span></span></code></pre>
+<p>Final array:</p>
+<pre class="language-md"><code class="language-md">domesticAnimals = ['cat 🐱', 'dog 🐶']</code></pre>
+<blockquote>
+<p>🧨 <strong>!important</strong></p>
+<p>If you use <code>{% set .... %}</code> inside a for-loop block, pay attention to have defined it <strong>outside</strong> before entering the loop.<br>
+I wrote a post about it: <a href="posts/nunjucks-scoped-variable-declarations/index.html">📒 Nunjucks scoped variable declarations</a></p>
+</blockquote>
+
+      </div>
+    
+
+    
+    <div class="c-card__bottom">
+      <time class="c-card__date" datetime="2021-01-23">23 Jan 2021</time>
+      <div class="c-card__tags">
+        
+          
+          <a href="tags/template-engine/index.html" class="c-label">template engine</a>
+        
+          
+          <a href="tags/nunjucks/index.html" class="c-label">nunjucks</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    </div>
+    
+    <nav class="c-pagination">
+  <ol class="c-pagination__list">
+    <li class="c-pagination__item">
+      
+    </li>
+    <li class="c-pagination__item">
+      
+      <a class="c-pagination__link" href="1/index.html">next &#8594;</a>
+      
+    </li>
+  </ol>
+</nav>
+
+    
+  
+
+</main>
+
+
+
+
+
+
+      
+      <footer class="c-footer">
+  <div class="l-main">
+    <div class="c-footer__group">
+      <div class="c-footer__theme-switcher"><label class="c-theme-switcher j-theme-switcher" for="checkbox">
+  <input class="c-theme-switcher__input" type="checkbox" id="checkbox"/>
+  <span class="c-theme-switcher__label c-theme-switcher__label--light" aria-label="theme-light">☀️</span>
+  <span class="c-theme-switcher__label c-theme-switcher__label--dark" aria-label="theme-dark">🌙</span>
+</label>
+
+      </div>
+
+      <p class="c-footer__copyright">© 2021 made with <span>♥️</span> by Giulia Chiola</p>
+
+      <div class="c-footer__socials">
+        <a class="c-footer__link" href="https://twitter.com/giulia_chiola" target="_blank" rel="noopener" title="twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon--twitter" fill="currentColor" width="200"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+        <a class="c-footer__link" href="https://github.com/giuliachiola" target="_blank" rel="noopener" title="github">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon icon--github" fill="currentColor" width="200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a class="c-footer__link" href="https://codepen.com/giuliachiola" target="_blank" rel="noopener" title="codepen">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon--codepen" fill="currentColor" width="200"><path d="M18.144 13.067v-2.134L16.55 12zm1.276 1.194a.628.628 0 01-.006.083l-.005.028-.011.053-.01.031a.443.443 0 01-.017.047l-.014.03a.78.78 0 01-.021.043l-.019.03a.57.57 0 01-.08.1l-.026.025a.602.602 0 01-.036.03l-.029.022-.01.008-6.782 4.522a.637.637 0 01-.708 0L4.864 14.79l-.01-.008a.599.599 0 01-.065-.052l-.026-.025-.032-.034-.021-.028a.588.588 0 01-.067-.11l-.014-.031a.644.644 0 01-.017-.047l-.01-.03c-.004-.018-.008-.036-.01-.054l-.006-.028a.628.628 0 01-.006-.083V9.739a.58.58 0 01.006-.083l.005-.027.011-.054.01-.03a.574.574 0 01.12-.217l.031-.034.026-.025a.62.62 0 01.065-.052l.01-.008 6.782-4.521a.638.638 0 01.708 0l6.782 4.521.01.008.03.022.035.03c.01.008.017.016.026.025a.545.545 0 01.08.1l.019.03a.633.633 0 01.021.043l.014.03c.007.016.012.032.017.047l.01.031c.004.018.008.036.01.054l.006.027a.619.619 0 01.006.083zM12 0C5.373 0 0 5.372 0 12c0 6.627 5.373 12 12 12 6.628 0 12-5.372 12-12 0-6.627-5.372-12-12-12m0 10.492L9.745 12 12 13.51 14.255 12zm.638 4.124v2.975l4.996-3.33-2.232-1.493zm-6.272-.356l4.996 3.33v-2.974l-2.764-1.849zm11.268-4.52l-4.996-3.33v2.974l2.764 1.85zm-6.272-.356V6.41L6.366 9.74l2.232 1.493zm-5.506 1.549v2.134L7.45 12z"/></svg>
+        </a>
+        <a class="c-footer__link" href="https://www.instagram.com/giulia_chiola/" target="_blank" rel="noopener" title="gitlab">
+          <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" class="icon icon--instagram" fill="currentColor" width="200"><path d="M128 23.064c34.177 0 38.225.13 51.722.745 12.48.57 19.258 2.655 23.769 4.408 5.974 2.322 10.238 5.096 14.717 9.575 4.48 4.479 7.253 8.743 9.575 14.717 1.753 4.511 3.838 11.289 4.408 23.768.615 13.498.745 17.546.745 51.723 0 34.178-.13 38.226-.745 51.723-.57 12.48-2.655 19.257-4.408 23.768-2.322 5.974-5.096 10.239-9.575 14.718-4.479 4.479-8.743 7.253-14.717 9.574-4.511 1.753-11.289 3.839-23.769 4.408-13.495.616-17.543.746-51.722.746-34.18 0-38.228-.13-51.723-.746-12.48-.57-19.257-2.655-23.768-4.408-5.974-2.321-10.239-5.095-14.718-9.574-4.479-4.48-7.253-8.744-9.574-14.718-1.753-4.51-3.839-11.288-4.408-23.768-.616-13.497-.746-17.545-.746-51.723 0-34.177.13-38.225.746-51.722.57-12.48 2.655-19.258 4.408-23.769 2.321-5.974 5.095-10.238 9.574-14.717 4.48-4.48 8.744-7.253 14.718-9.575 4.51-1.753 11.288-3.838 23.768-4.408 13.497-.615 17.545-.745 51.723-.745M128 0C93.237 0 88.878.147 75.226.77c-13.625.622-22.93 2.786-31.071 5.95-8.418 3.271-15.556 7.648-22.672 14.764C14.367 28.6 9.991 35.738 6.72 44.155 3.555 52.297 1.392 61.602.77 75.226.147 88.878 0 93.237 0 128c0 34.763.147 39.122.77 52.774.622 13.625 2.785 22.93 5.95 31.071 3.27 8.417 7.647 15.556 14.763 22.672 7.116 7.116 14.254 11.492 22.672 14.763 8.142 3.165 17.446 5.328 31.07 5.95 13.653.623 18.012.77 52.775.77s39.122-.147 52.774-.77c13.624-.622 22.929-2.785 31.07-5.95 8.418-3.27 15.556-7.647 22.672-14.763 7.116-7.116 11.493-14.254 14.764-22.672 3.164-8.142 5.328-17.446 5.95-31.07.623-13.653.77-18.012.77-52.775s-.147-39.122-.77-52.774c-.622-13.624-2.786-22.929-5.95-31.07-3.271-8.418-7.648-15.556-14.764-22.672C227.4 14.368 220.262 9.99 211.845 6.72c-8.142-3.164-17.447-5.328-31.071-5.95C167.122.147 162.763 0 128 0zm0 62.27C91.698 62.27 62.27 91.7 62.27 128c0 36.302 29.428 65.73 65.73 65.73 36.301 0 65.73-29.428 65.73-65.73 0-36.301-29.429-65.73-65.73-65.73zm0 108.397c-23.564 0-42.667-19.103-42.667-42.667S104.436 85.333 128 85.333s42.667 19.103 42.667 42.667-19.103 42.667-42.667 42.667zm83.686-110.994c0 8.484-6.876 15.36-15.36 15.36-8.483 0-15.36-6.876-15.36-15.36 0-8.483 6.877-15.36 15.36-15.36 8.484 0 15.36 6.877 15.36 15.36z" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+    
+      <a href="index.html#" class="s-back-to-top j-back-to-top" title="back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon icon--arrow-up" fill="currentColor" width="200"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18"/></svg>
+      </a>
+    
+
+    
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    
+    
+    <script defer src="dist/js/bundle.js"></script>
+  </body>
+</html>
